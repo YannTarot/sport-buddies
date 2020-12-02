@@ -1,1 +1,93 @@
+body{
+  background-color: #dbe2ef;
+}
 // Specific CSS for your home-page
+.banner-container{
+  display: flex;
+}
+
+.banner-image{
+  background: url(../../images/banner-runners.jpg);
+}
+
+.moscow {
+  background-color: black;
+  background-image: url("https://images.pexels.com/photos/69773/uss-nimitz-basketball-silhouettes-sea-69773.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  height: 500px;
+  display: block;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+}
+
+.spacer {
+  margin: 0px;
+  background-color: white;
+  min-height: 25%;
+  height: auto;
+}
+
+.jumbotron {
+  margin: 0;
+}
+
+.parallax_medium {
+  min-height: 500px;
+  display: block;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+}
+
+.parallax_large {
+  min-height: 600px;
+  display: block;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+}
+
+
+/* Places */
+
+.seychelles {
+  background-image: url("https://images.pexels.com/photos/3766560/pexels-photo-3766560.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+
+.finland {
+  background-image: url("https://images.pexels.com/photos/2403502/pexels-photo-2403502.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+
+.hongkong {
+  background-image: url("https://images.pexels.com/photos/1198174/pexels-photo-1198174.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+
+.cinq {
+  background-image: url("https://images.pexels.com/photos/3755440/pexels-photo-3755440.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+
+
+.background {
+  background-repeat:no-repeat;
+  background-position:50% 50%;
+  background-position:50% 50%\9 !important;
+}
+
+
+@media only screen and (max-width: 1024px) {
+
+  .moscow,
+  .hongkong,
+  .parallax_medium,
+  .parallax_large {
+    background-attachment: scroll;
+    background-size: cover;
+    width: 100%;
+  }
+}
