@@ -65,7 +65,7 @@ body{
 }
 
 .hongkong {
-  background-image: url("https://images.pexels.com/photos/1198174/pexels-photo-1198174.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-image: url("https://images.pexels.com/photos/3763871/pexels-photo-3763871.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
 }
 
 .cinq {
@@ -78,6 +78,53 @@ body{
   background-position:50% 50%;
   background-position:50% 50%\9 !important;
 }
+
+
+
+.home-page .text-separator {
+  text-align: center;
+  padding: 30px;
+  color: #404b55;
+  font-weight: 300px;
+  margin-bottom: 50px;
+}
+
+.home-page .cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 90px;
+}
+
+.home-page .card-category {
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: transform .5s
+}
+
+.home-page .card-category:hover {
+  transform: scale(1.2)
+}
+
+
+
+
+
+
+
+
+
+
 
 
 @media only screen and (max-width: 1024px) {

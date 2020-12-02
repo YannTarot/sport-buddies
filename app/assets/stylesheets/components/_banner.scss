@@ -8,26 +8,39 @@
     padding-top: 110px;
     padding-right: 25px;
     .btn{
-      border-radius: 10px;
-      background-color: #112d4e;
+      border-radius: 50px;
+      background-color: white;
+      color: #3f72af;
       margin-right: 115px;
+      border: none;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 16px 24px;
+    }
+    .btn-secondary{
+      background-color: transparent;
+      color: white;
+      border: 1px solid white;
     }
   }
 }
 
 .banner h1 {
   margin: 0;
-  color: white;
+  color:  white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 60px;
-  font-weight: bold;
+  font-weight: 800;
   padding-bottom: 20px;
 }
 
 .banner p {
-  font-size: 30px;
-  color: white;
-  opacity: .7;
+  font-size: 24px;
+  line-height: 40px;
+  font-weight: bold;
+  color:  white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   padding-bottom: 20px;
 }
