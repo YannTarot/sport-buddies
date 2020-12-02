@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_01_104244) do
+ActiveRecord::Schema.define(version: 2020_12_01_130550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(version: 2020_12_01_104244) do
     t.time "starts_at"
     t.integer "expected_participants_count"
     t.string "sport"
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_events_on_user_id"
+    t.bigint "owner_id", null: false
+    t.index ["owner_id"], name: "index_events_on_owner_id"
   end
 
   create_table "friendships", force: :cascade do |t|
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 2020_12_01_104244) do
     t.string "status", default: "pending"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "other_user_id", null: false
+    t.index ["other_user_id"], name: "index_friendships_on_other_user_id"
     t.index ["user_id"], name: "index_friendships_on_user_id"
   end
 
@@ -69,12 +71,14 @@ ActiveRecord::Schema.define(version: 2020_12_01_104244) do
     t.string "city"
     t.text "description"
     t.integer "age"
+    t.jsonb "sports", default: {}
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "events", "users"
+  add_foreign_key "events", "users", column: "owner_id"
   add_foreign_key "friendships", "users"
+  add_foreign_key "friendships", "users", column: "other_user_id"
   add_foreign_key "messages", "events"
   add_foreign_key "messages", "users"
   add_foreign_key "participations", "events"
