@@ -5,11 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "Cleaning booking database..."
+puts "Cleaning messages database..."
+Message.destroy_all
 
+puts "Cleaning particitpations database..."
+Participation.destroy_all
 
-puts "Cleaning camping car database..."
-
+puts "Cleaning events car database..."
+Event.destroy_all
 
 puts "Cleaning user database..."
 User.destroy_all
@@ -147,10 +150,48 @@ coursedebutantfinished = Event.create!(name: "Course à pied débutant", descrip
 
 puts "finished"
 
+puts "create particitpations"
+
+nicolas_particitpation = Participation.create!(user: nicolasvillenaud, event: basketball3v3finished, status: )
+kader_particitpation = Participation.create!(user: kaderbensoussan, event: basketball3v3finished, status: )
+maxime_particitpation = Participation.create!(user: maximejader, event: basketball3v3finished, status: )
+amandine_particitpation = Participation.create!(user: amandinepayet, event: basketball3v3finished, status: )
+martin_particitpation = Participation.create!(user: martinluron, event: basketball3v3finished, status: )
+guillaume_particitpation = Participation.create!(user: guillaumeathenas, event: basketball3v3finished, status: )
+
+catherine_particitpation = Participation.create!(user: catherineduchaud, event: coursedebutantfinished, status: )
+david_t_particitpation = Participation.create!(user: davidtravailleur, event: coursedebutantfinished, status: )
+david_b_particitpation = Participation.create!(user: davidbonnaud, event: coursedebutantfinished, status: )
+adele_particitpation = Participation.create!(user: adeleperrin, event: coursedebutantfinished, status: )
+joao_particitpation = Participation.create!(user: joaogomes, event: coursedebutantfinished, status: )
+jessica_particitpation = Participation.create!(user: jessicaletellec, event: coursedebutantfinished, status: )
+nicolas_particitpation = Participation.create!(user: nicolasvillenaud, event: coursedebutantfinished, status: )
+
+nicolas_particitpation_2 = Participation.create!(user: nicolasvillenaud, event: basketball2v2, status: )
+amandine_particitpation_2 = Participation.create!(user: amandinepayet, event: basketball2v2, status: )
+martin_particitpation_2 = Participation.create!(user: martinluron, event: basketball2v2, status: )
+aziz_particitpation = Participation.create!(user: azizsubra, event: basketball2v2, status: )
+
+nicolas_particitpation_3 = Participation.create!(user: nicolasvillenaud, event: jogging10km, status: )
+kader_particitpation_2     = Participation.create!(user: kaderbensoussan, event: jogging10km, status: )
+david_b_particitpation_2   = Participation.create!(user: davidbonnaud, event: jogging10km, status: )
+jessica_particitpation_2   = Participation.create!(user: jessicaletellec, event: jogging10km, status: )
+catherine_particitpation_2 = Participation.create!(user: catherineduchaud, event: jogging10km, status: )
+
+nicolas_particitpation_4 = Participation.create!(user: nicolasvillenaud, event: partenairemusculation, status: )
+arthur_particitpation_4 = Participation.create!(user: arthurmillaud, event: partenairemusculation, status: )
+
+puts "finished"
+
+puts "create friendships"
+friendships_1 = Friendship.create!(user: nicolasvillenaud, other_user: kaderbensoussan, status: "confirm")
+friendships_2 = Friendship.create!(user: nicolasvillenaud, other_user: kaderbensoussan, status: "confirm")
+friendships_3 = Friendship.create!(user: nicolasvillenaud, other_user: maximejader, status: "confirm")
+friendships_4 = Friendship.create!(user: martinluron, other_user: nicolasvillenaud, status: "pending")
+friendships_5 = Friendship.create!(user: jessicaletellec, other_user: nicolasvillenaud, status: "pending")
 
 
-
-
+puts "finished"
 
 
 
