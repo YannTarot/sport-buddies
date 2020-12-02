@@ -1,19 +1,24 @@
-<h2>Log in</h2>
+
+<%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner.png" %>);">> %>
+
+  <div class="row">
+    <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-sm-4">
+<h2>Connectez vous</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
     <%= f.input :email,
-                required: false,
+                required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
     <%= f.input :password,
-                required: false,
+                required: true,
                 input_html: { autocomplete: "current-password" } %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+    <%= f.button :submit, "Connexion", class: 'btn btn-primary'%>
   </div>
 <% end %>
 
