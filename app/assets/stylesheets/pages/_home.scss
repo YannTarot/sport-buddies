@@ -1,1 +1,140 @@
+body{
+  background-color: #dbe2ef;
+}
 // Specific CSS for your home-page
+.banner-container{
+  display: flex;
+}
+
+.banner-image{
+  background: url(../../images/banner-runners.jpg);
+}
+
+.moscow {
+  background-color: black;
+  background-image: url("https://images.pexels.com/photos/69773/uss-nimitz-basketball-silhouettes-sea-69773.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  height: 500px;
+  display: block;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+}
+
+.spacer {
+  margin: 0px;
+  background-color: white;
+  min-height: 25%;
+  height: auto;
+}
+
+.jumbotron {
+  margin: 0;
+}
+
+.parallax_medium {
+  min-height: 500px;
+  display: block;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+}
+
+.parallax_large {
+  min-height: 600px;
+  display: block;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+}
+
+
+/* Places */
+
+.seychelles {
+  background-image: url("https://images.pexels.com/photos/3766560/pexels-photo-3766560.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+
+.finland {
+  background-image: url("https://images.pexels.com/photos/2403502/pexels-photo-2403502.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+
+.hongkong {
+  background-image: url("https://images.pexels.com/photos/3763871/pexels-photo-3763871.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+
+.cinq {
+  background-image: url("https://images.pexels.com/photos/3755440/pexels-photo-3755440.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+
+
+.background {
+  background-repeat:no-repeat;
+  background-position:50% 50%;
+  background-position:50% 50%\9 !important;
+}
+
+
+
+.home-page .text-separator {
+  text-align: center;
+  padding: 30px;
+  color: #404b55;
+  font-weight: 300px;
+  margin-bottom: 50px;
+}
+
+.home-page .cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 90px;
+}
+
+.home-page .card-category {
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: transform .5s
+}
+
+.home-page .card-category:hover {
+  transform: scale(1.2)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1024px) {
+
+  .moscow,
+  .hongkong,
+  .parallax_medium,
+  .parallax_large {
+    background-attachment: scroll;
+    background-size: cover;
+    width: 100%;
+  }
+}
