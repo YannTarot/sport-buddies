@@ -7,6 +7,11 @@ class Event < ApplicationRecord
   has_many :participations
   has_many :messages
 
+
   validates :sport, inclusion: { in: SPORTS }
   validates :expected_level, inclusion: { in: LEVELS }
+
+  geocoded_by :location
+    after_validation :geocode, if: :will_save_change_to_location?
+
 end
