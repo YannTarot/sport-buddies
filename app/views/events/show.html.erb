@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- meta tag à modifier en temps voulu -->
+  <% content_for :meta_title, "#{@event.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+  <%# <% content_for :meta_description, @event.description %> %>
+  <%# <% content_for :meta_image, cl_image_path(@event.photo.path) %> %>
+</head>
+<body>
+  <div class="container-discu-descrption">
+    <div class="description-event">
+    </div>
+    <div class="message">
+    </div>
+  </div>
+  <div class="map-show">
+  </div>
+</body>
+</html>
