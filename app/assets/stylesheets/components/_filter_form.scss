@@ -47,6 +47,106 @@
 
 .container-cards-map {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 90px;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 50px;
+  margin-right: 20px;
+  margin-left: 20px;
 }
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.card-category:hover {
+
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 100px;
+  padding: 0 10px;
+}
+
+.card-info-player {
+}
+
+.btn {
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.65rem;
+  font-weight: bold;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 7px;
+  position: absolute;
+  margin-left: 170px;
+  margin-top: -18px;
+}
+
+
+#map {
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 114px;
+
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .container-cards-map {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .container-cards-map {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .container-cards-map {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .container-cards-map {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .container-cards-map {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+
