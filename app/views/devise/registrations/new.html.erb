@@ -1,44 +1,47 @@
-<div class="container">
-  <div class="row mt-5">
-    <div class="col-12 col-sm-8 col-md-4 offset-sm-2 offset-sm-4">
+<div class="container-signup">
+  <img src="https://picsum.photos/200/300">
+  <div class="container-form-signup">
+    <div class="form-signup">
       <h2>Inscrivez vous à Sport Buddies</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :first_name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "Prénom" }%>
-    <%= f.input :last_name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "Nom de famille" }%>
-    <%= f.input :age,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "Age" }%>
-    <%= f.input :city,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "Ville" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+        <div class="form-inputs">
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" }%>
+          <%= f.input :first_name,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "Prénom" }%>
+          <%= f.input :last_name,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "Nom de famille" }%>
+          <%= f.input :age,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "Age" }%>
+          <%= f.input :city,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "Ville" }%>
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { autocomplete: "new-password" } %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "S'inscrire", class: 'btn-login' %>
+        </div>
+      <% end %>
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "S'inscrire", class: 'btn btn-primary' %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

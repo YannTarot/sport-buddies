@@ -30,9 +30,23 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def new
+    @event = Event.new
+  end
+
+  def create
+    @event = Event.new(event_params)
+    @event.owner = current_user
+    if @event.save
+      redirect_to profile_path
+    else
+      render :new
+    end
+  end
+
   private
 
   def event_params
-    params.require(:event).permit(:name, :description, :location, :starts_at, :expected_participants_count, :sport, :owner_id, :photo)
+    params.require(:event).permit(:name, :description, :location, :starts_at, :expected_participants_count, :sport)
   end
 end
