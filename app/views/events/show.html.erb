@@ -9,13 +9,40 @@
   <%# <% content_for :meta_image, cl_image_path(@event.photo.path) %> %>
 </head>
 <body>
-  <div class="container-discu-descrption">
-    <div class="description-event">
+  <div class="main-show">
+    <div class="card-show-infos">
+      <%= link_to "Voir d'autres activités", events_path  %>
+      <h1><%= @event.name %></h1>
+      <div class="card-event-description">
+        <h2><strong>20.12.20</strong>  | 09h | 3/4 buddies</h2>
+        <p><%= @event.description %></p>
+        <div class="owner-avatar">
+          <img src="https://source.unsplash.com/random" alt="">
+          <p>Organisé par <%= @event.owner.first_name.capitalize   %> <%= @event.owner.last_name.capitalize %></p>
+        </div>
+        <div class="cta-show">
+          <%= link_to "Je m'inscris", event_participations_path(@event), class: "btn" %>
+          <%= link_to "J'invite mes buddies", profile_path(current_user), class: "btn"  %>
+        </div>
+      </div>
+
+      <div class="event-show-chat">
+        <h3>Discussion</h3>
+        <div class="event-message">
+          <div class="buddy-avatar">
+            <img src="" alt="">
+          </div>
+          <div class="message-content">
+            <p>Yo je ramène la ballon, oubliez pas l'eau !</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="message">
+
+    <div class="map-show">
+      <img src="" alt="">
     </div>
-  </div>
-  <div class="map-show">
+
   </div>
 </body>
 </html>
