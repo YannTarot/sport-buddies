@@ -1,14 +1,6 @@
 body{
   background-color: #dbe2ef;
 }
-// Specific CSS for your home-page
-.banner-container{
-  display: flex;
-}
-
-.banner-image{
-  background: url(../../images/banner-runners.jpg);
-}
 
 .moscow {
   background-color: black;
@@ -28,19 +20,23 @@ body{
   min-height: 50vh;
   height: auto;
 }
-
+.jumbo-one{
+  height: 900px !important;
+}
 .jumbotron {
+  height: 800px;
   margin: 0;
-  min-height: 70vh;
+  min-height: 80vh;
   background-color: #dbe2ef;
 }
 .first-container-title{
 text-align: center;
-margin-bottom: 140px;
+margin-bottom: 120px;
     h1{
       padding-bottom: 25px;
       font-weight: 600;
       font-size: 50px;
+      color: #112d4e;
 
   }
 }
@@ -55,7 +51,7 @@ margin-bottom: 140px;
 }
 
 .parallax_large {
-  min-height: 600px;
+  min-height: 80vh;
   display: block;
   background-attachment: fixed;
   background-position: center;
@@ -120,13 +116,16 @@ margin-bottom: 140px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  transition: transform .5s
+  transition: transform .5s;
+
 }
 
 .home-page .card-category:hover {
-  transform: scale(1.2)
+  transform: scale(1.2);
 }
-
+.home-page .card-category:hover::after{
+  background: linear-gradient(156.5deg, rgba(78, 84, 200, 0.81) 8.55%, rgba(143, 148, 251, 0.51));
+}
 
 .home-page .icons {
   display: grid;
@@ -159,14 +158,131 @@ margin-bottom: 140px;
   align-items: center;
 }
 
+.call-to-action{
+  text-align: center;
+  margin-top: 140px;
+  line-height: 20px;
+  .btn-flat{
+    margin-top: 58px;
+    color: white;
+    background-color: #2394bc;
+  }
+  h1{
+    color: #112d4e;
+    font-weight: 600;
+  }
+}
+
+.catchphrase{
+  text-align: center;
+  padding-top: 145px;
+  h1{
+    color: #112d4e;
+    font-weight: 600;
+  }
+}
 
 
+.activities{
+  text-align: center;
+  padding-top: 145px;
+  h1{
+    color: #112d4e;
+    font-weight: 600;
+    font-size: 60px;
+  }
+}
+
+.activities{
+  margin-bottom: 100px;
+  padding-top: 100px;
+}
 
 
+:root {
+  --image-ratio: .5666;
+  --padding: 30px;
+  --height: 720px;
+  --item-height: calc((var(--height) - var(--padding)) / 2);
+  --item-width: calc(var(--item-height) / var(--image-ratio));
+  --item-height-small: calc(var(--item-height) * var(--image-ratio));
+  // --item-width-small: calc(var(--item-height-small) / var(--image-ratio));
+}
+.mosaic {
+  list-style: none;
+  margin: 10px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.mosaic li {
+  height: var(--item-height);
+}
+.mosaic-list{
+  margin-bottom: 100px;
+}
+.mosaic li img {
+  height: 100%;
+  width: auto;
+}
 
+@media screen and (min-width: 720px) {
+  .mosaic {
+    flex-direction: column;
+    height: var(--height);
+  }
 
+  .mosaic li:nth-child(odd) {
+    margin-bottom: var(--padding);
+  }
 
+  .mosaic li:nth-child(4n+2),
+  .mosaic li:nth-child(4n+3) {
+    margin-left: var(--padding);
+  }
+
+  .mosaic li:nth-child(4n+2) img,
+  .mosaic li:nth-child(4n+3) img{
+    height: var(--item-height-small);
+  }
+
+  .mosaic li:nth-child(4n+3) {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .mosaic li:nth-child(4n+4) {
+    width: calc(var(--item-width-small) + (var(--padding) * 2));
+    transform: translateX(calc((var(--item-width) - var(--item-width-small) - (var(--padding) * 2)) * -1));
+  }
+}
+.basket-card-image{
+  margin-left: 90px;
+}
+
+.tennis-card-image{
+  object-fit: cover;
+  width: 355px;
+  height: 287px;
+  border-radius: 10px;
+}
+img.tennis-card-image{
+  width: 355px !important;
+  height: 287px !important;
+}
+
+.fitness-card-image{
+margin-left: 20px;
+  object-fit: cover;
+}
+
+.cyclisme-card-image{
+  margin-left: -86px;
+}
+.mosaic-image{
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;}
 
 @media only screen and (max-width: 1024px) {
 

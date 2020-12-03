@@ -4,6 +4,7 @@
     height: 80px;
     position: fixed;
     z-index: 1000;
+    margin-bottom: 85px;
 }
 #mainListDiv{
   margin-right: 20px;
@@ -27,7 +28,12 @@
 }
 
 
-
+.avatar{
+  height: 70px;
+  width: 70px;
+  padding-bottom: 5px;
+  object-fit: cover;
+}
 .navTrigger {
     display: none;
 
