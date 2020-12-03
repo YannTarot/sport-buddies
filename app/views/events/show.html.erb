@@ -15,7 +15,7 @@
       <h1><%= @event.name %></h1>
       <div class="card-event-description">
         <div class="owner-avatar">
-          <img src="https://source.unsplash.com/random" alt="">
+          <%= cl_image_tag @event.owner.avatar.key, widht:  100, height: 100, crop: :fill  %>
           <p>Organisé par <strong>  <%= @event.owner.first_name.capitalize %> <%= @event.owner.last_name.capitalize %></strong></p>
         </div>
         <div class="card-event-date">
@@ -42,6 +42,7 @@
             <img src="https://source.unsplash.com/random" alt="">
           </div>
           <div class="message-content">
+            <% %>
             <p>Yo je ramène la ballon, oubliez pas l'eau !</p>
           </div>
         </div>
