@@ -1,13 +1,13 @@
-.banner {
+.banner-sport {
   background-size: cover;
   background-position: center;
   padding: 150px 0;
   height: 100vh;
-  .container{
+  .title{
     height: 55vh;
     padding-top: 110px;
     padding-right: 25px;
-    .btn{
+    .btn-create{
       border-radius: 50px;
       background-color: white;
       color: #3f72af;
@@ -18,11 +18,20 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       padding: 16px 24px;
+      margin-right: 20px;
+
     }
-    .btn-secondary{
-      background-color: transparent;
-      color: white;
-      border: 1px solid white;
+    .btn-join{
+        background-color: transparent;
+        color: white;
+        border: 1px solid white;
+        border-radius: 50px;
+        font-size: 14px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 16px 24px;
+        margin-left: 20px;
     }
   }
 }
