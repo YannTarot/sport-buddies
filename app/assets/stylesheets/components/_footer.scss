@@ -1,0 +1,22 @@
+.footer{
+  background-color: $dark-blue;
+  height: 150px;
+  margin-top: 280px;
+
+}
+.text-center{
+  font-size: 25px;
+  color: $blue-sky;
+}
+.social_footer_ul {
+  display:table; margin:15px auto 0 auto; list-style-type:none;
+}
+.social_footer_ul li {
+  padding-left:20px; padding-top:10px; float:left;
+}
+.social_footer_ul li a {
+  color:#CCC; border:1px solid #CCC; padding:8px;border-radius:50%;
+}
+.social_footer_ul li i {
+  width:20px; height:20px; text-align:center;
+}
