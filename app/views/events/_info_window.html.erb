@@ -1,8 +1,9 @@
 <div class="pop-up card-product">
-  <%= cl_image_tag event.photo.key, height: 100, width: 210, crop: :fill %>
+  <%#= cl_image_tag event.photo.key, height: 100, width: 210, crop: :fill %>
   <div class="card-product-infos">
-    <h2><%= event.name %></h2>
+    <h4><%= event.name %></h4>
     <p><%= event.location %></p>
-    <p><%= event.date %></p>
+    <p><%= event.starts_at.strftime("%d/%h/%Y %H:%M") %></p>
   </div>
 </div>
+
