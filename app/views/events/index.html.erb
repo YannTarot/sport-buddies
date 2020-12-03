@@ -1,85 +1,65 @@
 <div class="container-index">
   <section class="search-container">
-      <div class="form-container">
-          <form action="/events" method="get" novalidate="novalidate">
-              <div class="row">
-                  <div class="col-lg-12">
-                      <div class="row">
-                          <div class="form-input-index col-lg-2 col-md-3 col-sm-12 p-0">
-                              <input name="city" type="text" class="form-control search-slt" placeholder="Localisation">
-                          </div>
-                          <div class="form-input-index col-lg-2 col-md-3 col-sm-12 p-0">
-                              <input name="date" type="date" label="Date de l'événement" class="form-control search-slt" placeholder="Date">
-                          </div>
-                          <div class="form-input-index col-lg-2 col-md-3 col-sm-12 p-0">
-                              <select name="category" class="form-control search-slt" id="exampleFormControlSelect1" placeholder="Sport">
-                                  <option>Football</option>
-                                  <option>Rugby</option>
-                                  <option>Basketball</option>
-                                  <option>Running</option>
-                                  <option>Musculation</option>
-                                  <option>Randonnée</option>
-                                  <option>Tennis</option>
-                                  <option>Cyclisme</option>
-                                  <option>Escalade</option>
-                              </select>
-                          </div>
-                          <div class="col-lg-2 col-md-3 col-sm-12 p-0">
-                              <button type="submit" class="searchformbutton wrn-btn">Rechercher</button>
-                          </div>
-                      </div>
-                  </div>
+    <div class="form-container">
+      <%= form_tag events_path, method: :get do %>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="form-input-index col-lg-2 col-md-3 col-sm-12 p-0">
+                <%= select_tag :city,
+                  options_for_select(Event::CITIES, params[:city]),
+                  class: "form-control search-slt",
+                  prompt: "Localisation"
+                %>
               </div>
-          </form>
-      </div>
+              <div class="form-input-index col-lg-2 col-md-3 col-sm-12 p-0">
+                <%= date_field_tag :starts_at, params[:starts_at],
+                  class: "form-control search-slt"
+                %>
+              </div>
+              <div class="form-input-index col-lg-2 col-md-3 col-sm-12 p-0">
+                <%= select_tag :sport,
+                  options_for_select(Event::SPORTS, params[:sport]),
+                  class: "form-control search-slt" ,
+                  prompt: "Sport"
+                %>
+              </div>
+              <div class="col-lg-2 col-md-3 col-sm-12 p-0">
+                <%= submit_tag "Rechercher", class: "searchformbutton wrn-btn" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </section>
   <div class="container-cards-map">
     <div class="index-cards">
-      <div class="index-card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <div class="index-card-info">
-          <div class="index-card-info-left">
-            <h4>Football : tous niveaux</h4>
-            <p>Carquefou, 44123</p>
-          </div>
-          <div class="index-card-info-player">
-            <p>5/9</p>
-          </div>
-        </div>
-        <div class="index-card-btn">
-          <button class="index-btn">S'inscrire</button>
-        </div>
-      </div>
-      <div class="index-card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <div class="index-card-info">
-          <div class="index-card-info-left">
-            <h4>Football : tous niveaux</h4>
-            <p>Carquefou, 44123</p>
-          </div>
-          <div class="index-card-info-player">
-            <p>5/9</p>
+      <% @events.each do |event| %>
+          <% card_function = image_path "card-#{event.sport}.jpg" %>
+        <div class="index-card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= card_function %>)">
+          <div class="index-card-info">
+            <div class="index-card-info-left">
+              <h4> <strong> <%= event.sport.capitalize %> </strong>: <%= event.expected_level %></h4>
+              <p><%= event.starts_at.strftime("%d/%m à %HH") %></p>
+            </div>
+            <% if event.expected_participants_count.present? %>
+              <div class="index-card-info-player">
+                <p><%= event.participations.count %>/<%= event.expected_participants_count %></p>
+              </div>
+            <% else %>
+              <div class="index-card-info-player">
+              </div>
+            <% end %>
+            </div>
+          <div class="index-card-btn">
+            <button class="index-btn">S'inscrire</button>
           </div>
         </div>
-        <div class="index-card-btn">
-          <button class="index-btn">S'inscrire</button>
-        </div>
-      </div>
-      <div class="index-card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <div class="index-card-info">
-          <div class="index-card-info-left">
-            <h4>Football : tous niveaux</h4>
-            <p>Carquefou, 44123</p>
-          </div>
-          <div class="index-card-info-player">
-            <p>5/9</p>
-          </div>
-        </div>
-        <div class="index-card-btn">
-          <button class="index-btn">S'inscrire</button>
-        </div>
-      </div>
+      <% end %>
     </div>
     <div id="map"
-         style="width: 100%; height: 500px;"
+         style="width: 100%; height: 67vh"
          data-markers="<%= @markers.to_json %>"
          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>

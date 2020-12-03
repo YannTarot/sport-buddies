@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
   SPORTS = ['rugby', 'football', 'basketball', 'running', 'tennis', 'cyclisme', 'fitness', 'escalade', 'randonnée']
   LEVELS = ['débutant', 'intermédiaire', 'confirmé']
+  CITIES = ['Nantes', 'Orvault', "Carquefou"]
 
   belongs_to :owner, class_name: "User"
 

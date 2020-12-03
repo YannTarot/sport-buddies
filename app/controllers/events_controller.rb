@@ -1,9 +1,21 @@
 class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
-  def index
-    @events = Event.all
 
-   # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+  def index
+    @events = Event.geocoded
+
+    if params[:city].present?
+      # raise
+      @events = @events.near(params[:city])
+    end
+    if params[:sport].present?
+      # raise
+      @events = @events.where(sport: params[:sport])
+    end
+    if params[:starts_at].present?
+      @events = @events.where("starts_at::date = :starts_at", starts_at: params[:starts_at])
+    end
+
     @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,
@@ -13,6 +25,7 @@ class EventsController < ApplicationController
       }
     end
   end
+
   def show
     @event = Event.find(params[:id])
   end
