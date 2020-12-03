@@ -5,17 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- meta tag à modifier en temps voulu -->
   <% content_for :meta_title, "#{@event.name} is on #{DEFAULT_META["meta_product_name"]}" %>
-  <%# <% content_for :meta_description, @event.description %> %>
-  <%# <% content_for :meta_image, cl_image_path(@event.photo.path) %> %>
+  <%# <% content_for :meta_description, @event.description %>
+  <%# <% content_for :meta_image, cl_image_path(@event.photo.path) %>
 </head>
 <body>
-  <div class="container-discu-descrption">
-    <div class="description-event">
+  <div class="main-show">
+    <div class="card-show-infos">
+      <%= link_to "Voir d'autres activités", events_path, class: "backlink-show"  %>
+      <h1><%= @event.name %></h1>
+      <div class="card-event-description">
+        <div class="owner-avatar">
+          <%= cl_image_tag @event.owner.avatar.key, widht:  100, height: 100, crop: :fill  %>
+          <p>Organisé par <strong>  <%= @event.owner.first_name.capitalize %> <%= @event.owner.last_name.capitalize %></strong></p>
+        </div>
+        <div class="card-event-date">
+        <h2><strong>20.12.20</strong></h2>
+        <h2 class="gray-separator">|</h2>
+        <h2> 09h </h2>
+        <h2 class="gray-separator">|</h2>
+        <h2>3/4 buddies</h2>
+        <h2 class="gray-separator">|</h2>
+        <h2>Niveau :</h2>
+        </div>
+        <p><%= @event.description %> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum molestiae eaque expedita excepturi voluptas nulla ipsam cum consequuntur voluptatibus ut soluta sed reprehenderit saepe hic nisi, dolor illo sequi eum.</p>
+
+        <div class="cta-show">
+          <%= link_to "Je m'inscris", event_participations_path(@event), class: "btn-show-participate" %>
+          <%= link_to "J'invite mes buddies", profile_path(current_user), class: "btn-show-buddies"  %>
+        </div>
+      </div>
+
+      <div class="event-show-chat">
+        <h3>Chat de <%= @event.name %></h3>
+        <div class="event-message">
+          <div class="messages-avatar">
+            <img src="https://source.unsplash.com/random" alt="">
+          </div>
+          <div class="message-content">
+            <% %>
+            <p>Yo je ramène la ballon, oubliez pas l'eau !</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="message">
+
+    <div class="map-show">
+      <div id="map"
+           style="width: 100%; height: 100vh;"
+           data-markers="<%= @markers.to_json %>"
+           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">>
+      </div>
     </div>
-  </div>
-  <div class="map-show">
+
   </div>
 
 </body>
