@@ -1,3 +1,6 @@
+.container-index {
+  padding-top: 80px;
+}
 
 .search-container{
   padding: 2rem;
@@ -26,8 +29,9 @@
 
 }
 
+
 .searchformbutton{
-  background-color: #3f72af;
+  background-color: #4194FE;
   margin-left: 5px;
   border-radius: 10px;
   font-size: 20px;
@@ -44,6 +48,7 @@
   margin-right: 5px;
   font-weight: 20px;
 }
+
 
 .container-cards-map {
   display: grid;
@@ -62,7 +67,7 @@
 .index-card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 250px;
   justify-content: center;
   align-items: center;
   color: white;
@@ -71,7 +76,6 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  position: relative;
 }
 
 .index-card-category:hover {
@@ -82,11 +86,22 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-top: 100px;
+  margin-top: 170px;
   padding: 0 10px;
+  position: absolute;
+  width: 29%;
 }
 
 .index-card-info-player {
+
+}
+
+.index-card-btn {
+  margin: 0 auto;
+  width: 110px;
+  position: relative;
+  top: 225px;
+  height: auto;
 }
 
 .index-btn {
@@ -97,14 +112,14 @@
   letter-spacing: 0.025rem;
   text-transform: uppercase;
   color: white;
-  background-color: black;
+  background-color: #4194FE;
   border: none;
   border-radius: 7px;
-  position: absolute;
-  margin-left: 170px;
-  margin-top: -18px;
 }
 
+.index-btn:hover {
+  transform: scale(1.1);
+}
 
 #map {
   border-radius: 5px;

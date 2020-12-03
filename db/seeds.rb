@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+
 puts "Cleaning messages database..."
 Message.destroy_all
 
@@ -130,65 +133,65 @@ puts "finished"
 
 puts "creat events"
 
-basketball3v3 = Event.create!(name: " Street basketball 3v3", description: "Salut la commu, on cherche 3 joueurs avec un gros niveau pour faire un match 3v3 sur Nantes ! ", location: "L'arbre à basketball, Nantes", starts_at: "2020-12-12 14:00", sport: "basketball", expected_level: "confirmé", expected_participants_count: 3, owner: kaderbensoussan)
-basketball2v2 = Event.create!(name: " Basket 2v2 ", description: "Salut les buddies, on prévoit un petit 2v2 sur une moitié de terrain. J'ai mon nouveau ballon spalding à tester, venez me rejoindre.", location: "Parc du grand blotereau, Nantes", starts_at: "2020-12-12 14:00", sport: "basketball", expected_level: "intermédiaire", expected_participants_count: 3, owner: amandinepayet)
-tournoidebasket = Event.create!(name: "Tournoi de basket", description: "Salut les buddies j'organise un gros tournoi de basket dimanche après-midi ! on fera du 2v2 sur un demi-terrain ! il me faut au moins 6 équipes ! Inscrivez-vous ! Aucune restriction de niveau !", location: "Stade vélodrome du petit breton, Nantes", starts_at: "2020-12-13 15:00", sport: "basketball", expected_level: "débutant", expected_participants_count: 10, owner: martinluron)
-basketindoor4v4 = Event.create!(name: "Match de basket indoor 4v4", description: "Yo ! J'ai un créneau dans une salle pour faire du basket indoor sur un super parquet, on est déjà 3, il manque plus que toi pour venir compléter le match.", location: "complexe sportif Jean Jahan, Saint Joseph de porterie", starts_at: "2020-12-21 20:00", sport: "basketball", expected_level: "confirmé", expected_participants_count: 5, owner: maximejader)
-basketpartenaire = Event.create!(name: "Cherche un partenaire !", description: "Salut tout le monde je me sers de cette app pour rechercher un sparring partner pour progresser en basket ! Envoyez moi un message si vous êtes interessés !", location: "Plaine de jeu de Sèvres, Nantes", starts_at: "2020-12-15 09:00", sport: "basketball", expected_level: "débutant", expected_participants_count: 1, owner: guillaumeathenas)
-streetbasket3v3 = Event.create!(name: "Street basket 3v3", description: "Bonjour tout le monde ! J'habite proche du parc de procé et je suis à la recherche de monde pour un petit street bientôt.", location: "Stade de basket, Parc de Procé Nantes", starts_at: "2020-12-13 11:00", sport: "basketball", expected_level: "débutant", expected_participants_count: 4, owner: azizsubra)
-footing10km = Event.create!(name: "Footing 10km", description: "Salut tout le monde je vais courir tous les mardis et je me sens un peu seul ! Si des gens veulent me rejoindre inscrivez-vous !", location: "Parc de Procé, Nantes", starts_at: "2020-12-15 07:00", sport: "running", expected_level: "confirmé", expected_participants_count: nil, owner: jessicaletellec)
-jogging10km = Event.create!(name: "Jogging 12km", description: "Hello les buddies, j'en ai un peu marre de courir seul sur les bords de l'erdre. L'endroit est magnifique, autant le partagé.", location: "Pont de la trotière, Nantes", starts_at: "2020-12-13 09:00", sport: "running", expected_level: "intermédiaire", expected_participants_count: nil, owner: davidtravailleur)
-coursedebutant = Event.create!(name: "Course à pied débutant", description: "Bonjour les buddies, récemment divorcée je suis en train de me refaire une santé pour plaire à nouveau aux hommes. Si vous voulez me rejoindre à petite foulées inscrivez vous je suis ouverte aux rencontres ", location: "Iles de Nantes, Nantes", starts_at: "2020-12-17 14:00", sport: "running", expected_level: "débutant", expected_participants_count: nil, owner: catherineduchaud)
-runningnantes = Event.create!(name: "Running ile de Nantes", description: "Salut la communauté, je prépare un trail et pour ça je fais uncircuit sympathique sur l'île de Nantes.Je cherche des buddies pour courir et gagner en motivation.", location: "Iles de Nantes, Nantes", starts_at: "2020-12-13 08:00", sport: "running", expected_level: "confirmé", expected_participants_count: nil, owner: adeleperrin)
-semimarathon = Event.create!(name: "Semi-marathon", description: "Salut les sportifs ! Je cherche des gens chauds pour courir un semi samedi matin ! L'objectif est de le terminer, ce n'est pas une course de vitesse ! Venez nombreux !", location: "Parc de la Gaudinière, Orvault", starts_at: "2020-12-19 10:00", sport: "running", expected_level: "intermédiaire", expected_participants_count: nil, owner: joaogomes)
-trail30km = Event.create!(name: "Trail 30km", description: "Hello les warriors ! Je suis à la recherche de runners pour m'accompagner dans un circuit en pleine forêt, dna sle but de préparer ma prochaine course, attention le niveau sera rude !", location: "Carquefou", starts_at: "2020-12-19 09:00", sport: "running", expected_level: "intermédiaire", expected_participants_count: nil, owner: marienguyen)
-fitnesspartenaire = Event.create!(name: "Cherche un partenaire de fitness", description: "Bonjour à tous, voulant garder la forme et ne sachant pas trop les bonne pratiques je cherche quelqu'un pour faire du fitness avec moi dans la bonne humeur et partager ses connaissances", location: "Beaulieu Fitness, Nantes", starts_at: "2020-12-14 21:00", sport: "fitness", expected_level: "confirmé", expected_participants_count: 1, owner: paulinelebeau)
-streetworkout = Event.create!(name: "Street workout", description: "Bonjour tout le monde. Je lance les invitations à me rejoindre pour une séance de circuit training en pleine air d'environ 2h, je compte sur vous pour me rejoindre et bruler pleins de calories.", location: "Parc du grand bloterau", starts_at: "2020-12-20 09:00", sport: "fitness", expected_level: "intermédiaire", expected_participants_count: nil, owner: joaogomes)
-partenairemusculation = Event.create!(name: "Partenaire de musculation", description: "Salut les buddies ! Je suis un peu bloqué sur mes maxs en ce moment. Je recherche une personne pour faire les séances et assurer ma sécurité lors de mes séries.", location: "Basic fit, Nantes", starts_at: "2020-12-19 10:00", sport: "fitness", expected_level: "confirmé", expected_participants_count: 1, owner: arthurmillaud)
-basketball3v3finished = Event.create!(name: " Street basketball 3v3", description: "Salut la commu, on cherche 3 joueurs avec un gros niveau pour faire un match 3v3 sur Nantes ! ", location: "L'arbre à basketball, Nantes", starts_at: "2020-11-28 14:00", sport: "basketball", expected_level: "confirmé", expected_participants_count: 3, owner: kaderbensoussan)
-coursedebutantfinished = Event.create!(name: "Course à pied débutant", description: "Bonjour les buddies, récemment divorcée je suis en train de me refaire une santé pour plaire à nouveau aux hommes. Si vous voulez me rejoindre à petite foulées inscrivez vous je suis ouverte aux rencontres ", location: "Iles de Nantes, Nantes", starts_at: "2020-11-30 14:00", sport: "running", expected_level: "débutant", expected_participants_count: nil, owner: catherineduchaud)
+basketball3v3 = Event.create!(name: " Street basketball 3v3", description: "Salut la commu, on cherche 3 joueurs avec un gros niveau pour faire un match 3v3 sur Nantes ! ", location: "L'arbre à basketball, Nantes", starts_at: "2020-12-12 14:00:00", sport: "basketball", expected_level: "confirmé", expected_participants_count: 3, owner_id: kaderbensoussan.id)
+basketball3v3 = Event.create!(name: " Basket 2v2 ", description: "Salut les buddies, on prévoit un petit 3v3 sur une moitié de terrain. J'ai mon nouveau ballon spalding à tester, venez me rejoindre.", location: "Parc du grand blotereau, Nantes", starts_at: "2020-12-12 14:00", sport: "basketball", expected_level: "intermédiaire", expected_participants_count: 5, owner_id: amandinepayet.id)
+tournoidebasket = Event.create!(name: "Tournoi de basket", description: "Salut les buddies j'organise un gros tournoi de basket dimanche après-midi ! on fera du 2v2 sur un demi-terrain ! il me faut au moins 6 équipes ! Inscrivez-vous ! Aucune restriction de niveau !", location: "Stade vélodrome du petit breton, Nantes", starts_at: "2020-12-13 15:00", sport: "basketball", expected_level: "débutant", expected_participants_count: 10, owner_id: martinluron.id)
+basketindoor4v4 = Event.create!(name: "Match de basket indoor 4v4", description: "Yo ! J'ai un créneau dans une salle pour faire du basket indoor sur un super parquet, on est déjà 3, il manque plus que toi pour venir compléter le match.", location: "complexe sportif Jean Jahan, Saint Joseph de porterie", starts_at: "2020-12-21 20:00", sport: "basketball", expected_level: "confirmé", expected_participants_count: 5, owner_id: maximejader.id)
+basketpartenaire = Event.create!(name: "Cherche un partenaire !", description: "Salut tout le monde je me sers de cette app pour rechercher un sparring partner pour progresser en basket ! Envoyez moi un message si vous êtes interessés !", location: "Plaine de jeu de Sèvres, Nantes", starts_at: "2020-12-15 09:00", sport: "basketball", expected_level: "débutant", expected_participants_count: 1, owner_id: guillaumeathenas.id)
+streetbasket3v3 = Event.create!(name: "Street basket 3v3", description: "Bonjour tout le monde ! J'habite proche du parc de procé et je suis à la recherche de monde pour un petit street bientôt.", location: "Stade de basket, Parc de Procé Nantes", starts_at: "2020-12-13 11:00", sport: "basketball", expected_level: "débutant", expected_participants_count: 4, owner_id: azizsubra.id)
+footing10km = Event.create!(name: "Footing 10km", description: "Salut tout le monde je vais courir tous les mardis et je me sens un peu seul ! Si des gens veulent me rejoindre inscrivez-vous !", location: "Parc de Procé, Nantes", starts_at: "2020-12-15 07:00", sport: "running", expected_level: "confirmé", expected_participants_count: nil, owner_id: jessicaletellec.id)
+jogging10km = Event.create!(name: "Jogging 12km", description: "Hello les buddies, j'en ai un peu marre de courir seul sur les bords de l'erdre. L'endroit est magnifique, autant le partagé.", location: "Pont de la trotière, Nantes", starts_at: "2020-12-13 09:00", sport: "running", expected_level: "intermédiaire", expected_participants_count: nil, owner_id: davidtravailleur.id)
+coursedebutant = Event.create!(name: "Course à pied débutant", description: "Bonjour les buddies, récemment divorcée je suis en train de me refaire une santé pour plaire à nouveau aux hommes. Si vous voulez me rejoindre à petite foulées inscrivez vous je suis ouverte aux rencontres ", location: "Iles de Nantes, Nantes", starts_at: "2020-12-17 14:00", sport: "running", expected_level: "débutant", expected_participants_count: nil, owner_id: catherineduchaud.id)
+runningnantes = Event.create!(name: "Running ile de Nantes", description: "Salut la communauté, je prépare un trail et pour ça je fais uncircuit sympathique sur l'île de Nantes.Je cherche des buddies pour courir et gagner en motivation.", location: "Iles de Nantes, Nantes", starts_at: "2020-12-13 08:00", sport: "running", expected_level: "confirmé", expected_participants_count: nil, owner_id: adeleperrin.id)
+semimarathon = Event.create!(name: "Semi-marathon", description: "Salut les sportifs ! Je cherche des gens chauds pour courir un semi samedi matin ! L'objectif est de le terminer, ce n'est pas une course de vitesse ! Venez nombreux !", location: "Parc de la Gaudinière, Orvault", starts_at: "2020-12-19 10:00", sport: "running", expected_level: "intermédiaire", expected_participants_count: nil, owner_id: joaogomes.id)
+trail30km = Event.create!(name: "Trail 30km", description: "Hello les warriors ! Je suis à la recherche de runners pour m'accompagner dans un circuit en pleine forêt, dna sle but de préparer ma prochaine course, attention le niveau sera rude !", location: "Carquefou", starts_at: "2020-12-19 09:00", sport: "running", expected_level: "intermédiaire", expected_participants_count: nil, owner_id: marienguyen.id)
+fitnesspartenaire = Event.create!(name: "Cherche un partenaire de fitness", description: "Bonjour à tous, voulant garder la forme et ne sachant pas trop les bonne pratiques je cherche quelqu'un pour faire du fitness avec moi dans la bonne humeur et partager ses connaissances", location: "Beaulieu Fitness, Nantes", starts_at: "2020-12-14 21:00", sport: "fitness", expected_level: "confirmé", expected_participants_count: 1, owner_id: paulinelebeau.id)
+streetworkout = Event.create!(name: "Street workout", description: "Bonjour tout le monde. Je lance les invitations à me rejoindre pour une séance de circuit training en pleine air d'environ 2h, je compte sur vous pour me rejoindre et bruler pleins de calories.", location: "Parc du grand bloterau", starts_at: "2020-12-20 09:00", sport: "fitness", expected_level: "intermédiaire", expected_participants_count: nil, owner_id: joaogomes.id)
+partenairemusculation = Event.create!(name: "Partenaire de musculation", description: "Salut les buddies ! Je suis un peu bloqué sur mes maxs en ce moment. Je recherche une personne pour faire les séances et assurer ma sécurité lors de mes séries.", location: "Basic fit, Nantes", starts_at: "2020-12-19 10:00", sport: "fitness", expected_level: "confirmé", expected_participants_count: 2, owner_id: arthurmillaud.id)
+basketball3v3finished = Event.create!(name: " Street basketball 3v3", description: "Salut la commu, on cherche 3 joueurs avec un gros niveau pour faire un match 3v3 sur Nantes ! ", location: "L'arbre à basketball, Nantes", starts_at: "2020-11-28 14:00", sport: "basketball", expected_level: "confirmé", expected_participants_count: 3, owner_id: kaderbensoussan.id)
+coursedebutantfinished = Event.create!(name: "Course à pied débutant", description: "Bonjour les buddies, récemment divorcée je suis en train de me refaire une santé pour plaire à nouveau aux hommes. Si vous voulez me rejoindre à petite foulées inscrivez vous je suis ouverte aux rencontres ", location: "Iles de Nantes, Nantes", starts_at: "2020-11-30 14:00", sport: "running", expected_level: "débutant", expected_participants_count: nil, owner_id: catherineduchaud.id)
 
 puts "finished"
 
 puts "create particitpations"
 
-nicolas_particitpation = Participation.create!(user: nicolasvillenaud, event: basketball3v3finished, status: "confirmed")
-kader_particitpation = Participation.create!(user: kaderbensoussan, event: basketball3v3finished, status: "confirmed")
-maxime_particitpation = Participation.create!(user: maximejader, event: basketball3v3finished, status: "confirmed")
-amandine_particitpation = Participation.create!(user: amandinepayet, event: basketball3v3finished, status: "confirmed")
-martin_particitpation = Participation.create!(user: martinluron, event: basketball3v3finished, status: "confirmed")
-guillaume_particitpation = Participation.create!(user: guillaumeathenas, event: basketball3v3finished, status: "confirmed")
+nicolas_particitpation = Participation.create!(user_id: nicolasvillenaud.id, event: basketball3v3finished, status: "confirmed")
+kader_particitpation = Participation.create!(user_id: kaderbensoussan.id, event: basketball3v3finished, status: "confirmed")
+maxime_particitpation = Participation.create!(user_id: maximejader.id, event: basketball3v3finished, status: "confirmed")
+amandine_particitpation = Participation.create!(user_id: amandinepayet.id, event: basketball3v3finished, status: "confirmed")
+martin_particitpation = Participation.create!(user_id: martinluron.id, event: basketball3v3finished, status: "confirmed")
+guillaume_particitpation = Participation.create!(user_id: guillaumeathenas.id, event: basketball3v3finished, status: "confirmed")
 
-catherine_particitpation = Participation.create!(user: catherineduchaud, event: coursedebutantfinished, status: "confirmed")
-david_t_particitpation = Participation.create!(user: davidtravailleur, event: coursedebutantfinished, status: "confirmed")
-david_b_particitpation = Participation.create!(user: davidbonnaud, event: coursedebutantfinished, status: "confirmed")
-adele_particitpation = Participation.create!(user: adeleperrin, event: coursedebutantfinished, status: "confirmed")
-joao_particitpation = Participation.create!(user: joaogomes, event: coursedebutantfinished, status: "confirmed")
-jessica_particitpation = Participation.create!(user: jessicaletellec, event: coursedebutantfinished, status: "confirmed")
-nicolas_particitpation = Participation.create!(user: nicolasvillenaud, event: coursedebutantfinished, status: "confirmed")
+catherine_particitpation = Participation.create!(user_id: catherineduchaud.id, event: coursedebutantfinished, status: "confirmed")
+david_t_particitpation = Participation.create!(user_id: davidtravailleur.id, event: coursedebutantfinished, status: "confirmed")
+david_b_particitpation = Participation.create!(user_id: davidbonnaud.id, event: coursedebutantfinished, status: "confirmed")
+adele_particitpation = Participation.create!(user_id: adeleperrin.id, event: coursedebutantfinished, status: "confirmed")
+joao_particitpation = Participation.create!(user_id: joaogomes.id, event: coursedebutantfinished, status: "confirmed")
+jessica_particitpation = Participation.create!(user_id: jessicaletellec.id, event: coursedebutantfinished, status: "confirmed")
+nicolas_particitpation = Participation.create!(user_id: nicolasvillenaud.id, event: coursedebutantfinished, status: "confirmed")
 
-nicolas_particitpation_2 = Participation.create!(user: nicolasvillenaud, event: basketball2v2, status: "confirmed")
-amandine_particitpation_2 = Participation.create!(user: amandinepayet, event: basketball2v2, status: "confirmed")
-martin_particitpation_2 = Participation.create!(user: martinluron, event: basketball2v2, status: "confirmed")
-aziz_particitpation = Participation.create!(user: azizsubra, event: basketball2v2, status: "confirmed")
+nicolas_particitpation_2 = Participation.create!(user_id: nicolasvillenaud.id, event: basketball3v3, status: "confirmed")
+amandine_particitpation_2 = Participation.create!(user_id: amandinepayet.id, event: basketball3v3, status: "confirmed")
+martin_particitpation_2 = Participation.create!(user_id: martinluron.id, event: basketball3v3, status: "confirmed")
+aziz_particitpation = Participation.create!(user_id: azizsubra.id, event: basketball3v3, status: "confirmed")
 
-nicolas_particitpation_3 = Participation.create!(user: nicolasvillenaud, event: jogging10km, status: "confirmed")
-kader_particitpation_2     = Participation.create!(user: kaderbensoussan, event: jogging10km, status: "confirmed")
-david_b_particitpation_2   = Participation.create!(user: davidbonnaud, event: jogging10km, status: "confirmed")
-jessica_particitpation_2   = Participation.create!(user: jessicaletellec, event: jogging10km, status: "confirmed")
-catherine_particitpation_2 = Participation.create!(user: catherineduchaud, event: jogging10km, status: "confirmed")
+nicolas_particitpation_3 = Participation.create!(user_id: nicolasvillenaud.id, event: jogging10km, status: "confirmed")
+kader_particitpation_2     = Participation.create!(user_id: kaderbensoussan.id, event: jogging10km, status: "confirmed")
+david_b_particitpation_2   = Participation.create!(user_id: davidbonnaud.id, event: jogging10km, status: "confirmed")
+jessica_particitpation_2   = Participation.create!(user_id: jessicaletellec.id, event: jogging10km, status: "confirmed")
+catherine_particitpation_2 = Participation.create!(user_id: catherineduchaud.id, event: jogging10km, status: "confirmed")
 
-nicolas_particitpation_4 = Participation.create!(user: nicolasvillenaud, event: partenairemusculation, status: "confirmed")
-arthur_particitpation_4 = Participation.create!(user: arthurmillaud, event: partenairemusculation, status: "confirmed")
+nicolas_particitpation_4 = Participation.create!(user_id: nicolasvillenaud.id, event: partenairemusculation, status: "confirmed")
+arthur_particitpation_4 = Participation.create!(user_id: arthurmillaud.id, event: partenairemusculation, status: "confirmed")
 
 puts "finished"
 
 puts "create friendships"
-friendships_1 = Friendship.create!(user: nicolasvillenaud, other_user: kaderbensoussan, status: "confirmed")
-friendships_2 = Friendship.create!(user: nicolasvillenaud, other_user: amandinepayet, status: "confirmed")
-friendships_3 = Friendship.create!(user: nicolasvillenaud, other_user: maximejader, status: "confirmed")
-friendships_4 = Friendship.create!(user: martinluron, other_user: nicolasvillenaud, status: "pending")
-friendships_5 = Friendship.create!(user: jessicaletellec, other_user: nicolasvillenaud, status: "pending")
+friendships_1 = Friendship.create!(user_id: nicolasvillenaud.id, other_user_id: kaderbensoussan.id, status: "confirmed")
+friendships_2 = Friendship.create!(user_id: nicolasvillenaud.id, other_user_id: amandinepayet.id, status: "confirmed")
+friendships_3 = Friendship.create!(user_id: nicolasvillenaud.id, other_user_id: maximejader.id, status: "confirmed")
+friendships_4 = Friendship.create!(user_id: martinluron.id, other_user_id: nicolasvillenaud.id, status: "pending")
+friendships_5 = Friendship.create!(user_id: jessicaletellec.id, other_user_id: nicolasvillenaud.id, status: "pending")
 
 
 puts "finished"
