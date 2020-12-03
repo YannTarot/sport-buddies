@@ -25,14 +25,25 @@ body{
 .spacer {
   margin: 0px;
   background-color: white;
-  min-height: 25%;
+  min-height: 50vh;
   height: auto;
 }
 
 .jumbotron {
   margin: 0;
+  min-height: 70vh;
+  background-color: #dbe2ef;
 }
+.first-container-title{
+text-align: center;
+margin-bottom: 140px;
+    h1{
+      padding-bottom: 25px;
+      font-weight: 600;
+      font-size: 50px;
 
+  }
+}
 .parallax_medium {
   min-height: 500px;
   display: block;
@@ -99,7 +110,7 @@ body{
   text-align: center;
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 210px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -117,6 +128,36 @@ body{
 }
 
 
+.home-page .icons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin: 0 20px;
+}
+
+.home-page .icon-category {
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-page .icon-content {
+  text-align: center;
+  h2 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 15px;
+  }
+}
+
+.home-page .icon {
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 
