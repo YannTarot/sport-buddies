@@ -48,7 +48,8 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.owner = current_user
     if @event.save
-      redirect_to profile_path
+      @participation = Participation.new(user: current_user, status: "confirmed", event: @event)
+      redirect_to event_path(@event)
     else
       render :new
     end
@@ -57,6 +58,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :description, :location, :starts_at, :expected_participants_count, :sport, :level)
+    params.require(:event).permit(:name, :description, :location, :starts_at, :expected_participants_count, :sport, :expected_level)
   end
 end
