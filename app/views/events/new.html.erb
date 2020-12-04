@@ -1,18 +1,32 @@
-<!DOCTYPE html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <div class="container-new-event">
-    <div class="form-new-event">
-      <%= simple_form_for(@event) do |f| %>
-        <%= f.input :name %>
-        <%= f.input :location %>
-        <%= f.button :submit, "Connexion", class: 'btn-login btn-primary' %>
-        <% end %>
-    </div>
+<div class="container-new-event">
+  <div class="form-new-event">
+    <%= simple_form_for(@event) do |f| %>
+      <label for="name">Nom</label>
+      <%= f.input :name, :id => 'name',
+                  label: false %>
+      <%= f.input :description %>
+      <label for="location">Localisation</label>
+      <%= f.input :location,  :id => 'location',
+                  label: false %>
+      <%= f.input :sport,
+                  as: :radio_buttons,
+                  collection_wrapper_tag: 'div',
+                  collection_wrapper_class: 'category-wrapper',
+                  item_wrapper_class: 'category-item',
+                  input_html: {class: 'category-selector'},
+                  collection: Event::SPORTS %>
+      <label for="level">Niveau attendus</label>
+      <%= f.input :expected_level, :class => 'level',
+                  label: false,
+                  as: :radio_buttons,
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item',
+                  collection: Event::LEVELS %>
+      <label for="participant">Nombre de buddies attendus</label>
+      <%= f.input :expected_participants_count, :id => 'participant',
+                  label: false,
+                  as: :range %>
+      <%= f.button :submit, "Connexion", class: 'btn-login btn-primary' %>
+    <% end %>
   </div>
-</body>
-</html>
+</div>
