@@ -1,8 +1,11 @@
 .container-login {
+  height: 100vh;
   width: 100vw;
   display: flex;
 
   .container-form-log {
+    display: flex;
+    align-items: center;
     width: 50%;
     background-color: white;
   }
@@ -11,7 +14,7 @@
 
 .login-image {
   width: 50%;
-  height: 100%;
+
   background-size: cover;
   background-position: center;
 }
