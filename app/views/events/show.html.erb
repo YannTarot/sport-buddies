@@ -16,26 +16,26 @@
       <div class="card-event-description">
         <div class="owner-avatar">
           <%= cl_image_tag @event.owner.avatar.key, widht:  100, height: 100, crop: :fill  %>
-          <p>Organisé par <strong>  <%= @event.owner.first_name.capitalize %> <%= @event.owner.last_name.capitalize %></strong></p>
+          <p>Organisé par <strong> <%= @event.owner.first_name.capitalize %> <%= @event.owner.last_name.capitalize %></strong></p>
         </div>
         <div class="card-event-date">
-        <h2><strong>20.12.20</strong></h2>
-        <h2 class="gray-separator">|</h2>
-        <h2> 09h </h2>
-        <h2 class="gray-separator">|</h2>
-        <% if @event.expected_participants_count.present? %>
-          <h2><%= @event.participations.count %> / <%= @event.expected_participants_count %> buddies</h2>
-        <% else %>
-          <h2> Max de buddies</h2>
-        <% end %>
-        <h2 class="gray-separator">|</h2>
-        <% if  @event.expected_level == "débutant" %>
-          <h2>Niveau : <% @event.expected_level %> <i class="fas fa-medal bronze-color"></i></h2>
-        <% elsif @event.expected_level == "intermédiaire" %>
-          <h2>Niveau : <% @event.expected_level %> <i class="fas fa-medal argent-color"></i></h2>
-        <% elsif @event.expected_level == "confirmé" %>
-          <h2>Niveau : <% @event.expected_level %> <i class="fas fa-medal gold-color"></i></h2>
-        <% end %>
+          <h2><strong>20.12.20</strong></h2>
+          <h2 class="gray-separator">|</h2>
+          <h2> 09h </h2>
+          <h2 class="gray-separator">|</h2>
+            <% if @event.expected_participants_count.present? %>
+              <h2><%= @event.participations.count %> / <%= @event.expected_participants_count %> buddies</h2>
+            <% else %>
+              <h3> Un max de buddies</h3>
+            <% end %>
+          <h2 class="gray-separator">|</h2>
+            <% if  @event.expected_level == "débutant" %>
+              <h2>Niveau : <% @event.expected_level %> <i class="fas fa-medal bronze-color"></i></h2>
+            <% elsif @event.expected_level == "intermédiaire" %>
+              <h2>Niveau : <% @event.expected_level %> <i class="fas fa-medal argent-color"></i></h2>
+            <% elsif @event.expected_level == "confirmé" %>
+              <h2>Niveau : <% @event.expected_level %> <i class="fas fa-medal gold-color"></i></h2>
+            <% end %>
         </div>
         <p><%= @event.description %></p>
 
