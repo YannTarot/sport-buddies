@@ -30,7 +30,7 @@
         <p><%= @event.description %> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum molestiae eaque expedita excepturi voluptas nulla ipsam cum consequuntur voluptatibus ut soluta sed reprehenderit saepe hic nisi, dolor illo sequi eum.</p>
 
         <div class="cta-show">
-          <%= link_to "Je m'inscris", event_participations_path(@event), class: "btn-show-participate" %>
+          <%= link_to "Je m'inscris", event_participations_path(@event), class: "btn-show-participate", method: :post %>
           <%= link_to "J'invite mes buddies", profile_path(current_user), class: "btn-show-buddies"  %>
         </div>
       </div>

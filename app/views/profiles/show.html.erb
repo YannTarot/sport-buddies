@@ -1,0 +1,10 @@
+<div class="header profile-header"></div>
+<div class="profile">
+  <div class="pic-holder">
+  <%= cl_image_tag current_user.avatar.key, height: 200, width: 200, crop: :fill, class: "pic-holder" %>
+  </div>
+  <div class="info">
+    <h3><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h3>
+    <p><i><%= current_user.description %></i></p>
+	</div>
+</div>
