@@ -76,24 +76,30 @@
 
 .btn-show-participate {
   border-radius: 50px;
-  background-color: #4194FE;
+  background-color: #4094FE;
   color: white;
+  margin-right: 115px;
   border: none;
-  width: 40%;
-  height: 60px;
-  text-align: center;
+  font-size: 16px !important;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 16px 24px;
+  margin-right: 20px;
 }
 
 .btn-show-buddies {
   border-radius: 50px;
-  background-color: none;
-  color: black;
-  border: 2px solid #4194FE;
-  width: 40%;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-item: center;
+  background-color: white;
+  color: #4094FE;
+  margin-right: 115px;
+  border: 2px solid #4094FE;
+  font-size: 16px !important;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 16px 24px;
+  margin-right: 20px;
 }
 
 
