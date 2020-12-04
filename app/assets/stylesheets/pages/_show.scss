@@ -47,6 +47,7 @@
   font-size: 20px;
   line-height: 1.85;
   opacity: 0.8;
+  font-weight: 500;
 }
 
 .card-event-date {
@@ -180,8 +181,11 @@
 }
 
 
-
-
+@media screen and (min-width: 1025px) {
+  .card-event-description {
+    width: 900px;
+  }
+}
 
 
 
