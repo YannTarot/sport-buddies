@@ -18,6 +18,7 @@
 .card-show-infos h1 {
   font-size: 62px;
   color: #172574;
+  width: auto;
 }
 
 .backlink-show {
@@ -30,7 +31,7 @@
   background: #FFFFFF;
   box-shadow: 5px 5px 24px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  width: 700px;
+  width: 750px;
   left: 143px;
   border-radius: 10px;
   margin-top: 20px;
@@ -140,6 +141,11 @@
   padding: 10px 20px;
 }
 
+.message-user {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
 .messages-avatar img {
   border-radius: 50%;
   height: 60px;
@@ -155,3 +161,40 @@
   position: sticky;
   top: 0;
 }
+
+.bronze-color {
+  color: #cd7f32;
+}
+
+.argent-color {
+  color: #C0C0C0;
+}
+
+.gold-color {
+  color: gold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

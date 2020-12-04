@@ -28,6 +28,16 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+
+    @event_location = Event.geocoded
+    @markers = @event_location.geocoded.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { event: event }),
+        image_url: helpers.asset_url('marker.png')
+      }
+    end
   end
 
   def new
