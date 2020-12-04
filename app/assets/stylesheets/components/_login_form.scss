@@ -2,17 +2,19 @@
   width: 100vw;
   display: flex;
 
-  img {
-    width: 50%;
-    height: 100%;
-  }
-
   .container-form-log {
     width: 50%;
     background-color: white;
   }
 }
 
+
+.login-image {
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
   .form-login {
   margin: 0 auto;
   width: 400px;
