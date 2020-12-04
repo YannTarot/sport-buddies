@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resource :profile, only: [:show, :update]
 
   resources :events, only: [:index, :show, :new, :create] do
-    resources :participations, only: :create
+    resources :participations, only: [:create, :confirm]
     resources :invitations, only: [:new, :create]
     resources :messages, only: :create
   end

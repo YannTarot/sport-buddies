@@ -1,27 +1,27 @@
 <div class="container-login">
-  <img src="https://picsum.photos/200/300">
-    <div class="container-form-log">
-      <div class="form-login">
-        <h2>Connectez vous</h2>
+  <div class="login-image" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= image_path "runners-banner.jpeg" %>);">
+  </div>
+  <div class="container-form-log">
+    <div class="form-login">
+      <h2>Connectez vous</h2>
 
-        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="form-inputs">
-            <%= f.input :email,
-                        required: true,
-                        autofocus: true,
-                        input_html: { autocomplete: "email" } %>
-            <%= f.input :password,
-                        required: true,
-                        input_html: { autocomplete: "current-password" } %>
-            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-          </div>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" } %>
+          <%= f.input :password,
+                      required: true,
+                      input_html: { autocomplete: "current-password" } %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        </div>
 
-          <div class="form-actions">
-            <%= f.button :submit, "Connexion", class: 'btn-login btn-primary'%>
-          </div>
-        <%= render "devise/shared/links" %>
-        <% end %>
+        <div class="form-actions">
+          <%= f.button :submit, "Connexion", class: 'btn-login btn-primary'%>
+        </div>
+      <%= render "devise/shared/links" %>
+      <% end %>
     </div>
-      </div>
-
+  </div>
 </div>

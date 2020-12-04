@@ -3,8 +3,9 @@
     <h1>Sport Buddies</h1>
     <p>Trouve des amis sportifs près de chez toi.</p>
 
-    <a class="btn btn-dark btn-lg btn-create" href="#">Crée ton activité</a>
-    <a class="btn btn-join" href="#">Rejoins une activité</a>
+
+    <%= link_to "Crée ton activité", new_event_path, class: "btn btn-dark btn-lg btn-create" %>
+    <%= link_to "Rejoins une activité", events_path, class: "btn btn-join" %>
 
   </div>
 </div>

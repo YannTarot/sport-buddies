@@ -40,7 +40,9 @@
         <p><%= @event.description %></p>
 
         <div class="cta-show">
-          <%= link_to "Je m'inscris", confirm_participation_path(@event), class: "btn-show-participate" %>
+
+          <%= link_to "Je m'inscris", event_participations_path(@event), class: "btn-show-participate", method: :post %>
+
           <%= link_to "J'invite mes buddies", profile_path(current_user), class: "btn-show-buddies"  %>
         </div>
       </div>
@@ -70,9 +72,9 @@
 
     <div class="map-show">
       <div id="map"
-           style="width: 100%; height: 100vh;"
-           data-markers="<%= @markers.to_json %>"
-           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">>
+          style="width: 100%; height: 100vh;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">>
       </div>
     </div>
 
