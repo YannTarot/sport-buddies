@@ -5,6 +5,7 @@
       <%= f.input :name, :id => 'name',
                   label: false %>
       <%= f.input :description %>
+      <%= f.input :starts_at, as: :string, input_html: {class: "datepicker"}%>
       <label for="location">Localisation</label>
       <%= f.input :location,  :id => 'location',
                   label: false %>

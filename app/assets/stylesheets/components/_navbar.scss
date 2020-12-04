@@ -16,7 +16,11 @@
   margin-left: 15px;
 }
 
-
+.dropdown-menu{
+  border-radius: 10px;
+  color: $dark-blue;
+  background-color: $blue-sky;
+}
 
 .nav div.main_list ul li a {
     text-decoration: none;
@@ -26,7 +30,7 @@
 }
 
 .nav div.main_list ul li a:hover {
-    color: #112d4e;
+    color: $blue-sky;
 }
 
 
