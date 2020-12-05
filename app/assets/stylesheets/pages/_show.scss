@@ -1,3 +1,7 @@
+.show-body-background {
+  background-color: #D9E8EF;
+}
+
 .main-show {
   display: flex;
   width: 100%;
@@ -6,7 +10,7 @@
   align-items: center;
   margin-right: Opx;
   position: absolute;
-  background-color: #D9E8EF;
+
  }
 
 .card-show-infos {
@@ -56,9 +60,13 @@
     margin-right: 16px;
   }
   h3 {
-    font-size: 25px;
+    font-size: 30px;
     margin-bottom: 30px;
     margin-right: 16px;
+    opacity: 0.8;
+  }
+  i {
+    opacity: 0.6;
   }
   .gray-separator {
     opacity: 0.4;
@@ -109,7 +117,11 @@
   margin-right: 20px;
 }
 
-
+.event-owner-infos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .owner-avatar {
   display: flex;
   align-items: center;
@@ -132,6 +144,19 @@
   padding-left: 10px;
   font-size: 18px;
   opacity: 0.6;
+}
+
+.event-owner-level-expected {
+  margin-bottom: 30px;
+  display: flex;
+  text-align: center;
+  p {
+    margin-bottom: 0px;
+    opacity: 0.65;
+  }
+  i {
+    margin-left: 10px;
+  }
 }
 
 .event-show-chat {
