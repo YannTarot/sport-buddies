@@ -32,14 +32,13 @@ class EventsController < ApplicationController
 
     @event = Event.geocoded.find(params[:id])
 
-    @markers = @event_location.geocoded.map do |event|
-      {
-        lat: event.latitude,
-        lng: event.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { event: event }),
-        image_url: helpers.asset_url("#{event.sport}-marker.png")
-      }
-    end
+    @markers =
+      [{
+        lat: @event.latitude,
+        lng: @event.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { event: @event }),
+        image_url: helpers.asset_url("#{@event.sport}-marker.png")
+      }]
   end
 
   def new
