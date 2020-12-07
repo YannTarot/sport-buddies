@@ -27,28 +27,30 @@
 
   <div class="user-description">
     <ul>
-    <li><i class="fas fa-birthday-cake profile-icone"></i><%= current_user.age %> ans</li>
-    <li><i class="fas fa-running profile-icone"></i><%= current_user.sports %></li>
-    <li><i class="fas fa-address-card profile-icone"></i><%= current_user.description %></li>
-
+      <li><i class="fas fa-birthday-cake profile-icone"></i><%= current_user.age %> ans</li>
+      <li><i class="fas fa-running profile-icone"></i><%= current_user.sports %></li>
+      <li><i class="fas fa-address-card profile-icone"></i><%= current_user.description %></li>
     </ul>
-<ol>
 
-<% current_user.invitations.each do |invitation| %>
-  <li>
-    <%= invitation.user.first_name %>
-  </li>
-<% end %>
+    <ol>
+      <% current_user.invitations.each do |invitation| %>
+        <li>
+          <%= invitation.user.first_name %>
+        </li>
+      <% end %>
 
-  <% current_user.friends.each do |friend|%>
-    <li>
-      <%= friend.first_name %>
-        <%#= link_to 'Unfriend',
-        invitations_destroy_path(invitation_id: Invitation.find_invitation(@user.id, friend.id))  %>
-    </li>
-  <% end %>
-</ol>
+      <% current_user.friends.each do |friend|%>
+        <li>
+          <%= friend.first_name %>
+            <%#= link_to 'Unfriend',
+            invitations_destroy_path(invitation_id: Invitation.find_invitation(@user.id, friend.id))  %>
+        </li>
+      <% end %>
+    </ol>
   </div>
+
+  <%= render "past_events", events: @past_events %>
+
   <div class="container friendlist">
     <div class="row">
       <div class="card-friend col-sm-5">
