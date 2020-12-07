@@ -7,7 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-
+Friendship.destroy_all
+Invitation.destroy_all
 puts "Cleaning messages database..."
 Message.destroy_all
 
@@ -187,37 +188,11 @@ arthur_particitpation_4 = Participation.create!(user_id: arthurmillaud.id, event
 puts "finished"
 
 puts "create friendships"
-friendships_1 = Friendship.create!(user_id: nicolasvillenaud.id, other_user_id: kaderbensoussan.id, status: "confirmed")
-friendships_2 = Friendship.create!(user_id: nicolasvillenaud.id, other_user_id: amandinepayet.id, status: "confirmed")
-friendships_3 = Friendship.create!(user_id: nicolasvillenaud.id, other_user_id: maximejader.id, status: "confirmed")
+friendships_1 = Friendship.create!(user_id: nicolasvillenaud.id, other_user_id: kaderbensoussan.id, status: "accepted")
+friendships_2 = Friendship.create!(user_id: nicolasvillenaud.id, other_user_id: amandinepayet.id, status: "accepted")
+friendships_3 = Friendship.create!(user_id: nicolasvillenaud.id, other_user_id: maximejader.id, status: "accepted")
 friendships_4 = Friendship.create!(user_id: martinluron.id, other_user_id: nicolasvillenaud.id, status: "pending")
 friendships_5 = Friendship.create!(user_id: jessicaletellec.id, other_user_id: nicolasvillenaud.id, status: "pending")
 
 
 puts "finished"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

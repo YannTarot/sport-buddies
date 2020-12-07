@@ -1,10 +1,11 @@
 <div class="header profile-header"></div>
+<div class="container profile-container">
 <div class="profile">
   <div class="pic-holder">
   <%= cl_image_tag current_user.avatar.key, height: 200, width: 200, crop: :fill, class: "pic-holder" %>
   </div>
   <div class="btn-update">
-  <%= link_to "Editer mon profil", profile_path, method: :put, class: "btn btn-primary btn-edit" %>
+  <%= link_to "Editer mon profil", profile_path, method: :patch, class: "btn btn-primary btn-edit" %>
   </div>
   <div class="info">
     <h3><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h3>
@@ -12,9 +13,9 @@
 </div>
 
 <nav class="navbar-light navbar-expand-md justify-content-center">
-  <div class="navbar-collapse collapse justify-content-between align-items-center w-100">
+  <div class="navbar-collapse collapse justify-content-around align-items-center w-100">
     <ul class="topBotomBordersOut navbar-nav text-center">
-      <li class="nav-item"><a class="nav-link" href="#">A propos</a></li>
+      <li class="nav-item"><a class="nav-link" href="/">A propos</a></li>
       <li class="nav-item"> <a class="nav-link" href="#">Voir mes amis</a>
       <li class="nav-item"> <a class="nav-link" href="#">Mon historique d'activité</a>
       <li class="nav-item"> <a class="nav-link" href="#">Mes activités à venir</a>
@@ -23,10 +24,55 @@
   </div>
 </nav>
 
-<div class="user-description">
-  <ul>
-  <li><i class="fas fa-birthday-cake profile-icone"></i><%= current_user.age %></li>
-  <li><i class="fas fa-running profile-icone"></i><%= current_user.sports %></li>
-  <li><i class="fas fa-address-card profile-icone"></i><%= current_user.description %></li>
-  </ul>
+
+  <div class="user-description">
+    <ul>
+    <li><i class="fas fa-birthday-cake profile-icone"></i><%= current_user.age %> ans</li>
+    <li><i class="fas fa-running profile-icone"></i><%= current_user.sports %></li>
+    <li><i class="fas fa-address-card profile-icone"></i><%= current_user.description %></li>
+
+    </ul>
+<ol>
+
+<% current_user.invitations.each do |invitation| %>
+  <li>
+    <%= invitation.user.first_name %>
+  </li>
+<% end %>
+
+  <% current_user.friends.each do |friend|%>
+    <li>
+      <%= friend.first_name %>
+        <%#= link_to 'Unfriend',
+        invitations_destroy_path(invitation_id: Invitation.find_invitation(@user.id, friend.id))  %>
+    </li>
+  <% end %>
+</ol>
+  </div>
+  <div class="container friendlist">
+    <div class="row">
+      <div class="card-friend col-sm-5">
+        <img src="https://source.unsplash.com/random" />
+        <div class="card-friend-infos">
+          <h2>Friend name</h2>
+          <p>Friends <strong>sports</strong>.</p>
+        </div>
+      </div>
+      <div class="card-friend col-sm-5">
+        <img src="https://source.unsplash.com/random" />
+        <div class="card-friend-infos">
+          <h2>Friend name</h2>
+          <p>Friends <strong>sports</strong>.</p>
+
+        </div>
+      </div>
+      <div class="card-friend col-sm-5">
+        <img src="https://source.unsplash.com/random" />
+        <div class="card-friend-infos">
+          <h2>Friend name</h2>
+          <p>Friends <strong>sports</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

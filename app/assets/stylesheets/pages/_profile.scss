@@ -1,8 +1,3 @@
-body{
-  padding:0px;
-  margin:0px;
-  font-family: "HelveticaNeue-light", "Helvetica Neue light", "Helvetica Neue light", Helvetica, Arial, sans-serif;
-}
 
 .profile-header{
   margin: 0px;
@@ -47,6 +42,7 @@ body{
 
 .btn-edit{
   margin-right: 65px;
+  border: 2px solid $blue-sky;
 }
 
 .nav-item {
@@ -62,7 +58,10 @@ body{
     position: relative;
     z-index: 0;
 }
-
+.topBotomBordersOut{
+  font-size: 17px;
+  font-weight: 600;
+}
 .topBotomBordersOut a:before, .topBotomBordersOut a:after,  .topBotomBordersOut a:active{
     position: absolute;
     left: 0px;
@@ -90,4 +89,66 @@ body{
   font-size: 30px;
   margin-bottom: 20px;
   padding-right: 30px;
+}
+
+.user-description {
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  li{
+    color: $dark-blue;
+    list-style: none;
+  }
+}
+
+.profile-container {
+  margin-bottom: 30px;
+  padding-bottom: 50px;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: -30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.card-friend {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-left: 0px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.card-friend img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-friend h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-friend p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-friend .card-friend-infos {
+  padding: 16px;
+}
+
+.friendlist{
+  display: flex;
+  justify-content: center;
+
 }
