@@ -14,7 +14,7 @@ Message.destroy_all
 puts "Cleaning particitpations database..."
 Participation.destroy_all
 
-puts "Cleaning events car database..."
+puts "Cleaning events database..."
 Event.destroy_all
 
 puts "Cleaning user database..."
@@ -131,7 +131,7 @@ nicolasvillenaud.save!
 
 puts "finished"
 
-puts "creat events"
+puts "create events"
 
 basketball3v3 = Event.create!(name: " Street basketball 3v3", description: "Salut la commu, on cherche 3 joueurs avec un gros niveau pour faire un match 3v3 sur Nantes ! ", location: "L'arbre à basket, Nantes", starts_at: "2020-12-12 14:00:00", sport: "basketball", expected_level: "confirmé", expected_participants_count: 3, owner_id: kaderbensoussan.id)
 basketball3v3 = Event.create!(name: " Basket 2v2 ", description: "Salut les buddies, on prévoit un petit 3v3 sur une moitié de terrain. J'ai mon nouveau ballon spalding à tester, venez me rejoindre.", location: "Parc du Grand Blottereau, Nantes", starts_at: "2020-12-12 14:00", sport: "basketball", expected_level: "intermédiaire", expected_participants_count: 5, owner_id: amandinepayet.id)
@@ -194,4 +194,18 @@ friendships_4 = Friendship.create!(user_id: martinluron.id, other_user_id: nicol
 friendships_5 = Friendship.create!(user_id: jessicaletellec.id, other_user_id: nicolasvillenaud.id, status: "pending")
 
 
+puts "finished"
+
+puts " Create messages"
+message = Message.create!(content:"Salut les buddies, quelqu'un a un bon ballon à ramener ? 🤔", user_id: nicolasvillenaud.id, event: basketball3v3 )
+message = Message.create!(content:"Yes, je viens d'acheter un tout nouveau 🏀 😎", user_id: amandinepayet.id, event: basketball3v3 )
+message = Message.create!(content:"Cool !!!", user_id: martinluron.id, event:  basketball3v3 )
+message = Message.create!(content:"C'est toujours plus sympa de courir à plusieurs !", user_id: kaderbensoussan.id , event: jogging10km )
+message = Message.create!(content:"Pensez à vos frontales, il fera sans doute nuit", user_id: jessicaletellec.id, event: jogging10km )
+message = Message.create!(content:"On se rejoint en bas du parc ?", user_id: kaderbensoussan.id, event: jogging10km )
+message = Message.create!(content:"Yes carrément", user_id: nicolasvillenaud.id, event: jogging10km )
+message = Message.create!(content:"Moi je peux covoit si ça en intéresse ", user_id: catherineduchaud.id , event: jogging10km )
+message = Message.create!(content:"Salut Arthur, tu suis déjà un programme ?", user_id: nicolasvillenaud.id, event: partenairemusculation )
+message = Message.create!(content:"Ouais j'en ai un, tu pourras me montrer ce que tu fais ça m'intéresse.", user_id: arthurmillaud.id, event: partenairemusculation )
+message = Message.create!(content:"ça marche je te montrerai ça", user_id: nicolasvillenaud.id, event: partenairemusculation )
 puts "finished"
