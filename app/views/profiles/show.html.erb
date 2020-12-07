@@ -76,7 +76,9 @@
             <%= cl_image_tag invitation.user.avatar.key, height: 200, width: 200, crop: :fill %>
             <div class="card-friend-infos">
               <h2><%= invitation.user.first_name %></h2>
-              <p> <%= invitation.user.sports %></p>
+              <% invitation.user.sports.first(2).each do |sport| %>
+              <p><%= "#{sport[0]} avec un niveau #{sport[1]}" %></p>
+              <% end %>
             </div>
             <div class="button-friendship-request">
               <%= link_to "Accepter", accept_friendship_path(invitation), method: :patch, class: "btn btn-light-blue btn-md" %>
