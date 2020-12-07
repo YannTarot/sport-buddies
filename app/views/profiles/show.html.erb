@@ -81,13 +81,13 @@
           <div class="card-friend">
             <%= cl_image_tag friend.avatar.key, height: 200, width: 200, crop: :fill %>
             <div class="card-friend-infos">
-              <h2><%= friend.first_name %></h2>
-              <p> <%= friend.sports %></p>
+               <h2><%= friend.first_name %></h2>
+               <p> <%= friend.sports %></p>
             </div>
-          </div>
         <% end %>
+          </div>
       </div>
-      </div>
+     </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
     <div class="d-flex flex-wrap justify-content-center">
       <% current_user.invitations.each do |invitation|%>
@@ -95,7 +95,9 @@
           <%= cl_image_tag invitation.user.avatar.key, height: 200, width: 200, crop: :fill %>
           <div class="card-friend-infos">
             <h2><%= invitation.user.first_name %></h2>
-            <p> <%= invitation.user.sports %></p>
+            <% invitation.user.sports.first(2).each do |sport| %>
+              <p><%= "#{sport[0]} avec un niveau #{sport[1]}" %></p>
+              <% end %>
           </div>
           <div class="button-friendship-request">
             <%= link_to "Accepter", accept_friendship_path(invitation), method: :patch, class: "btn btn-light-blue btn-md" %>
