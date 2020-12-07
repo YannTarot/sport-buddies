@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :pending_invitations, -> { where confirmed: false }, class_name: 'Invitation', foreign_key: "friend_id"
   has_many :events, foreign_key: :owner_id #as owner
   has_many :participations
-  has_many :joined_events, through: :participations, source: :events
+  has_many :joined_events, through: :participations, source: :event
   has_many :requested_friendships, class_name: "Friendship" #as requester
   has_many :received_friendships, class_name: "Friendship", foreign_key: :other_user_id
 
