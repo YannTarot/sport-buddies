@@ -24,13 +24,15 @@ class EventsController < ApplicationController
         image_url: helpers.asset_url("#{event.sport}-marker.png")
       }
     end
+    @basket
   end
 
   def show
     @user  = current_user
 
-
     @event = Event.geocoded.find(params[:id])
+    users_participating = @event.participations.map { |participation| participation[:user_id] }
+    @already_suscribed = users_participating.include?(current_user.id)
 
     @markers =
       [{
@@ -61,5 +63,4 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:name, :description, :location, :starts_at, :expected_participants_count, :sport, :expected_level)
   end
-
 end
