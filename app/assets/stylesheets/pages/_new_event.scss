@@ -1,11 +1,16 @@
 .container-new-event {
   background-color: white;
   width: 600px;
-  height: 900px;
+  height: 1100px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 150px;
+  margin-top: 100px;
   border-radius: 15px;
+
+  h1 {
+    text-align: center;
+    padding-top: 20px;
+  }
 }
 
 .form-new-event {
@@ -30,12 +35,12 @@
 .category-selector + label {
   display: block;
   cursor: pointer;
-  box-sizing: border-box;
-  width: 100%;
+  box-sizing: content-box;
+  width: 50%;
   font-size: 12px;
-  text-align: left;
-  padding: 10px 10px 30px 10px;
-  border: 1px solid #EAEAEA;
+  text-align: center;
+  padding: 60px 20px 20px 20px;
+  border: 1px solid white;
   border-radius: 4px;
   background-color: white;
 }
@@ -113,7 +118,7 @@
   font-weight: 800;
   letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 16px 24px;
+  padding: 20px 10px 20px 10px;
   margin-right: 20px;
   display: block;
   margin-left: auto;
@@ -127,4 +132,62 @@
 
 .col-form-label {
   display: none;
+}
+
+label[for="event_sport_escalade"] {
+  background-image:asset-url('escalade-icon.png');
+  background-repeat: no-repeat;
+  background-size: 50px, auto;
+}
+
+label[for="event_sport_rugby"] {
+background-image:asset-url('rugby-icon.png');
+  background-repeat: no-repeat;
+  background-size: 50px, auto;
+}
+
+label[for="event_sport_football"] {
+  background-image:asset-url('football-icon.png');
+  background-repeat: no-repeat;
+  background-size: 50px, auto;
+}
+
+label[for="event_sport_randonnée"] {
+  background-image:asset-url('randonnee-icon.png');
+  background-repeat: no-repeat;
+  background-size: 50px, auto;
+}
+
+label[for="event_sport_tennis"] {
+  background-image:asset-url('tennis-icon.png');
+  background-repeat: no-repeat;
+  background-size: 50px, auto;
+}
+
+label[for="event_sport_basketball"] {
+  background-image:asset-url('basketball-icon.png');
+  background-repeat: no-repeat;
+  background-size: 50px, auto;
+}
+
+label[for="event_sport_fitness"] {
+  background-image:asset-url('fitness-icon.png');
+  background-repeat: no-repeat;
+  background-size: 50px, auto;
+}
+
+label[for="event_sport_cyclisme"] {
+  background-image:asset-url('cyclisme-icon.png');
+  background-repeat: no-repeat;
+  background-size: 50px, auto;
+}
+
+label[for="event_sport_running"] {
+  background-image:asset-url('running-icon.png');
+  background-repeat: no-repeat;
+  background-size: 50px, auto;
+}
+
+.slider-track {
+  width:100%;
 }
