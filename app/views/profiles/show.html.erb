@@ -23,7 +23,9 @@
               </div>
               <div class="favorite-sports d-flex">
                 <i class="fas fa-running profile-icone"></i>
-                <p><%= current_user.sports %></p>
+                <% current_user.sports.each do |sport| %>
+                  <p><%= "#{sport[0].capitalize} niveau #{sport[1]}" %></p>
+                <% end %>
               </div>
               <div class="bio d-flex">
                 <i class="fas fa-address-card profile-icone"></i>
@@ -34,27 +36,6 @@
         </div>
     </div>
   </div>
-
-
-  <%# <nav class="navbar-light navbar-expand-md justify-content-center">
-    <div class="navbar-collapse collapse justify-content-around align-items-center w-100">
-      <ul class="topBotomBordersOut navbar-nav text-center" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mes amis</a>
-        </li>
-        <li class="nav-item" role="presentation">
-          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Mes demandes d'amis</a>
-        </li>
-        <li class="nav-item" role="presentation">
-          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Mon historique d'évènements</a>
-        </li>
-        <li class="nav-item" role="presentation">
-          <a class="nav-link" id="future-event-tab" data-toggle="tab" href="#future-event" role="tab" aria-controls="future-event" aria-selected="false">Evenements à venir</a>
-        </li>
-      </ul>
-    </div>
-  </nav> %>
-
 
 
 <div class="container profile-user-infos">
@@ -70,7 +51,7 @@
         <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Mon historique d'évènements</a>
       </li>
       <li class="nav-item nav-item-profile" role="presentation">
-        <a class="nav-link" id="future-event-tab" data-toggle="tab" href="#future-event" role="tab" aria-controls="future-event" aria-selected="false">Evenements à venir</a>
+        <a class="nav-link" id="future-event-tab" data-toggle="tab" href="#future-event" role="tab" aria-controls="future-event" aria-selected="false">Evènements à venir</a>
       </li>
     </ul>
   </div>
@@ -81,8 +62,10 @@
           <div class="card-friend">
             <%= cl_image_tag friend.avatar.key, height: 200, width: 200, crop: :fill %>
             <div class="card-friend-infos">
-              <h2><%= friend.first_name %></h2>
-              <p> <%= friend.sports %></p>
+              <h2><%= friend.first_name.capitalize %></h2>
+              <% friend.sports.first(2).each do |sport| %>
+              <p><%= "#{sport[0].capitalize} niveau #{sport[1]}" %></p>
+              <% end %>
             </div>
           </div>
         <% end %>
@@ -94,8 +77,10 @@
         <div class="card-friend">
           <%= cl_image_tag invitation.user.avatar.key, height: 200, width: 200, crop: :fill %>
           <div class="card-friend-infos">
-            <h2><%= invitation.user.first_name %></h2>
-            <p> <%= invitation.user.sports %></p>
+            <h2><%= invitation.user.first_name.capitalize %></h2>
+              <% invitation.user.sports.first(2).each do |sport| %>
+              <p><%= "#{sport[0].capitalize} niveau #{sport[1]}" %></p>
+              <% end %>
           </div>
           <div class="button-friendship-request">
             <%= link_to "Accepter", accept_friendship_path(invitation), method: :patch, class: "btn btn-light-blue btn-md" %>
