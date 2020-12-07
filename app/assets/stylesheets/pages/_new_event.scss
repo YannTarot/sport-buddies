@@ -1,15 +1,15 @@
 .container-new-event {
   background-color: white;
   width: 600px;
-  height: 650px;
+  height: 900px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 100px;
+  margin-top: 150px;
   border-radius: 15px;
 }
 
 .form-new-event {
-  padding: 10px;
+  padding: 50px;
 }
 
 .category-wrapper {
@@ -41,35 +41,36 @@
 }
 
 .category-selector:checked + label {
-  color: white !important;
+  color: #112d4e !important;
+  border-color: #112d4e;
 }
 
 
-#snippet_category_ruby + label {
+#event_sports_ruby + label {
   color: #FD1015;
 }
 
-#snippet_category_ruby:checked + label {
+#event_sports_ruby:checked + label {
   background-color: #FD1015;
   border-color: #FD1015;
 }
 
 
-#snippet_category_javascript + label {
+#event_sports_javascript + label {
   color: #FFC65A;
 }
 
-#snippet_category_javascript:checked + label {
+#event_sports_javascript:checked + label {
   background-color: #FFC65A;
   border-color: #FFC65A;
 }
 
 
-#snippet_category_css + label {
+#event_sports_css + label {
   color: #62DDF5;
 }
 
-#snippet_category_css:checked + label {
+#event_sports_css:checked + label {
   background-color: #62DDF5;
   border-color: #62DDF5;
 }
@@ -86,7 +87,7 @@
 .tag-selector + label {
   cursor: pointer;
   display: inline-block;
-  font-size: 0.7rem;
+  font-size: 1rem;
   border-radius: 50rem;
   padding: 0.1rem 0.5rem;
   background-color: #ECEAFF;
@@ -99,4 +100,31 @@
 .tag-selector:checked + label {
   background-color: #7E73FF;
   color: white;
+}
+
+.btn-new-event {
+  border-radius: 50px;
+  background-color: #3f72af;
+  color: white;
+  margin-right: 115px;
+  margin-bottom: 25px;
+  border: 1px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 16px 24px;
+  margin-right: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+.btn-new-event:hover {
+  background-color: white;
+  color: #3f72af;
+  border: 2px solid #3f72af;
+}
+
+.col-form-label {
+  display: none;
 }

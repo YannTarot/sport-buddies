@@ -114,12 +114,12 @@
 }
 
 .card-friend {
+  width: 45%;
   overflow: hidden;
   height: 120px;
   background: white;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   padding-left: 0px;
   margin: 10px;
   border-radius: 10px;
@@ -144,6 +144,7 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+
 }
 
 .card-friend .card-friend-infos {
@@ -167,4 +168,26 @@
   p {
     margin-bottom: 0;
   }
+}
+
+.nav-item-profile{
+  padding: 0;
+  color: $dark-blue;
+  a{
+    color: $dark-blue;
+    border: none;
+  }
+  a.active{
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    color: $dark-blue;
+    border-color: transparent;
+  }
+}
+.navbar-profile {
+  width: 100%;
+  margin-bottom: 40px;
+  background: transparent;
+
 }
