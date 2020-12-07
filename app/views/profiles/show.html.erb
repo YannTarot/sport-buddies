@@ -67,10 +67,10 @@
               <p><%= "#{sport[0].capitalize} niveau #{sport[1]}" %></p>
               <% end %>
             </div>
-          </div>
         <% end %>
+          </div>
       </div>
-      </div>
+     </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
     <div class="d-flex flex-wrap justify-content-center">
       <% current_user.invitations.each do |invitation|%>
@@ -79,7 +79,7 @@
           <div class="card-friend-infos">
             <h2><%= invitation.user.first_name.capitalize %></h2>
               <% invitation.user.sports.first(2).each do |sport| %>
-              <p><%= "#{sport[0].capitalize} niveau #{sport[1]}" %></p>
+              <p><%= "#{sport[0].capitalize} niveau #{sport[1]}" %></p>            
               <% end %>
           </div>
           <div class="button-friendship-request">
