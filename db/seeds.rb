@@ -8,7 +8,7 @@
 
 
 Friendship.destroy_all
-Invitation.destroy_all
+
 puts "Cleaning messages database..."
 Message.destroy_all
 

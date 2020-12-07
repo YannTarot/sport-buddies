@@ -9,7 +9,7 @@
   <%# <% content_for :meta_image, cl_image_path(@event.photo.path) %>
 </head>
 <body class="show-body-background">
-  <div class="main-show margin-navbar">
+  <div class="main-show">
     <div class="card-show-infos">
       <%= link_to "Voir d'autres activités", events_path, class: "backlink-show"  %>
       <h1><%= @event.name %></h1>
@@ -51,14 +51,13 @@
         <p><%= @event.description %></p>
 
         <div class="cta-show">
-          <% @users_participating = @event.participations.map { |participation| participation[:user_id] } %>
-          <% if @users_participating.include?(current_user) %>
-            <%= link_to "Déjà inscris", profile_path(current_user), class: "btn-show-buddies" %>
-
+          <% if @already_suscribed %>
+            <%= link_to "Déjà inscrit 👍", profile_path(current_user), class: "btn-show-buddies" %>
             <%= link_to "J'invite mes buddies", profile_path(current_user), class: "btn-show-buddies"  %>
+          <% elsif @event.expected_participants_count == @event.participations.count %>
+            <%= link_to "évènement complet 💪", events_path, class: "btn-show-buddies" %>
           <% else %>
             <%= link_to "Je m'inscris", event_participations_path(@event), class: "btn-show-participate", method: :post %>
-
             <%= link_to "J'invite mes buddies", profile_path(current_user), class: "btn-show-buddies"  %>
           <% end %>
         </div>
