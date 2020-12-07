@@ -27,9 +27,11 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    @user  = current_user
 
-    @event_location = Event.geocoded
+
+    @event = Event.geocoded.find(params[:id])
+
     @markers = @event_location.geocoded.map do |event|
       {
         lat: event.latitude,
@@ -60,4 +62,5 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:name, :description, :location, :starts_at, :expected_participants_count, :sport, :expected_level)
   end
+
 end
