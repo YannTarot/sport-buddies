@@ -1,0 +1,24 @@
+<div class="container">
+<% events.each do |event| %>
+<% card_function = image_path "card-#{event.sport}.jpg" %>
+  <div class="index-card-category m-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= card_function %>)">
+    <div class="index-card-info">
+      <div class="index-card-info-left">
+        <h4> <strong> <%= event.sport.capitalize %> </strong>: <%= event.expected_level %></h4>
+          <p><%= event.starts_at.strftime("%d/%m à %HH") %></p>
+            </div>
+            <% if event.expected_participants_count.present? %>
+              <div class="index-card-info-player">
+                <p><%= event.participations.count %>/<%= event.expected_participants_count %></p>
+              </div>
+            <% else %>
+              <div class="index-card-info-player">
+              </div>
+            <% end %>
+            </div>
+          <div class="index-card-btn">
+            <%= link_to "Voir l'évenement", event_path(event), class: "index-btn" %>
+          </div>
+        </div>
+<% end %>
+</div>

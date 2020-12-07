@@ -16,4 +16,11 @@ Rails.application.routes.draw do
       patch :deny
     end
   end
+
+  resources :friendships, only: [] do
+    member do
+      patch :accept
+      patch :deny
+    end
+  end
 end

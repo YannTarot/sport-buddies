@@ -21,7 +21,7 @@ class EventsController < ApplicationController
         lat: event.latitude,
         lng: event.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { event: event }),
-        image_url: helpers.asset_url('marker.png')
+        image_url: helpers.asset_url("#{event.sport}-marker.png")
       }
     end
   end
@@ -29,16 +29,17 @@ class EventsController < ApplicationController
   def show
     @user  = current_user
 
+
     @event = Event.geocoded.find(params[:id])
 
-    @markers =
-      [{
-        lat: @event.latitude,
-        lng: @event.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { event: @event }),
-        image_url: helpers.asset_url('marker.png')
-      }]
-
+    @markers = @event_location.geocoded.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { event: event }),
+        image_url: helpers.asset_url("#{event.sport}-marker.png")
+      }
+    end
   end
 
   def new
