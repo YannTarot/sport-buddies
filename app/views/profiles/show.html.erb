@@ -34,63 +34,89 @@
         </div>
     </div>
   </div>
+
+
   <%# <nav class="navbar-light navbar-expand-md justify-content-center">
     <div class="navbar-collapse collapse justify-content-around align-items-center w-100">
-      <ul class="topBotomBordersOut navbar-nav text-center">
-        <li class="nav-item"><a class="nav-link" id="a-propos" href="/">A propos</a></li>
-        <li class="nav-item"> <a class="nav-link" id="voir-mes-amis" href="#">Voir mes amis</a></li>
-        <li class="nav-item"> <a class="nav-link" id="historique-activite" href="#">Mon historique d'activité</a></li>
-        <li class="nav-item"> <a class="nav-link" id="activite-a-venir" href="#">Mes activités à venir</a></li>
+      <ul class="topBotomBordersOut navbar-nav text-center" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mes amis</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Mes demandes d'amis</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Mon historique d'évènements</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="future-event-tab" data-toggle="tab" href="#future-event" role="tab" aria-controls="future-event" aria-selected="false">Evenements à venir</a>
+        </li>
       </ul>
     </div>
   </nav> %>
-  <nav>
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Voir mes amis</a>
-      <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Mes demandes amis</a>
-      <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">mon historique d'activités</a>
-      <a class="nav-link" id="nav-event-tab" data-toggle="tab" href="#nav-event" role="tab" aria-controls="nav-event" aria-selected="false">mes activités à venir</a>
-    </div>
-  </nav>
-  <div class="tab-content" id="nav-tabContent">
-    <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-      <div class="container friendlist" id= "pending-request">
-        <div class="row">
-          <% current_user.friends.each do |friend|%>
-            <div class="card-friend col-sm-5">
-              <%= cl_image_tag friend.avatar.key, height: 200, width: 200, crop: :fill %>
-              <div class="card-friend-infos">
-                <h2><%= friend.first_name %></h2>
-                <p> <%= friend.sports %></p>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-      <div class="container friendlist" id= "pending-request">
-        <div class="row">
-          <% current_user.invitations.each do |invitation|%>
-          <div class="card-friend col-sm-5">
-            <%= cl_image_tag invitation.user.avatar.key, height: 200, width: 200, crop: :fill %>
+
+
+
+<div class="container profile-user-infos">
+  <div class="d-flex">
+    <ul class="nav nav-tabs navbar-profile" id="myTab" role="tablist">
+      <li class="nav-item nav-item-profile" role="presentation">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mes amis</a>
+      </li>
+      <li class="nav-item nav-item-profile" role="presentation">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Mes demandes d'amis</a>
+      </li>
+      <li class="nav-item nav-item-profile" role="presentation">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Mon historique d'évènements</a>
+      </li>
+      <li class="nav-item nav-item-profile" role="presentation">
+        <a class="nav-link" id="future-event-tab" data-toggle="tab" href="#future-event" role="tab" aria-controls="future-event" aria-selected="false">Evenements à venir</a>
+      </li>
+    </ul>
+  </div>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="d-flex flex-wrap justify-content-center">
+        <% current_user.friends.each do |friend|%>
+          <div class="card-friend">
+            <%= cl_image_tag friend.avatar.key, height: 200, width: 200, crop: :fill %>
             <div class="card-friend-infos">
-              <h2><%= invitation.user.first_name %></h2>
-              <p> <%= invitation.user.sports %></p>
-            </div>
-            <div class="button-friendship-request">
-              <%= link_to "Accepter", accept_friendship_path(invitation), method: :patch, class: "btn btn-light-blue btn-md" %>
-              <%= link_to "Refuser", deny_friendship_path(invitation), method: :patch, class: "btn btn-light-blue btn-md" %>
+              <h2><%= friend.first_name %></h2>
+              <p> <%= friend.sports %></p>
             </div>
           </div>
-          <% end %>
+        <% end %>
+      </div>
+      </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="d-flex flex-wrap justify-content-center">
+      <% current_user.invitations.each do |invitation|%>
+        <div class="card-friend">
+          <%= cl_image_tag invitation.user.avatar.key, height: 200, width: 200, crop: :fill %>
+          <div class="card-friend-infos">
+            <h2><%= invitation.user.first_name %></h2>
+            <p> <%= invitation.user.sports %></p>
+          </div>
+          <div class="button-friendship-request">
+            <%= link_to "Accepter", accept_friendship_path(invitation), method: :patch, class: "btn btn-light-blue btn-md" %>
+            <%= link_to "Refuser", deny_friendship_path(invitation), method: :patch, class: "btn btn-light-blue btn-md" %>
+          </div>
         </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+      <div class="d-flex flex-wrap justify-content-center">
+        <%= render "past_events", events: @past_events %>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="future-event" role="tabpanel" aria-labelledby="future-event-tab">
+      <div class="d-flex flex-wrap justify-content-center">
+        <%= render "future_events", events: @future_events %>
       </div>
     </div>
   </div>
 </div>
-
-
 
 
 
