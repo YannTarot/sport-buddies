@@ -27,17 +27,18 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    @user  = current_user
 
-    @event_location = Event.geocoded
-    @markers = @event_location.geocoded.map do |event|
-      {
-        lat: event.latitude,
-        lng: event.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { event: event }),
+    @event = Event.geocoded.find(params[:id])
+
+    @markers =
+      [{
+        lat: @event.latitude,
+        lng: @event.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { event: @event }),
         image_url: helpers.asset_url('marker.png')
-      }
-    end
+      }]
+
   end
 
   def new
@@ -60,4 +61,5 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:name, :description, :location, :starts_at, :expected_participants_count, :sport, :expected_level)
   end
+
 end
