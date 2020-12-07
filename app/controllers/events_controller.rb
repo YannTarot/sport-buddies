@@ -21,7 +21,7 @@ class EventsController < ApplicationController
         lat: event.latitude,
         lng: event.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { event: event }),
-        image_url: helpers.asset_url("#{event.sport}-marker.png")
+        image_url: helpers.asset_url("#{event.sport}_marker.png")
       }
     end
   end
@@ -37,7 +37,7 @@ class EventsController < ApplicationController
         lat: event.latitude,
         lng: event.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { event: event }),
-        image_url: helpers.asset_url("#{event.sport}-marker.png")
+        image_url: helpers.asset_url("#{event.sport}_marker.png")
       }
     end
   end
@@ -62,5 +62,4 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:name, :description, :location, :starts_at, :expected_participants_count, :sport, :expected_level)
   end
-
 end
