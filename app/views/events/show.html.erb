@@ -22,12 +22,15 @@
           <div class="event-owner-level-expected" >
             <% if  @event.expected_level == "débutant" %>
               <p> <%= @event.expected_level.capitalize %></p>
-              <h3><i class="fas fa-medal bronze-color"></i></h3>
+              <h3><i class="fas fa-medal gold-color"></i></h3>
             <% elsif @event.expected_level == "intermédiaire" %>
               <p> <%= @event.expected_level.capitalize %></p>
-              <h3><i class="fas fa-medal argent-color"></i></h3>
+              <h3><i class="fas fa-medal gold-color"></i></h3>
+              <h3><i class="fas fa-medal gold-color"></i></h3>
             <% elsif @event.expected_level == "confirmé" %>
               <p> <%= @event.expected_level.capitalize %></p>
+              <h3><i class="fas fa-medal gold-color"></i></h3>
+              <h3><i class="fas fa-medal gold-color"></i></h3>
               <h3><i class="fas fa-medal gold-color"></i></h3>
             <% end %>
           </div>
@@ -40,9 +43,9 @@
 
           <h2 class="gray-separator">|</h2>
             <% if @event.expected_participants_count.present? %>
-              <h2><%= @event.participations.count %> / <%= @event.expected_participants_count %> buddies</h2>
+              <h2><%= @event.participations.count %> / <%= @event.expected_participants_count %> <i class="fas fa-user-friends"></i></h2>
             <% else %>
-              <h3> Pas de limite de buddies</h3>
+              <h3> Aucune limite de buddies</h3>
             <% end %>
         </div>
         <p><%= @event.description %></p>
