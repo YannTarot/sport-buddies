@@ -1,29 +1,30 @@
 <div class="header profile-header"></div>
-<div class="container profile-container">
-<div class="profile">
-  <div class="pic-holder">
-  <%= cl_image_tag current_user.avatar.key, height: 200, width: 200, crop: :fill, class: "pic-holder" %>
-  </div>
-  <div class="btn-update">
-  <%= link_to "Editer mon profil", profile_path, method: :patch, class: "btn btn-primary btn-edit" %>
-  </div>
-  <div class="info">
-    <h3><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h3>
-	</div>
+  <div class="container profile-container">
+    <div class="profile">
+      <div class="pic-holder">
+        <%= cl_image_tag current_user.avatar.key, height: 200, width: 200, crop: :fill, class: "pic-holder" %>
+      </div>
+      <div class="btn-update">
+        <%= link_to "Editer mon profil", profile_path, method: :patch, class: "btn btn-primary btn-edit" %>
+      </div>
+      <div class="info">
+        <h3><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h3>
+    </div>
 </div>
 
 <nav class="navbar-light navbar-expand-md justify-content-center">
   <div class="navbar-collapse collapse justify-content-around align-items-center w-100">
     <ul class="topBotomBordersOut navbar-nav text-center">
-      <li class="nav-item"><a class="nav-link" href="/">A propos</a></li>
-      <li class="nav-item"> <a class="nav-link" href="#">Voir mes amis</a>
-      <li class="nav-item"> <a class="nav-link" href="#">Mon historique d'activité</a>
-      <li class="nav-item"> <a class="nav-link" href="#">Mes activités à venir</a>
+      <li class="nav-item"><a class="nav-link" id="a-propos" href="/">A propos</a></li>
+      <li class="nav-item"> <a class="nav-link" id="voir-mes-amis" href="#">Voir mes amis</a>
+      <li class="nav-item"> <a class="nav-link" id="historique-activite" href="#">Mon historique d'activité</a>
+      <li class="nav-item"> <a class="nav-link" id="activite-a-venir" href="#">Mes activités à venir</a>
       </li>
     </ul>
   </div>
 </nav>
 
+<
 
   <div class="user-description">
     <ul>
@@ -59,23 +60,86 @@
         <div class="card-friend-infos">
           <h2>Friend name</h2>
           <p>Friends <strong>sports</strong>.</p>
-        </div>
-      </div>
-      <div class="card-friend col-sm-5">
-        <img src="https://source.unsplash.com/random" />
-        <div class="card-friend-infos">
-          <h2>Friend name</h2>
-          <p>Friends <strong>sports</strong>.</p>
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+    <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
+    <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+  <div class="user-description">
+    <div class="user-informations">
+      <div class="d-flex">
+        <div>
+        <div class="birthday d-flex">
+            <i class="fas fa-birthday-cake profile-icone"></i>
+            <p><%= current_user.age %> ans</p>
+          </div>
+          <div class="favorite-sports d-flex">
+            <i class="fas fa-running profile-icone"></i>
+            <p><%= current_user.sports %></p>
+          </div>
 
         </div>
-      </div>
-      <div class="card-friend col-sm-5">
-        <img src="https://source.unsplash.com/random" />
-        <div class="card-friend-infos">
-          <h2>Friend name</h2>
-          <p>Friends <strong>sports</strong>.</p>
+        <div class="bio d-flex">
+          <i class="fas fa-address-card profile-icone"></i>
+          <p><%= current_user.description %></p>
         </div>
       </div>
     </div>
   </div>
 </div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+    <div class="container friendlist" id="friendlist">
+        <div class="row">
+          <% current_user.friends.each do |friend|%>
+            <div class="card-friend col-sm-5">
+              <%= cl_image_tag friend.avatar.key, height: 200, width: 200, crop: :fill %>
+              <div class="card-friend-infos">
+                <h2><%= friend.first_name %></h2>
+                <p> <%= friend.sports %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+  </div>
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+  <div class="container friendlist" id= "pending-request">
+    <div class="row">
+      <% current_user.invitations.each do |invitation|%>
+        <div class="card-friend col-sm-5">
+          <%= cl_image_tag invitation.user.avatar.key, height: 200, width: 200, crop: :fill %>
+          <div class="card-friend-infos">
+            <h2><%= invitation.user.first_name %></h2>
+            <p> <%= invitation.user.sports %></p>
+              <div class="button-friendship-request">
+                <%= link_to "Accepter", accept_friendship_path(invitation), method: :patch, class: "btn btn-light-blue btn-md" %>
+                <%= link_to "Refuser", deny_friendship_path(invitation), method: :patch, class: "btn btn-light-blue btn-md" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+
+
+</div>
+
+
+  <%# current_user.friends.each do |friend|%>
+    <%# <li>
+      <%= friend.first_name %>
+        <%#= link_to 'Unfriend',
+        invitations_destroy_path(invitation_id: Invitation.find_invitation(@user.id, friend.id))  %>
+    <%# </li> %>
+  <%# end %>
+<%# </ol>
+  </div> %>

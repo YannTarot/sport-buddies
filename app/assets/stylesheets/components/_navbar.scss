@@ -1,5 +1,5 @@
 
-.nav {
+.navbar-primary {
     width: 100%;
     height: 80px;
     position: fixed;
@@ -22,14 +22,14 @@
   background-color: $blue-sky;
 }
 
-.nav div.main_list ul li a {
+.navbar-primary div.main_list ul li a {
     text-decoration: none;
     color: #fff;
     line-height: 65px;
     font-size: 1.5rem;
 }
 
-.nav div.main_list ul li a:hover {
+.navbar-primary div.main_list ul li a:hover {
     color: $blue-sky;
 }
 
@@ -45,7 +45,7 @@
 
 }
 
-.nav {
+.navbar-primary {
     padding-top: 20px;
     padding-bottom: 20px;
     -webkit-transition: all 0.4s ease;
@@ -63,16 +63,16 @@
     #mainListDiv{
       display: none;
     }
-    .nav div.main_list {
+    .navbar-primary div.main_list {
         width: 100%;
         height: 0;
         overflow: hidden;
     }
-    .nav div.show_list {
+    .navbar-primary div.show_list {
         height: auto;
         display: none;
     }
-    .nav div.main_list ul {
+    .navbar-primary div.main_list ul {
         flex-direction: column;
         width: 100%;
         height: 100vh;
@@ -82,17 +82,17 @@
         background-color: #111;
         background-position: center top;
     }
-    .nav div.main_list ul li {
+    .navbar-primary div.main_list ul li {
         width: 100%;
         text-align: right;
     }
-    .nav div.main_list ul li a {
+    .navbar-primary div.main_list ul li a {
         text-align: center;
         width: 100%;
         font-size: 3rem;
         padding: 20px;
     }
-    .nav div.media_button {
+    .navbar-primary div.media_button {
         display: block;
     }
 }

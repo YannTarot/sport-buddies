@@ -1,4 +1,17 @@
 class ProfilesController < ApplicationController
+
+  def accept_friendship
+    @friendship = Friendship.find(params[:id])
+    @friendship.status = "accepted"
+      redirect_to profile_path
+  end
+
+  def deny_friendship
+    @friendship = Friendship.find(params[:id])
+    @friendship.status = "denied"
+    redirect_to profile_path
+  end
+
   def show
     @confirmed_participations = current_user.participations.where(status: "confirmed")
     @pending_participations = current_user.participations.where(status: "pending")
@@ -9,6 +22,9 @@ class ProfilesController < ApplicationController
   def update
   end
 
-end
 
-private
+
+
+  private
+
+end
