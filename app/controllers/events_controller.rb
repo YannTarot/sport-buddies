@@ -24,22 +24,23 @@ class EventsController < ApplicationController
         image_url: helpers.asset_url("#{event.sport}_marker.png")
       }
     end
+    @basket
   end
 
   def show
     @user  = current_user
 
-
     @event = Event.geocoded.find(params[:id])
+    users_participating = @event.participations.map { |participation| participation[:user_id] }
+    @already_suscribed = users_participating.include?(current_user.id)
 
-    @markers = @event_location.geocoded.map do |event|
-      {
-        lat: event.latitude,
-        lng: event.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { event: event }),
-        image_url: helpers.asset_url("#{event.sport}_marker.png")
-      }
-    end
+    @markers =
+      [{
+        lat: @event.latitude,
+        lng: @event.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { event: @event }),
+        image_url: helpers.asset_url("#{@event.sport}-marker.png")
+      }]
   end
 
   def new
