@@ -5,19 +5,23 @@
       <%= f.input :name, :id => 'name',
                   label: false %>
       <%= f.input :description %>
-      <%= f.input :starts_at, as: :string, input_html: {class: "datepicker"}%>
+      <label for="starts_at">Date de l'événement</label>
+      <%= f.input :starts_at, as: :string, input_html: {class: "datepicker"},
+                  label: false %>
       <label for="location">Localisation</label>
       <%= f.input :location,  :id => 'location',
                   label: false %>
+      <label for="sport">Sport</label>
       <%= f.input :sport,
                   as: :radio_buttons,
+                  label: false,
                   collection_wrapper_tag: 'div',
                   collection_wrapper_class: 'category-wrapper',
                   item_wrapper_class: 'category-item',
                   input_html: {class: 'category-selector'},
                   collection: Event::SPORTS %>
-      <label for="level">Niveau attendus</label>
-      <%= f.input :expected_level, :class => 'level',
+      <label for="expected_level">Niveau attendus</label>
+      <%= f.input :expected_level, :id => 'expected_level',
                   label: false,
                   as: :radio_buttons,
                   input_html: { class: "tag-selector" },
@@ -26,8 +30,19 @@
       <label for="participant">Nombre de buddies attendus</label>
       <%= f.input :expected_participants_count, :id => 'participant',
                   label: false,
-                  as: :range %>
-      <%= f.button :submit, "Connexion", class: 'btn-login btn-primary' %>
+                  as: :range, input_html: { min: '0', max: '22', step: 'any'} %>
+      <%= f.button :submit, "Créer l'événement", class: 'btn-new-event' %>
     <% end %>
   </div>
 </div>
+
+
+<i class="fas fa-biking"></i>
+<i class="fas fa-basketball-ball"></i>
+<i class="fas fa-futbol"></i>
+<i class="fas fa-running"></i>
+<i class="fas fa-hiking"></i>
+<i class="fas fa-football-ball"></i>
+<i class="fas fa-dumbbell"></i>
+<i class="fas fa-globe"></i>
+<i class="far fa-hand-rock"></i>
