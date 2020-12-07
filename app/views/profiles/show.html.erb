@@ -68,78 +68,74 @@
     <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
   </div>
 </nav>
+
 <div class="tab-content" id="nav-tabContent">
   <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-  <div class="user-description">
-    <div class="user-informations">
-      <div class="d-flex">
-        <div>
-        <div class="birthday d-flex">
-            <i class="fas fa-birthday-cake profile-icone"></i>
-            <p><%= current_user.age %> ans</p>
+    <div class="user-description">
+      <div class="user-informations">
+        <div class="d-flex">
+          <div>
+            <div class="birthday d-flex">
+              <i class="fas fa-birthday-cake profile-icone"></i>
+              <p><%= current_user.age %> ans</p>
+            </div>
+            <div class="favorite-sports d-flex">
+              <i class="fas fa-running profile-icone"></i>
+              <p><%= current_user.sports %></p>
+            </div>
           </div>
-          <div class="favorite-sports d-flex">
-            <i class="fas fa-running profile-icone"></i>
-            <p><%= current_user.sports %></p>
+          <div class="bio d-flex">
+            <i class="fas fa-address-card profile-icone"></i>
+            <p><%= current_user.description %></p>
           </div>
 
-        </div>
-        <div class="bio d-flex">
-          <i class="fas fa-address-card profile-icone"></i>
-          <p><%= current_user.description %></p>
         </div>
       </div>
     </div>
   </div>
-</div>
   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
     <div class="container friendlist" id="friendlist">
-        <div class="row">
-          <% current_user.friends.each do |friend|%>
-            <div class="card-friend col-sm-5">
-              <%= cl_image_tag friend.avatar.key, height: 200, width: 200, crop: :fill %>
-              <div class="card-friend-infos">
-                <h2><%= friend.first_name %></h2>
-                <p> <%= friend.sports %></p>
-              </div>
+      <div class="row">
+        <% current_user.friends.each do |friend|%>
+          <div class="card-friend col-sm-5">
+          <%= cl_image_tag friend.avatar.key, height: 200, width: 200, crop: :fill %>
+            <div class="card-friend-infos">
+              <h2><%= friend.first_name %></h2>
+              <p> <%= friend.sports %></p>
             </div>
+          </div>
           <% end %>
         </div>
       </div>
+    </div>
   </div>
   <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-  <div class="container friendlist" id= "pending-request">
-    <div class="row">
-      <% current_user.invitations.each do |invitation|%>
+    <div class="container friendlist" id= "pending-request">
+      <div class="row">
+        <% current_user.invitations.each do |invitation|%>
         <div class="card-friend col-sm-5">
           <%= cl_image_tag invitation.user.avatar.key, height: 200, width: 200, crop: :fill %>
           <div class="card-friend-infos">
             <h2><%= invitation.user.first_name %></h2>
             <p> <%= invitation.user.sports %></p>
-              <div class="button-friendship-request">
-                <%= link_to "Accepter", accept_friendship_path(invitation), method: :patch, class: "btn btn-light-blue btn-md" %>
-                <%= link_to "Refuser", deny_friendship_path(invitation), method: :patch, class: "btn btn-light-blue btn-md" %>
-            </div>
+          </div>
+          <div class="button-friendship-request">
+            <%= link_to "Accepter", accept_friendship_path(invitation), method: :patch, class: "btn btn-light-blue btn-md" %>
+            <%= link_to "Refuser", deny_friendship_path(invitation), method: :patch, class: "btn btn-light-blue btn-md" %>
           </div>
         </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
-  </div>
 </div>
 
-
-
-
-</div>
-
-
-  <%# current_user.friends.each do |friend|%>
-    <%# <li>
+<%# current_user.friends.each do |friend|%>
+  <%# <li>
       <%= friend.first_name %>
         <%#= link_to 'Unfriend',
         invitations_destroy_path(invitation_id: Invitation.find_invitation(@user.id, friend.id))  %>
-    <%# </li> %>
-  <%# end %>
+  <%# </li> %>
+<%# end %>
 <%# </ol>
   </div> %>
