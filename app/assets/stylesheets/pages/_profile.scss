@@ -32,6 +32,7 @@
   h3{
     font-size: 40px;
     font-weight: 600;
+    margin-bottom: 20px;
   }
 }
 
@@ -74,7 +75,22 @@
     list-style: none;
   }
 }
-
+.user-infos{
+  display: flex;
+  justify-content: center;
+  margin:  auto;
+  align-items: center;
+  height: 50px;
+  margin-bottom: 30px;
+  p{
+    margin-top: 20px;
+    background-color: $blue-sky;
+    padding: 15px;
+    border-radius: 10px;
+    color: #FFF;
+    font-weight: 600;
+  }
+}
 .profile-container {
   margin-bottom: 30px;
   padding-bottom: 50px;
@@ -127,19 +143,6 @@
   justify-content: center;
 }
 
-.user-informations{
-  padding: 30px;
-  background: $blue-sky;
-  color: #FFF;
-  width: 700px;
-  margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-
-  p {
-    margin-bottom: 0;
-  }
-}
 
 .nav-item-profile{
   padding: 0;
