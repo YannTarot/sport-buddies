@@ -1,5 +1,5 @@
 meta_product_name: "Sport Buddies"
 meta_title: "Sport Buddies - Rencontrez vos prochains sparring partners "
 meta_description: "Avec Sport Buddies, faites de nouvelles rencontres tout en faisant du sport !"
-meta_image: "sportbuddies-logo.png" # should exist in `app/assets/images/`
+meta_image: "facebook_og.jpg" # should exist in `app/assets/images/`
 twitter_account: "@LeWagonNantes"   # required for Twitter Cards
