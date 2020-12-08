@@ -47,6 +47,11 @@
             <% else %>
               <h3> Aucune limite de buddies</h3>
             <% end %>
+          <h2 class="gray-separator">|</h2>
+          <h2><%= link_to edit_event_path(@event) do %>
+            <i class='far fa-edit'></i>
+            <% end %>
+          </h2>
         </div>
         <p><%= @event.description %></p>
 
