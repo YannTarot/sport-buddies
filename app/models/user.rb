@@ -28,20 +28,10 @@ class User < ApplicationRecord
   def invitations
     received_friendships.where(status: "pending")
   end
-  # def friends
-  #   friends_i_sent_invitation = Invitation.where(user_id: id, confirmed: true).pluck(:friend_id)
-  #   friends_i_got_invitation = Invitation.where(friend_id: id, confirmed: true).pluck(:user_id)
-  #   ids = friends_i_sent_invitation + friends_i_got_invitation
-  #   User.where(id: ids)
-  # end
 
-  # def friend_with?(user)
-  #   Invitation.confirmed_record?(id, user.id)
-  # end
-
-  # def send_invitation(user)
-  #   invitations.create(friend_id: user.id)
-  # end
+  def send_invitation
+    requested_friendships.create(friend_id: user.id)
+  end
 
   private
 
@@ -60,3 +50,13 @@ class User < ApplicationRecord
   end
 
 end
+# def friends
+#   friends_i_sent_invitation = Invitation.where(user_id: id, confirmed: true).pluck(:friend_id)
+#   friends_i_got_invitation = Invitation.where(friend_id: id, confirmed: true).pluck(:user_id)
+#   ids = friends_i_sent_invitation + friends_i_got_invitation
+#   User.where(id: ids)
+# end
+
+# def friend_with?(user)
+#   Invitation.confirmed_record?(id, user.id)
+# end
