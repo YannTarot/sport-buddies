@@ -26,13 +26,21 @@
     </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <div class="d-flex flex-column flex-wrap justify-content-center">
-        <div class= "">
+        <div class="p-3">
         <h3>Demandes d'amis en attente</h3>
+        <% if current_user.invitations.empty? %>
+        <p> Vous n'avez pas de demandes d'amis en attente</p>
+        <% else %>
         <%= render "users/invitations", invitations: current_user.invitations %>
+        <% end %>
         </div>
-        <div>
+        <div class="p-3">
         <h3>Évenements en attente</h3>
+        <% if @pending_participations.empty? %>
+        <p> Vous n'avez pas d'invitations à des évemenents en attente</p>
+        <% else %>
         <%= render "users/participations", participations: @pending_participations %>
+        <% end %>
         </div>
       </div>
     </div>
