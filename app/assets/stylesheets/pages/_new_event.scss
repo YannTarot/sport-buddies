@@ -1,15 +1,20 @@
 .container-new-event {
   background-color: white;
   width: 600px;
-  height: 650px;
+  height: 1100px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 100px;
   border-radius: 15px;
+
+  h1 {
+    text-align: center;
+    padding-top: 20px;
+  }
 }
 
 .form-new-event {
-  padding: 10px;
+  padding: 50px;
 }
 
 .category-wrapper {
@@ -30,46 +35,47 @@
 .category-selector + label {
   display: block;
   cursor: pointer;
-  box-sizing: border-box;
-  width: 100%;
+  box-sizing: content-box;
+  width: 50%;
   font-size: 12px;
-  text-align: left;
-  padding: 10px 10px 30px 10px;
-  border: 1px solid #EAEAEA;
+  text-align: center;
+  padding: 60px 20px 20px 20px;
+  border: 1px solid white;
   border-radius: 4px;
   background-color: white;
 }
 
 .category-selector:checked + label {
-  color: white !important;
+  color: #112d4e !important;
+  border-color: #112d4e;
 }
 
 
-#snippet_category_ruby + label {
+#event_sports_ruby + label {
   color: #FD1015;
 }
 
-#snippet_category_ruby:checked + label {
+#event_sports_ruby:checked + label {
   background-color: #FD1015;
   border-color: #FD1015;
 }
 
 
-#snippet_category_javascript + label {
+#event_sports_javascript + label {
   color: #FFC65A;
 }
 
-#snippet_category_javascript:checked + label {
+#event_sports_javascript:checked + label {
   background-color: #FFC65A;
   border-color: #FFC65A;
 }
 
 
-#snippet_category_css + label {
+#event_sports_css + label {
   color: #62DDF5;
 }
 
-#snippet_category_css:checked + label {
+#event_sports_css:checked + label {
   background-color: #62DDF5;
   border-color: #62DDF5;
 }
@@ -86,7 +92,7 @@
 .tag-selector + label {
   cursor: pointer;
   display: inline-block;
-  font-size: 0.7rem;
+  font-size: 1rem;
   border-radius: 50rem;
   padding: 0.1rem 0.5rem;
   background-color: #ECEAFF;
@@ -99,4 +105,89 @@
 .tag-selector:checked + label {
   background-color: #7E73FF;
   color: white;
+}
+
+.btn-new-event {
+  border-radius: 50px;
+  background-color: #3f72af;
+  color: white;
+  margin-right: 115px;
+  margin-bottom: 25px;
+  border: 1px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 20px 10px 20px 10px;
+  margin-right: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+.btn-new-event:hover {
+  background-color: white;
+  color: #3f72af;
+  border: 2px solid #3f72af;
+}
+
+.col-form-label {
+  display: none;
+}
+
+label[for="event_sport_escalade"] {
+  background-image:asset-url('escalade-icon.png');
+  background-repeat: no-repeat;
+  background-size: 50px, auto;
+}
+
+label[for="event_sport_rugby"] {
+background-image:asset-url('rugby-icon.png');
+  background-repeat: no-repeat;
+  background-size: 50px, auto;
+}
+
+label[for="event_sport_football"] {
+  background-image:asset-url('football-icon.png');
+  background-repeat: no-repeat;
+  background-size: 50px, auto;
+}
+
+label[for="event_sport_randonnée"] {
+  background-image:asset-url('randonnee-icon.png');
+  background-repeat: no-repeat;
+  background-size: 50px, auto;
+}
+
+label[for="event_sport_tennis"] {
+  background-image:asset-url('tennis-icon.png');
+  background-repeat: no-repeat;
+  background-size: 50px, auto;
+}
+
+label[for="event_sport_basketball"] {
+  background-image:asset-url('basketball-icon.png');
+  background-repeat: no-repeat;
+  background-size: 50px, auto;
+}
+
+label[for="event_sport_fitness"] {
+  background-image:asset-url('fitness-icon.png');
+  background-repeat: no-repeat;
+  background-size: 50px, auto;
+}
+
+label[for="event_sport_cyclisme"] {
+  background-image:asset-url('cyclisme-icon.png');
+  background-repeat: no-repeat;
+  background-size: 50px, auto;
+}
+
+label[for="event_sport_running"] {
+  background-image:asset-url('running-icon.png');
+  background-repeat: no-repeat;
+  background-size: 50px, auto;
+}
+
+.slider-track {
+  width:100%;
 }

@@ -1,23 +1,28 @@
 <div class="container-new-event">
+  <h1>Créer ton événement</h1>
   <div class="form-new-event">
     <%= simple_form_for(@event) do |f| %>
       <label for="name">Nom</label>
       <%= f.input :name, :id => 'name',
                   label: false %>
       <%= f.input :description %>
-      <%= f.input :starts_at, as: :string, input_html: {class: "datepicker"}%>
+      <label for="starts_at">Date de l'événement</label>
+      <%= f.input :starts_at, as: :string, input_html: {class: "datepicker"},
+                  label: false %>
       <label for="location">Localisation</label>
       <%= f.input :location,  :id => 'location',
                   label: false %>
+      <label for="sport">Sport</label>
       <%= f.input :sport,
                   as: :radio_buttons,
+                  label: false,
                   collection_wrapper_tag: 'div',
                   collection_wrapper_class: 'category-wrapper',
                   item_wrapper_class: 'category-item',
                   input_html: {class: 'category-selector'},
                   collection: Event::SPORTS %>
-      <label for="level">Niveau attendus</label>
-      <%= f.input :expected_level, :class => 'level',
+      <label for="expected_level">Niveau attendus</label>
+      <%= f.input :expected_level, :id => 'expected_level',
                   label: false,
                   as: :radio_buttons,
                   input_html: { class: "tag-selector" },
@@ -26,8 +31,9 @@
       <label for="participant">Nombre de buddies attendus</label>
       <%= f.input :expected_participants_count, :id => 'participant',
                   label: false,
-                  as: :range %>
-      <%= f.button :submit, "Connexion", class: 'btn-login btn-primary' %>
+                  as: :string, input_html: { data: {"slider-min" => 0, "slider-max" => 22, "slider-step" => '1'}} %>
+      <span id="participantSliderValLabel">Current Slider Value: <span id="participantSliderVal"></span></span>
+      <%= f.button :submit, "Créer l'événement", class: 'btn-new-event' %>
     <% end %>
   </div>
 </div>

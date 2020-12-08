@@ -32,6 +32,7 @@
   h3{
     font-size: 40px;
     font-weight: 600;
+    margin-bottom: 20px;
   }
 }
 
@@ -58,35 +59,7 @@
     position: relative;
     z-index: 0;
 }
-.topBotomBordersOut{
-  font-size: 17px;
-  font-weight: 600;
-}
-.topBotomBordersOut a:before, .topBotomBordersOut a:after {
-    position: absolute;
-    left: 0px;
-    width: 100%;
-    height: 2px;
-    background: $blue-sky;
-    content:"";
-    opacity: 0;
-    transition: all 0.3s;
-}
-.topBotomBordersOut a:active{
-  font-weight: bold;
-}
-.topBotomBordersOut a:before {
-    top: 0px;
-    transform: translateY(10px);
-}
-.topBotomBordersOut a:after {
-    bottom: 0px;
-    transform: translateY(-10px);
-}
-.topBotomBordersOut a:hover:before, .topBotomBordersOut a:hover:after {
-    opacity: 1;
-    transform: translateY(0px);
-}
+
 
 .profile-icone {
   font-size: 30px;
@@ -96,30 +69,44 @@
 
 .user-description {
   align-items: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 130px;
   li{
     color: $dark-blue;
     list-style: none;
   }
 }
-
+.user-infos{
+  display: flex;
+  justify-content: center;
+  margin:  auto;
+  align-items: center;
+  height: 50px;
+  margin-bottom: 30px;
+  p{
+    margin-top: 20px;
+    background-color: $blue-sky;
+    padding: 15px;
+    border-radius: 10px;
+    color: #FFF;
+    font-weight: 600;
+  }
+}
 .profile-container {
   margin-bottom: 30px;
   padding-bottom: 50px;
   background-color: white;
   border-radius: 10px;
-  margin-top: -30px;
+  margin-top: -100px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .card-friend {
+  width: 45%;
   overflow: hidden;
   height: 120px;
   background: white;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   padding-left: 0px;
   margin: 10px;
   border-radius: 10px;
@@ -144,6 +131,7 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+
 }
 
 .card-friend .card-friend-infos {
@@ -155,16 +143,28 @@
   justify-content: center;
 }
 
-.user-informations{
-  padding: 30px;
-  background: $blue-sky;
-  color: #FFF;
-  width: 700px;
-  margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 
-  p {
-    margin-bottom: 0;
+.nav-item-profile{
+  padding: 0;
+  color: $dark-blue;
+  a{
+    font-weight: 600;
+    font-size: 20px;
+    color: $dark-blue;
+    border: none;
   }
+  a.active{
+    border-radius: 10px;
+    border-bottom: 2px solid $blue-sky !important;
+    background-color: $light-blue !important;
+    font-weight: bold;
+    color: $dark-blue;
+    border-color: transparent !important;
+  }
+}
+.navbar-profile {
+  width: 100%;
+  margin-bottom: 40px;
+  background: transparent;
+
 }

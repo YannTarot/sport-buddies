@@ -3,9 +3,9 @@
     <div class="form-container">
       <%= form_tag events_path, method: :get do %>
         <div class="row">
-          <div class="col-lg-12">
-            <div class="row">
-              <div class="form-input-index col-lg-2 col-md-3 col-sm-12 p-0">
+          <div class="col-lg-9">
+            <div class="row all search">
+              <div class="form-input-index col-lg-3 col-md-3 col-sm-12 p-0">
                 <%= select_tag :city,
                   options_for_select(Event::CITIES, params[:city]),
                   class: "form-control search-slt",
@@ -17,15 +17,15 @@
                   class: "form-control search-slt"
                 %>
               </div>
-              <div class="form-input-index col-lg-2 col-md-3 col-sm-12 p-0">
+              <div class="form-input-index col-lg-3 col-md-3 col-sm-12 p-0">
                 <%= select_tag :sport,
                   options_for_select(Event::SPORTS, params[:sport]),
                   class: "form-control search-slt" ,
                   prompt: "Sport"
                 %>
               </div>
-              <div class="col-lg-2 col-md-3 col-sm-12 p-0">
-                <%= submit_tag "Rechercher", class: "searchformbutton wrn-btn" %>
+              <div class="btn-wrapper">
+                <%= button_tag type: 'submit', class: 'wrn-btn' do %><i class="fas fa-search"></i><% end %>
               </div>
             </div>
           </div>
@@ -38,6 +38,49 @@
       <% events_sorted = @events.sort_by &:starts_at %>
       <% events_sorted.each do |event| %>
       <% if event.starts_at > DateTime.now %>
+          <% if event.sport == "basketball" || event.sport == "running" %>
+            <% card_function = image_path "card-#{event.sport.parameterize}-#{event.expected_level.parameterize}.jpg" %>
+            <div class="index-card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= card_function %>)">
+            <%= link_to event_path(event) do  %>
+              <div class="index-card-info">
+                <div class="index-card-info-left">
+                  <h4 class="d-flex"> <strong> <%= event.sport.capitalize %>  </strong>
+                    <% if  event.expected_level == "débutant" %>
+                      <div class="medals d-flex">
+                        <i class="fas fa-medal gold-color"></i>
+                      </div>
+                    <% elsif event.expected_level == "intermédiaire" %>
+                      <div class="medals d-flex">
+                        <i class="fas fa-medal gold-color"></i>
+                        <i class="fas fa-medal gold-color"></i>
+                      </div>
+                    <% elsif event.expected_level == "confirmé" %>
+                      <div class="medals d-flex">
+                        <i class="fas fa-medal gold-color"></i>
+                        <i class="fas fa-medal gold-color"></i>
+                        <i class="fas fa-medal gold-color"></i>
+                      </div>
+                    <% end %></h4>
+                  <p class="time-event"><%= event.starts_at.strftime("%d/%m à %HH") %></p>
+                </div>
+                <% if event.expected_participants_count.present? %>
+                  <div class="index-card-info-player">
+                    <p><%= event.participations.count %>/<%= event.expected_participants_count %></p>
+                    <div class="icon">
+                      <i class="far fa-user"></i>
+                    </div>
+                  </div>
+                <% else %>
+                  <div class="index-card-info-player">
+                  </div>
+                <% end %>
+                </div>
+              <% end %>
+              <div class="index-card-btn">
+                <%= link_to "Go !", event_path(event), class: "index-btn" %>
+              </div>
+            </div>
+          <% else %>
             <% card_function = image_path "card-#{event.sport}.jpg" %>
             <div class="index-card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= card_function %>)">
             <%= link_to event_path(event) do  %>
@@ -79,11 +122,12 @@
                 <%= link_to "Go !", event_path(event), class: "index-btn" %>
               </div>
             </div>
+          <% end %>
         <% end %>
       <% end %>
     </div>
     <div id="map"
-        style="width: 100%; height: 67vh"
+        style="width: 100%; height: 82vh"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>

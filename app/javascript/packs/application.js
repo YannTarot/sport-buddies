@@ -31,11 +31,14 @@ import "../plugins/flatpickr"
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initNavbarAnimation } from '../components/navbar.js'
+import { initFlatpickr } from "../plugins/flatpickr";
+import { initSlider } from "../components/slider";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-
   initNavbarAnimation();
   initMapbox();
+  initFlatpickr();
+  initSlider();
 });
