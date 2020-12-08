@@ -16,17 +16,19 @@ class ParticipationsController < ApplicationController
     end
   end
 
-  def accept
+  def confirm
+    # @event = Event.find(params[:event_id])
     @participation = Participation.find(params[:id])
-    @particpation.status = "accepted"
-    @particpation.save!
+    # @participation = current_user.participations
+    @participation.update(status: "confirmed")
+    @participation.save!
       redirect_to profile_path
   end
 
   def deny
     @participation = Participation.find(params[:id])
-    @particpation.status = "denied"
-    @particpation.save!
+    @participation.status = "denied"
+    @participation.save!
       redirect_to profile_path
   end
 

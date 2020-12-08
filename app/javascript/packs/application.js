@@ -36,6 +36,7 @@ import { initSlider } from "../components/slider";
 import { initToggle } from "../components/toggle-participants";
 
 
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
