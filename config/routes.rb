@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :events, only: [:index, :show, :new, :create, :edit, :update] do
     resources :participations, only: [:create, :confirm]
-    resources :invitations, only: [:new, :create]
+    resources :invitations, only: :create
     resources :messages, only: :create
   end
 

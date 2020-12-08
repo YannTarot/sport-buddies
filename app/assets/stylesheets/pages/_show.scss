@@ -245,6 +245,75 @@
 }
 
 
+.modal-content {
+  border-radius: 10px;
+}
+
+.modal-title {
+  font-size: 30px;
+  color: #172574;
+  margin: 0px 0 0 100px;
+}
+
+
+.modal-body {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 40px;
+
+
+  label {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+  }
+
+
+  .modal-firstname p {
+    margin-top: 13px;
+    font-size: 22px !important ;
+    font-style: bold;
+    color: #172574;
+  }
+
+  .modal-avatar {
+    img {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    }
+  }
+
+
+  .check-box {
+    position: absolute;
+    transform: scale(0);
+  }
+  .check-box + label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+  }
+
+  .check-box:checked + label {
+    .modal-avatar img {
+      border-radius: 50%;
+      height: 100px;
+      width: 100px;
+      object-fit: cover;
+      border: 5px solid $blue-sky
+    }
+  }
+}
+
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+
 @media screen and (min-width: 1025px) {
   .card-event-description {
     width: 900px;

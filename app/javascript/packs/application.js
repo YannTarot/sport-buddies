@@ -46,3 +46,4 @@ document.addEventListener('turbolinks:load', () => {
   initToggle();
   initSlider();
 });
+
