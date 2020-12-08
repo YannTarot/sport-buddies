@@ -7,7 +7,7 @@ class Event < ApplicationRecord
 
   has_many :participations
   has_many :messages
-
+  has_many :users, through: :participations
 
   validates :sport, inclusion: { in: SPORTS }
   validates :expected_level, inclusion: { in: LEVELS }

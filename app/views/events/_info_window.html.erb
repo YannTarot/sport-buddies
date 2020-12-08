@@ -1,7 +1,7 @@
 <div class="pop-up card-product">
   <%#= cl_image_tag event.photo.key, height: 100, width: 210, crop: :fill %>
   <div class="card-product-infos">
-    <h4><%= event.name %></h4>
+    <h4 style= "text-decoration: none;"><%= link_to "#{event.name}", event_path(event)%></h4>
     <p><%= event.location %></p>
     <p><%= event.starts_at.strftime("%d/%h %H:%M") %></p>
   </div>

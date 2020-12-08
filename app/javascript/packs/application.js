@@ -42,3 +42,4 @@ document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
   initSlider();
 });
+

@@ -34,6 +34,8 @@ class EventsController < ApplicationController
     users_participating = @event.participations.map { |participation| participation[:user_id] }
     @already_suscribed = users_participating.include?(current_user.id)
 
+    @friends_to_invite = current_user.friends - @event.users
+
     @markers =
       [{
         lat: @event.latitude,
