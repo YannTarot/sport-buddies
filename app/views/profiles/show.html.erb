@@ -21,7 +21,10 @@
   <div class="d-flex">
     <ul class="nav nav-tabs navbar-profile" id="myTab" role="tablist">
       <li class="nav-item nav-item-profile" role="presentation">
-        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mes amis</a>
+        <a class="nav-link active" id="future-event-tab" data-toggle="tab" href="#future-event" role="tab" aria-controls="future-event" aria-selected="false">Evènements à venir</a>
+      </li>
+      <li class="nav-item nav-item-profile" role="presentation">
+        <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mes amis</a>
       </li>
       <li class="nav-item nav-item-profile" role="presentation">
         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Mes demandes d'amis</a>
@@ -29,13 +32,10 @@
       <li class="nav-item nav-item-profile" role="presentation">
         <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Mon historique d'évènements</a>
       </li>
-      <li class="nav-item nav-item-profile" role="presentation">
-        <a class="nav-link" id="future-event-tab" data-toggle="tab" href="#future-event" role="tab" aria-controls="future-event" aria-selected="false">Evènements à venir</a>
-      </li>
     </ul>
   </div>
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
       <div class="d-flex flex-wrap justify-content-center">
         <% current_user.friends.each do |friend|%>
           <div class="card-friend">
@@ -74,7 +74,7 @@
         <%= render "past_events", events: @past_events %>
       </div>
     </div>
-    <div class="tab-pane fade" id="future-event" role="tabpanel" aria-labelledby="future-event-tab">
+    <div class="tab-pane fade show active" id="future-event" role="tabpanel" aria-labelledby="future-event-tab">
       <div class="d-flex flex-wrap justify-content-center">
         <%= render "future_events", events: @future_events %>
       </div>

@@ -147,7 +147,8 @@
 
 .index-card-btn {
   margin: 0 auto;
-  width: 110px;
+  display: flex;
+  justify-content: center;
   position: relative;
   top: -25px;
   height: auto;
