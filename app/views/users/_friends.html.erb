@@ -1,0 +1,11 @@
+<% friends.each do |friend|%>
+  <div class="card-friend">
+    <%= cl_image_tag friend.avatar.key, height: 200, width: 200, crop: :fill %>
+    <div class="card-friend-infos">
+      <h2><%= friend.first_name.capitalize %></h2>
+      <% friend.sports.first(2).each do |sport| %>
+      <p><%= "#{sport[0].capitalize} niveau #{sport[1]}" %></p>
+      <% end %>
+    </div>
+  </div>
+<% end %>
