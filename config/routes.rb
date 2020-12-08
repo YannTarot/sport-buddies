@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resource :profile, only: [:show, :update]
 
-  resources :events, only: [:index, :show, :new, :create] do
+  resources :events, only: [:index, :show, :new, :create, :edit, :update] do
     resources :participations, only: [:create, :confirm]
     resources :invitations, only: :create
     resources :messages, only: :create
@@ -22,5 +22,9 @@ Rails.application.routes.draw do
       patch :accept
       patch :deny
     end
+  end
+
+  resources :users, only: [:show] do
+    resources :friendships, only: [:create]
   end
 end

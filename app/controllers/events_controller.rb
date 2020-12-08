@@ -29,10 +29,11 @@ class EventsController < ApplicationController
 
   def show
     @user  = current_user
-
+    @message = Message.new
     @event = Event.geocoded.find(params[:id])
-    users_participating = @event.participations.map { |participation| participation[:user_id] }
-    @already_suscribed = users_participating.include?(current_user.id)
+    @messages = @event.messages.order(created_at: :desc)
+
+    @already_suscribed = @event.participations.map { |participation| participation[:user_id] }
 
     @friends_to_invite = current_user.friends - @event.users
 
@@ -59,6 +60,17 @@ class EventsController < ApplicationController
       render :new
     end
   end
+
+def edit
+  @event = Event.find(params[:id])
+end
+
+def update
+  @event = Event.find(params[:id])
+  @event.update(event_params)
+
+  redirect_to event_path(@event)
+end
 
   private
 

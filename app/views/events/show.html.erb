@@ -41,6 +41,13 @@
             <% else %>
               <h3> Aucune limite de buddies</h3>
             <% end %>
+            <% if @event.owner[:id] == current_user.id %>
+              <h2 class="gray-separator">|</h2>
+              <h2><%= link_to edit_event_path(@event) do %>
+                <i class='far fa-edit'>Modifier</i>
+                <% end %>
+              </h2>
+            <% end %>
         </div>
         <p><%= @event.description %></p>
 
@@ -63,16 +70,31 @@
       </div>
     <div class="event-show-chat">
       <h3>Conversations</h3>
-        <% @event.messages.each do |message| %>
-        <div class="event-message">
-          <div class="messages-avatar">
-            <%= cl_image_tag message.user.avatar.key, width:  100, height: 100, crop: :fill  %>
+      <div class="message_to_send">
+        <% if @already_suscribed.include?(current_user.id) %>
+          <div>
+          <%= simple_form_for [ @event, @message ], remote: true do |f| %>
+            <%= f.input_field :content, label: false, placeholder: "Tape ton message ici #{@user.first_name.capitalize}", class: "field-message-content" %>
           </div>
-          <div class="message-content">
-            <p class="message-user"> <%= message.user.first_name.capitalize %> <%= message.user.last_name.capitalize %> <small><%= message.created_at.strftime(" %d/%m à %HH%Mm") %></small></p>
-            <p><%= message.content %></p>
+          <div>
+            <%= f.submit "Envoyer", class: "btn-show-participate" %>
           </div>
+        <% end %>
+        <% else %>
+          <p class="unsuscribed-field-message-content"> Tu dois être inscrit pour participer à la conversation </p>
+
+        <% end %>
+      </div>
+        <% @messages.each do |message| %>
+      <div class="event-message">
+        <div class="messages-avatar">
+          <%= cl_image_tag message.user.avatar.key, widht:  100, height: 100, crop: :fill  %>
         </div>
+        <div class="message-content">
+          <p class="message-user"> <%= message.user.first_name.capitalize %> <%= message.user.last_name.capitalize %> <small><%= message.created_at.strftime(" %d/%m à %HH%Mm") %></small></p>
+          <p><%= message.content %></p>
+        </div>
+      </div>
         <% end %>
     </div>
 
@@ -118,5 +140,3 @@
       </div>
     </div>
   </div>
-<!-- </body>
- -->

@@ -70,7 +70,17 @@
   .gray-separator {
     opacity: 0.4;
   }
+  .fa-edit {
+  color: #3F94FE;
+  opacity: 1;
+  }
+  .fa-trash-alt {
+  color: #3F94FE;
+  opacity: 1;
+  }
 }
+
+
 
 .cta-show {
   display: flex;
@@ -171,6 +181,22 @@
   // justify-content: space-around;
   margin-top: 20px;
 }
+.message_to_send {
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+
+.field-message-content {
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  background-color: white;
+  border: 1px solid #4194FE;
+  border-radius: 15px;
+  padding: 10px 20px;
+  width: 450px;
+  margin-left: 80px;
+  margin-right: 40px;
+}
 .message-content {
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   background-color: white;
@@ -179,9 +205,21 @@
   padding: 10px 20px;
 }
 
+.unsuscribed-field-message-content {
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  background-color: white;
+  border: 1px solid #4194FE;
+  border-radius: 15px;
+  padding: 10px 20px;
+  width: 400px;
+  margin-left: 80px;
+  margin-right: 40px;
+  opacity: 0.65;
+}
+
 .message-user {
-  font-size: 12px;
-  opacity: 0.7;
+  font-size: 13px;
+  opacity: 0.8;
 }
 
 .messages-avatar img {

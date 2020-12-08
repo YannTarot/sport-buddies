@@ -1,0 +1,12 @@
+<% participations.each do |participation|%>
+  <div class="card-friend">
+    <%= cl_image_tag participation.user.avatar.key, height: 200, width: 200, crop: :fill %>
+    <div class="card-friend-infos">
+      <h2><%= participation.event.name %></h2>
+    </div>
+    <div class="button-friendship-request">
+      <%= link_to "Accepter", confirm_participation_path(participation), method: :patch, class: "btn btn-light-blue btn-md" %>
+      <%= link_to "Refuser", deny_participation_path(participation), method: :patch, class: "btn btn-light-blue btn-md" %>
+    </div>
+  </div>
+<% end %>

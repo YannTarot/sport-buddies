@@ -39,7 +39,7 @@
   width: 50%;
   font-size: 12px;
   text-align: center;
-  padding: 60px 20px 20px 20px;
+  padding: 60px 20px 10px 20px;
   border: 1px solid white;
   border-radius: 4px;
   background-color: white;
@@ -138,56 +138,138 @@ label[for="event_sport_escalade"] {
   background-image:asset-url('escalade-icon.png');
   background-repeat: no-repeat;
   background-size: 50px, auto;
+  background-position: center 10px;
 }
 
 label[for="event_sport_rugby"] {
 background-image:asset-url('rugby-icon.png');
   background-repeat: no-repeat;
   background-size: 50px, auto;
+  background-position: center 10px;
 }
 
 label[for="event_sport_football"] {
   background-image:asset-url('football-icon.png');
   background-repeat: no-repeat;
   background-size: 50px, auto;
+  background-position: center 10px;
 }
 
 label[for="event_sport_randonnée"] {
   background-image:asset-url('randonnee-icon.png');
   background-repeat: no-repeat;
   background-size: 50px, auto;
+  background-position: center 10px;
 }
 
 label[for="event_sport_tennis"] {
   background-image:asset-url('tennis-icon.png');
   background-repeat: no-repeat;
   background-size: 50px, auto;
+  background-position: center 10px;
 }
 
 label[for="event_sport_basketball"] {
   background-image:asset-url('basketball-icon.png');
   background-repeat: no-repeat;
   background-size: 50px, auto;
+  background-position: center 10px;
 }
 
 label[for="event_sport_fitness"] {
   background-image:asset-url('fitness-icon.png');
   background-repeat: no-repeat;
   background-size: 50px, auto;
+  background-position: center 10px;
 }
 
 label[for="event_sport_cyclisme"] {
   background-image:asset-url('cyclisme-icon.png');
   background-repeat: no-repeat;
   background-size: 50px, auto;
+  background-position: center 10px;
 }
 
 label[for="event_sport_running"] {
   background-image:asset-url('running-icon.png');
   background-repeat: no-repeat;
   background-size: 50px, auto;
+  background-position: center 10px;
 }
 
 .slider-track {
   width:100%;
+}
+
+.form-group.radio_buttons.optional.event_expected_level {
+  width: max-content;
+  margin: 0 auto;
+}
+
+.form-group.string.optional.event_expected_participants_count {
+  width: 100%;
+}
+
+.slider.slider-horizontal{
+  width: 100%;
+}
+
+.slider-handle {
+  background-image: linear-gradient(to bottom, #3f72af, #004c72) !important;
+}
+
+.slider-selection {
+  background-color: #c5efff;
+  background-image: linear-gradient(to bottom, #d4ecf5, #dbe2ef);
+}
+
+.slider-track-low, .slider-track-high {
+  background: #d2d5d7;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+}
+
+.toggle {
+  position: absolute;
+  transform: scale(0);
+}
+
+.toggle + label {
+  position: relative;
+  display: inline-block;
+  padding-left: 40px;
+}
+
+.toggle + label::before {
+  content: '';
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  width: 36px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  background-color: #EAEAEA;
+  border-radius: 50rem;
+}
+
+.toggle:checked + label::before {
+  background-color: #1EDD88;
+}
+
+.toggle + label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  top: 2px;
+  left: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: left 0.2s ease;
+}
+
+.toggle:checked + label::after {
+  left: 18px;
 }
