@@ -65,16 +65,27 @@
       </div>
     <div class="event-show-chat">
       <h3>Conversations</h3>
-        <% @event.messages.each do |message| %>
-        <div class="event-message">
-          <div class="messages-avatar">
-            <%= cl_image_tag message.user.avatar.key, widht:  100, height: 100, crop: :fill  %>
-          </div>
-          <div class="message-content">
-            <p class="message-user"> <%= message.user.first_name.capitalize %> <%= message.user.last_name.capitalize %> <small><%= message.created_at.strftime(" %d/%m à %HH%Mm") %></small></p>
-            <p><%= message.content %></p>
-          </div>
+      <div class="message_to_send">
+        <div>
+        <%= simple_form_for [ @event, @message ], remote: true do |f| %>
+          <%= f.input_field :content, label: false, placeholder: "Tape ton message ici #{@user.first_name.capitalize}", class: "field-message-content" %>
         </div>
+        <div>
+          <%= f.submit "Envoyer", class: "btn-show-participate" %>
+        </div>
+
+        <% end %>
+      </div>
+        <% @messages.each do |message| %>
+      <div class="event-message">
+        <div class="messages-avatar">
+          <%= cl_image_tag message.user.avatar.key, widht:  100, height: 100, crop: :fill  %>
+        </div>
+        <div class="message-content">
+          <p class="message-user"> <%= message.user.first_name.capitalize %> <%= message.user.last_name.capitalize %> <small><%= message.created_at.strftime(" %d/%m à %HH%Mm") %></small></p>
+          <p><%= message.content %></p>
+        </div>
+      </div>
         <% end %>
     </div>
 
