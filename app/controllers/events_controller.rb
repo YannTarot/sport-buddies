@@ -29,11 +29,10 @@ class EventsController < ApplicationController
 
   def show
     @user  = current_user
+    @message = Message.new
 
     @event = Event.geocoded.find(params[:id])
-    users_participating = @event.participations.map { |participation| participation[:user_id] }
-    @already_suscribed = users_participating.include?(current_user.id)
-
+    @messages = @event.messages.order(created_at: :desc)
     @markers =
       [{
         lat: @event.latitude,
