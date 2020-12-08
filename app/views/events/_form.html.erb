@@ -1,40 +1,41 @@
-    <%= simple_form_for(@event) do |f| %>
-      <label for="name">Nom</label>
-      <%= f.input :name, :id => 'name',
-                  label: false %>
-      <%= f.input :description %>
-      <label for="starts_at">Date de l'événement</label>
-      <%= f.input :starts_at, as: :string, input_html: {class: "datepicker"},
-                  label: false %>
-      <label for="location">Localisation</label>
-      <%= f.input :location,  :id => 'location',
-                  label: false %>
-      <label for="sport">Sport</label>
-      <%= f.input :sport,
-                  as: :radio_buttons,
-                  label: false,
-                  collection_wrapper_tag: 'div',
-                  collection_wrapper_class: 'category-wrapper',
-                  item_wrapper_class: 'category-item',
-                  input_html: {class: 'category-selector'},
-                  collection: Event::SPORTS %>
-      <label for="expected_level">Niveau attendu</label>
-      <%= f.input :expected_level, :id => 'expected_level',
-                  label: false,
-                  as: :radio_buttons,
-                  input_html: { class: "tag-selector" },
-                  item_wrapper_class: 'tag-item',
-                  collection: Event::LEVELS %>
-      <div class="form-check form-switch">
-        <input class="form-check-input toggle boolean" type="checkbox" id="toggle-participants-count">
-        <label class="form-check-label boolean" for="toggle-participants-count">Selectionner des participants</label>
-      </div>
-      <div class="participants hidden">
-        <label for="participant">Nombre de buddies attendu : <span id="participantSliderVal"></span></label>
-        <%= f.input :expected_participants_count, :id => 'participant',
-                    label: false,
-                    as: :string, input_html: { data: {"slider-min" => 0, "slider-max" => 22, "slider-step" => '1'}} %>
-        <span id="participantSliderValLabel"></span>
-      </div>
-      <%= f.button :submit, "Créer l'événement", class: 'btn-new-event' %>
-    <% end %>
+<%= simple_form_for(@event) do |f| %>
+  <label for="name">Nom</label>
+  <%= f.input :name, :id => 'name',
+              label: false %>
+  <%= f.input :description %>
+  <label for="starts_at">Date de l'événement</label>
+  <%= f.input :starts_at, as: :string, input_html: {class: "datepicker"},
+              label: false %>
+  <label for="location">Localisation</label>
+  <%= f.input :location,  :id => 'location',
+              label: false %>
+  <label for="sport">Sport</label>
+  <%= f.input :sport,
+              as: :radio_buttons,
+              label: false,
+              collection_wrapper_tag: 'div',
+              collection_wrapper_class: 'category-wrapper',
+              item_wrapper_class: 'category-item',
+              input_html: {class: 'category-selector'},
+              collection: Event::SPORTS %>
+  <label for="expected_level">Niveau attendu</label>
+  <%= f.input :expected_level, :id => 'expected_level',
+              label: false,
+              as: :radio_buttons,
+              input_html: { class: "tag-selector" },
+              item_wrapper_class: 'tag-item',
+              collection: Event::LEVELS %>
+  <div class="form-check form-switch">
+    <input class="form-check-input toggle boolean" type="checkbox" id="toggle-participants-count">
+    <label class="form-check-label boolean" for="toggle-participants-count">Selectionner des participants</label>
+  </div>
+  <div class="participants hidden">
+    <label for="participant">Nombre de buddies attendu : <span id="participantSliderVal"></span></label>
+    <%= f.input :expected_participants_count, :id => 'participant',
+                label: false,
+                as: :string, input_html: { data: {"slider-min" => 0, "slider-max" => 22, "slider-step" => '1'}} %>
+    <span id="participantSliderValLabel"></span>
+  </div>
+
+  <%= f.button :submit, "Créer l'événement", class: 'btn-new-event' %>
+<% end %>
