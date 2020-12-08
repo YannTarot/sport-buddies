@@ -33,6 +33,8 @@ import "../plugins/flatpickr"
 import { initNavbarAnimation } from '../components/navbar.js'
 import { initFlatpickr } from "../plugins/flatpickr";
 import { initSlider } from "../components/slider";
+import { initToggle } from "../components/toggle-participants";
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -40,5 +42,6 @@ document.addEventListener('turbolinks:load', () => {
   initNavbarAnimation();
   initMapbox();
   initFlatpickr();
+  initToggle();
   initSlider();
 });

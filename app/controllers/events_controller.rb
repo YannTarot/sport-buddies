@@ -52,7 +52,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.owner = current_user
     if @event.save
-      @participation = Participation.new(user: current_user, status: "confirmed", event: @event)
+      @participation = Participation.create(user: current_user, status: "confirmed", event: @event)
       redirect_to event_path(@event)
     else
       render :new
