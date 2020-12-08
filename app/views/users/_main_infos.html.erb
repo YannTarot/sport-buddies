@@ -10,7 +10,7 @@
       </div>
     <% elsif @friend_with_current_user == false %>
       <div class="btn-update">
-        <%= link_to "Demander en ami", profile_path, method: :get, class: "btn btn-primary btn-edit" %>
+        <%= link_to "Demander en ami", user_friendships_path(@user), method: :post, class: "btn btn-primary btn-edit" %>
       </div>
     <% end %>
 

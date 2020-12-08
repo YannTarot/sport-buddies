@@ -6,6 +6,7 @@
       <% friend.sports.first(2).each do |sport| %>
       <p><%= "#{sport[0].capitalize} niveau #{sport[1]}" %></p>
       <% end %>
+      <%= link_to "Profile", user_path(friend), class: "btn btn-profile-link" %>
     </div>
   </div>
 <% end %>
