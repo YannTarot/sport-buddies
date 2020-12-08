@@ -13,35 +13,37 @@
   width: 100%;
   font-size: 0.875rem;
   line-height: 1.5;
-  // border: 1px solid #ccc;
   height: calc(3rem + 2px) !important;
-  // border-radius:10px;
-  // margin-right: 10px !important;
   border: none;
-  border-right: 1px solid black;
+  border-right: 1px solid #F0F0F0;
 }
 
 .btn-wrapper {
-  display: flex;
-  flex-grow: 1;
-  justify-content: flex-start;
+  background-color: white;
+  border-radius: 0 50px 50px 0;
+  padding: 6px;
 }
 
 .wrn-btn{
-  width: calc(3rem + 2px) !important;
   font-size: 16px;
   font-weight: 400;
-  height: calc(3rem + 2px) !important;
   border-radius: 50%;
   border: none;
   background: #4194FE;
+  width: 36px;
+  height: 36px;
+  color: white;
 }
 
 .all-search {
-  border: 1px solid #ccc;
   background-color: white;
   border-radius: 20px;
   padding: 5px;
+}
+
+
+#city {
+  border-radius: 50px 0 0 50px;
 }
 
 // .searchformbutton{
@@ -169,11 +171,15 @@
   text-decoration: none;
 }
 
-#map {
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  position: sticky;
-  top: 114px;
+.container-index {
+
+  #map {
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 114px;
+    margin-top: -130px;
+  }
 
 }
 
