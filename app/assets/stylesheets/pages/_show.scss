@@ -195,6 +195,18 @@
   padding: 10px 20px;
 }
 
+.unsuscribed-field-message-content {
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  background-color: white;
+  border: 1px solid #4194FE;
+  border-radius: 15px;
+  padding: 10px 20px;
+  width: 400px;
+  margin-left: 80px;
+  margin-right: 40px;
+  opacity: 0.65;
+}
+
 .message-user {
   font-size: 13px;
   opacity: 0.8;

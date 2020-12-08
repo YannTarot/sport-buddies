@@ -68,13 +68,17 @@
     <div class="event-show-chat">
       <h3>Conversations</h3>
       <div class="message_to_send">
-        <div>
-        <%= simple_form_for [ @event, @message ], remote: true do |f| %>
-          <%= f.input_field :content, label: false, placeholder: "Tape ton message ici #{@user.first_name.capitalize}", class: "field-message-content" %>
-        </div>
-        <div>
-          <%= f.submit "Envoyer", class: "btn-show-participate" %>
-        </div>
+        <% if @users_participating.include?(current_user) %>
+          <div>
+          <%= simple_form_for [ @event, @message ], remote: true do |f| %>
+            <%= f.input_field :content, label: false, placeholder: "Tape ton message ici #{@user.first_name.capitalize}", class: "field-message-content" %>
+          </div>
+          <div>
+            <%= f.submit "Envoyer", class: "btn-show-participate" %>
+          </div>
+        <% end %>
+        <% else %>
+          <p class="unsuscribed-field-message-content"> Tu dois être inscrit pour participer à la conversation </p>
 
         <% end %>
       </div>
