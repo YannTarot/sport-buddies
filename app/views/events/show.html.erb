@@ -51,9 +51,7 @@
         <p><%= @event.description %></p>
 
         <div class="cta-show">
-
-          <% @users_participating = @event.participations.map { |participation| participation[:user_id] } %>
-          <% if @users_participating.include?(current_user) %>
+          <% if @already_suscribed.include?(current_user.id) %>
               <%= link_to "Déjà inscris", profile_path(current_user), class: "btn-show-buddies" %>
 
               <%= link_to "J'invite mes buddies", profile_path(current_user), class: "btn-show-buddies"  %>
@@ -69,7 +67,7 @@
     <div class="event-show-chat">
       <h3>Conversations</h3>
       <div class="message_to_send">
-        <% if @users_participating.include?(current_user) %>
+        <% if @already_suscribed.include?(current_user.id) %>
           <div>
           <%= simple_form_for [ @event, @message ], remote: true do |f| %>
             <%= f.input_field :content, label: false, placeholder: "Tape ton message ici #{@user.first_name.capitalize}", class: "field-message-content" %>

@@ -28,11 +28,14 @@
                   input_html: { class: "tag-selector" },
                   item_wrapper_class: 'tag-item',
                   collection: Event::LEVELS %>
-      <label for="participant">Nombre de buddies attendus</label>
+      <%# <%= f.input :archived, as: :boolean, input_html: { class: "toggle" } %> %>
+      <%# if checked render cequil y en dessous %>
+      <label for="participant">Nombre de buddies attendus : <span id="participantSliderVal"></span></label>
       <%= f.input :expected_participants_count, :id => 'participant',
                   label: false,
                   as: :string, input_html: { data: {"slider-min" => 0, "slider-max" => 22, "slider-step" => '1'}} %>
-      <span id="participantSliderValLabel">Current Slider Value: <span id="participantSliderVal"></span></span>
+      <span id="participantSliderValLabel"></span>
+      <%# else no render %>
       <%= f.button :submit, "Créer l'événement", class: 'btn-new-event' %>
     <% end %>
   </div>
