@@ -23,4 +23,7 @@ Rails.application.routes.draw do
       patch :deny
     end
   end
+
+  resources :users, only: [:show]
+
 end

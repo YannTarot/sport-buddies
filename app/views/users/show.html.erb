@@ -1,0 +1,37 @@
+<%= render "users/main_infos", user: @user %>
+
+<% if @friend_with_current_user %>
+  <div class="container profile-user-infos">
+    <div class="d-flex">
+      <ul class="nav nav-tabs navbar-profile" id="myTab" role="tablist">
+        <li class="nav-item nav-item-profile" role="presentation">
+          <a class="nav-link active" id="future-event-tab" data-toggle="tab" href="#future-event" role="tab" aria-controls="future-event" aria-selected="false">Evènements à venir</a>
+        </li>
+        <li class="nav-item nav-item-profile" role="presentation">
+          <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mes amis</a>
+        </li>
+        <li class="nav-item nav-item-profile" role="presentation">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Mon historique d'évènements</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="d-flex flex-wrap justify-content-center">
+          <%= render "users/friends", friends: @user.friends %>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <div class="d-flex flex-wrap justify-content-center">
+          <%= render "users/past_events", events: @past_events %>
+        </div>
+      </div>
+      <div class="tab-pane fade show active" id="future-event" role="tabpanel" aria-labelledby="future-event-tab">
+        <div class="d-flex flex-wrap justify-content-center">
+          <%= render "users/future_events", events: @future_events %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

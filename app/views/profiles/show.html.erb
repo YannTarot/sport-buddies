@@ -1,21 +1,4 @@
-<div class="header profile-header"></div>
-<div class="container profile-container">
-  <div class="profile">
-    <div class="pic-holder">
-      <%= cl_image_tag current_user.avatar.key, height: 200, width: 200, crop: :fill, class: "pic-holder" %>
-    </div>
-    <div class="btn-update">
-      <%= link_to "Editer mon profil", profile_path, method: :patch, class: "btn btn-primary btn-edit" %>
-    </div>
-    <div class="info">
-      <h3><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h3>
-      <div class="user-infos">
-        <p><%= current_user.age %> ans &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= current_user.sports.count %> sports pratiqués</p>
-      </div>
-      <p><em><%= current_user.description %></em><p>
-    </div>
-  </div>
-
+<%= render "users/main_infos", user: current_user %>
 
 <div class="container profile-user-infos">
   <div class="d-flex">
@@ -34,49 +17,26 @@
       </li>
     </ul>
   </div>
+
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
       <div class="d-flex flex-wrap justify-content-center">
-        <% current_user.friends.each do |friend|%>
-          <div class="card-friend">
-            <%= cl_image_tag friend.avatar.key, height: 200, width: 200, crop: :fill %>
-            <div class="card-friend-infos">
-              <h2><%= friend.first_name.capitalize %></h2>
-              <% friend.sports.first(2).each do |sport| %>
-              <p><%= "#{sport[0].capitalize} niveau #{sport[1]}" %></p>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
+        <%= render "users/friends", friends: current_user.friends %>
       </div>
-      </div>
+    </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <div class="d-flex flex-wrap justify-content-center">
-      <% current_user.invitations.each do |invitation|%>
-        <div class="card-friend">
-          <%= cl_image_tag invitation.user.avatar.key, height: 200, width: 200, crop: :fill %>
-          <div class="card-friend-infos">
-            <h2><%= invitation.user.first_name.capitalize %></h2>
-              <% invitation.user.sports.first(2).each do |sport| %>
-              <p><%= "#{sport[0].capitalize} niveau #{sport[1]}" %></p>
-              <% end %>
-          </div>
-          <div class="button-friendship-request">
-            <%= link_to "Accepter", accept_friendship_path(invitation), method: :patch, class: "btn btn-light-blue btn-md" %>
-            <%= link_to "Refuser", deny_friendship_path(invitation), method: :patch, class: "btn btn-light-blue btn-md" %>
-          </div>
-        </div>
-        <% end %>
+      <div class="d-flex flex-wrap justify-content-center">
+        <%= render "users/invitations", invitations: current_user.invitations %>
       </div>
     </div>
     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
       <div class="d-flex flex-wrap justify-content-center">
-        <%= render "past_events", events: @past_events %>
+        <%= render "users/past_events", events: @past_events %>
       </div>
     </div>
     <div class="tab-pane fade show active" id="future-event" role="tabpanel" aria-labelledby="future-event-tab">
       <div class="d-flex flex-wrap justify-content-center">
-        <%= render "future_events", events: @future_events %>
+        <%= render "users/future_events", events: @future_events %>
       </div>
     </div>
   </div>

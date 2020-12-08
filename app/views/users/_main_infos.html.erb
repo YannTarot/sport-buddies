@@ -1,0 +1,24 @@
+<div class="header profile-header"></div>
+<div class="container profile-container">
+  <div class="profile">
+    <div class="pic-holder">
+      <%= cl_image_tag user.avatar.key, height: 200, width: 200, crop: :fill, class: "pic-holder" %>
+    </div>
+    <% if user == current_user%>
+      <div class="btn-update">
+        <%= link_to "Editer mon profil", profile_path, method: :patch, class: "btn btn-primary btn-edit" %>
+      </div>
+    <% elsif @friend_with_current_user == false %>
+      <div class="btn-update">
+        <%= link_to "Demander en ami", profile_path, method: :get, class: "btn btn-primary btn-edit" %>
+      </div>
+    <% end %>
+
+    <div class="info">
+      <h3><%= user.first_name.capitalize %> <%= user.last_name.capitalize %></h3>
+      <div class="user-infos">
+        <p><%= user.age %> ans &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= user.sports.count %> sports pratiqués</p>
+      </div>
+      <p><em><%= user.description %></em><p>
+    </div>
+  </div>
