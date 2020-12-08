@@ -65,10 +65,17 @@
             </div>
           </div>
         </div>
+        <% if user_signed_in? %>
         <div class="call-to-action">
+          <h1>Prêt à relever le défi ?</h1>
+          <%= link_to "Rejoins la partie !", new_user_registration_path, class: "btn btn-flat" %>
+        </div>
+        <% else %>
+          <div class="call-to-action">
           <h1>Prêt à relever le défi ?</h1>
           <%= link_to "Inscris-toi gratuitement", new_user_registration_path, class: "btn btn-flat" %>
         </div>
+        <% end %>
       </div>
     </div>
   </div>
