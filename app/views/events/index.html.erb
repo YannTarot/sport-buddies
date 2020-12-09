@@ -5,11 +5,11 @@
         <div class="row">
           <div class="col-lg-9">
             <div class="row all search">
+              <div class="form-wrapper"></div>
               <div class="form-input-index col-lg-3 col-md-3 col-sm-12 p-0">
-                <%= select_tag :city,
-                  options_for_select(Event::CITIES, params[:city]),
-                  class: "form-control search-slt",
-                  prompt: "Localisation"
+                <%= text_field_tag :location, params[:location],
+                  class: "form-control search-slt first",
+                  placeholder: "Localisation"
                 %>
               </div>
               <div class="form-input-index col-lg-2 col-md-3 col-sm-12 p-0">

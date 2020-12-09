@@ -4,9 +4,13 @@ class EventsController < ApplicationController
   def index
     @events = Event.geocoded
 
-    if params[:city].present?
-      # raise
-      @events = @events.near(params[:city])
+    # if params[:location].present?
+    #   # raise
+    #   # @events = @events.near(params[:city], 1, units: :km)
+    #   @events = Event.where(["location ILIKE ?", "Nantes"]) 
+    # end
+    if params[:location].present?
+      @events = @events.where("location ILIKE ?", "%#{params[:location]}%")
     end
     if params[:sport].present?
       # raise

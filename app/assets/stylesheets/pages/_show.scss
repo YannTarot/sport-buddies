@@ -110,6 +110,8 @@
   text-transform: uppercase;
   padding: 16px 24px;
   margin-right: 20px;
+  outline: none !important;
+  outline: 0px auto -webkit-focus-ring-color !important;
 }
 
 .btn-show-buddies {
@@ -166,6 +168,11 @@
   i {
     margin-left: 10px;
   }
+}
+
+button:focus {
+    outline: none !important;
+    outline: 0px auto -webkit-focus-ring-color!important;
 }
 
 .event-show-chat {
