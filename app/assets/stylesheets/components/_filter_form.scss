@@ -78,7 +78,7 @@
 
 .container-cards-map {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 1fr;
   grid-gap: 40px;
   margin-right: 40px;
   margin-left: 40px;
@@ -87,7 +87,7 @@
 .index-cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 50px;
+  grid-gap: 40px;
 }
 
 .index-card-category {
@@ -219,11 +219,19 @@
   .container-cards-map {
     grid-template-columns: 1fr;
   }
+
+  .index-cards {
+    grid-template-columns: 1fr
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .container-cards-map {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .index-cards {
     grid-template-columns: 1fr;
   }
 }
@@ -231,6 +239,10 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .container-cards-map {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .index-cards {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -238,13 +250,21 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .container-cards-map {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
+  }
+
+  .index-cards {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .container-cards-map {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
+  }
+
+  .index-cards {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
