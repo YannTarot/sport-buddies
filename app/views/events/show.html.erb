@@ -59,7 +59,7 @@
 
         <div class="cta-show">
           <% if @event_date > DateTime.now %>
-            <% if @already_suscribed %>
+            <% if @already_suscribed.include?(current_user.id) %>
               <%= link_to "Déjà inscrit 👍", profile_path(current_user), class: "btn-show-buddies" %>
               <!-- Button trigger modal -->
               <button type="button" class="btn-show-buddies" data-toggle="modal" data-target="#exampleModal">
