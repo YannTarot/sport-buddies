@@ -55,14 +55,9 @@
 
 .card-event-date {
   display: flex;
+  height: 35px;
   h2 {
     margin-right: 16px;
-  }
-  h3 {
-    font-size: 30px;
-    margin-bottom: 30px;
-    margin-right: 16px;
-    opacity: 0.8;
   }
   i {
     opacity: 0.6;
@@ -80,7 +75,14 @@
   }
 }
 
+.card-event-location {
 
+  p {
+    font-size: 18px;
+    margin-bottom: 0px;
+    opacity: 0.7;
+  }
+}
 
 .cta-show {
   display: flex;
