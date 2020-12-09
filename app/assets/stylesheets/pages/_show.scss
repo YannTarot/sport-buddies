@@ -58,6 +58,7 @@
   h2 {
     margin-right: 16px;
   }
+
   h3 {
     font-size: 30px;
     margin-bottom: 30px;
@@ -79,6 +80,19 @@
   opacity: 1;
   }
 }
+
+.buddy-list{
+  h2:hover{
+    font-size: 2em;
+    color: #172574;
+  }
+  h2:hover:after {
+    content:"afficher la liste";
+    margin-left: 10px;
+    font-size: 12px;
+  }
+}
+
 
 
 
