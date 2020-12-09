@@ -250,11 +250,11 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .container-cards-map {
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2fr 1fr;
   }
 
   .index-cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
