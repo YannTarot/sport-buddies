@@ -207,6 +207,29 @@
 }
 
 
+.friend_button{
+  border: none;
+}
+
+.modal-body{
+  flex-wrap: wrap;
+}
+
+
+.card_friend {
+  border-radius: 50%;
+  margin: 10px 5px;
+}
+
+.card_friend_name{
+  font-weight: bold;
+  font-size: 1.2em;
+  text-decoration: none;
+  text-align: center;
+  color: $dark-blue;
+
+
+
 /*¨TABS */
 .container-events-profile {
   display:flex;
@@ -221,4 +244,5 @@
 
 .profile-invitations .card-friend img {
   width:auto;
+
 }

@@ -63,6 +63,7 @@
     margin-right: 16px;
     font-weight:600;
   }
+
   h3 {
     font-size: 24px;
     margin-bottom: 30px;
@@ -87,14 +88,18 @@
 
 }
 
-.card-event-location {
-
-  p {
-    font-size: 18px;
-    margin-bottom: 0px;
-    opacity: 0.7;
+.buddy-list{
+  h2:hover{
+    font-size: 2em;
+    color: #172574;
+  }
+  h2:hover:after {
+    content:"afficher la liste";
+    margin-left: 10px;
+    font-size: 12px;
   }
 }
+
 
 .cta-show {
   display: flex;
