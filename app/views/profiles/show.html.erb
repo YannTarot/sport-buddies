@@ -37,7 +37,7 @@
         <div class="p-3">
         <h3>Évenements en attente</h3>
         <% if @pending_participations.empty? %>
-        <p> Vous n'avez pas d'invitations à des évemenents en attente</p>
+        <p> Vous n'avez pas d'invitations à des évènements en attente</p>
         <% else %>
         <%= render "users/participations", participations: @pending_participations %>
         <% end %>
