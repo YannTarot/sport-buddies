@@ -81,7 +81,7 @@
               </div>
             </div>
           <% else %>
-            <% card_function = image_path "card-#{event.sport}.jpg" %>
+            <% card_function = image_path "card-#{event.sport.parameterize}.jpg" %>
             <div class="index-card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= card_function %>)">
             <%= link_to event_path(event) do  %>
               <div class="index-card-info">
