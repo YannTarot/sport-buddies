@@ -60,6 +60,11 @@
         <div class="cta-show">
           <% if @event_date > DateTime.now %>
             <% if @already_suscribed.include?(current_user.id) %>
+              <%= link_to "Déjà inscrit 👍 ", events_path, class: "btn-show-buddies" %>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn-show-buddies" data-toggle="modal" data-target="#exampleModal">
+                J'invite mes buddies
+              </button>
             <% elsif @event.expected_participants_count == nil %>
               <%= link_to "Je m'inscris", event_participations_path(@event), class: "btn-show-participate", method: :post %>
               <!-- Button trigger modal -->
