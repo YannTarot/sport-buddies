@@ -165,7 +165,7 @@ margin-bottom: 120px;
   line-height: 20px;
   .btn-flat{
     padding: 35px;
-    margin-top: 29px;
+
     color: white;
     background-color: #2394bc;
   }
@@ -228,6 +228,9 @@ margin-bottom: 120px;
   .div7 { grid-area: 1 / 5 / 3 / 7; }
   .div8 { grid-area: 3 / 5 / 5 / 7; }
 
+  .mosaic img{
+    border-radius: 10px;
+  }
 @media only screen and (max-width: 1024px) {
 
   .moscow,
