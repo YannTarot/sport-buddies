@@ -11,7 +11,11 @@
         <div class="event-owner-infos">
           <div class="owner-avatar">
             <%= cl_image_tag @event.owner.avatar.key, widht:  100, height: 100, crop: :fill  %>
-            <p>Organisé par <strong> <%= @event.owner.first_name.capitalize %> <%= @event.owner.last_name.capitalize %></strong></p>
+            <%= link_to profile_path(@event.owner) do %>
+            <p>Organisé par <strong> <%= @event.owner.first_name.capitalize %> <%= @event.owner.last_name.capitalize %></strong>
+            <% end %>
+            </p>
+
           </div>
           <div class="event-owner-level-expected" >
             <% if  @event.expected_level == "débutant" %>
@@ -44,7 +48,7 @@
             <% if @event.owner[:id] == current_user.id %>
               <h2 class="gray-separator">|</h2>
               <h2><%= link_to edit_event_path(@event) do %>
-                <i class='far fa-edit'>Modifier</i>
+                <i class='far fa-edit'></i>
                 <% end %>
               </h2>
             <% end %>

@@ -31,7 +31,7 @@ class EventsController < ApplicationController
     @user  = current_user
     @message = Message.new
     @event = Event.geocoded.find(params[:id])
-    @messages = @event.messages.order(created_at: :desc)
+    @messages = @event.messages.order(created_at: :asc)
 
     @already_suscribed = @event.participations.map { |participation| participation[:user_id] }
 
