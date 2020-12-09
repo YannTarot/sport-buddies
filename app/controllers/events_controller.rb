@@ -80,6 +80,12 @@ end
   private
 
   def event_params
+    new_params = event_params_raw
+    new_params[:expected_participants_count] = nil if new_params[:expected_participants_count].to_i == 0
+    new_params
+  end
+
+  def event_params_raw
     params.require(:event).permit(:name, :description, :location, :starts_at, :expected_participants_count, :sport, :expected_level)
   end
 end

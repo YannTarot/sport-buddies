@@ -5,6 +5,5 @@ export const initToggle = () => {
 
   toggle.addEventListener("change", () => {
    content.classList.toggle('hidden')
-   toggle.classList.toggle('after')
   });
 };
