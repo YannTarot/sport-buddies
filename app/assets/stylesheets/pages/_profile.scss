@@ -250,3 +250,9 @@
 
 }
 }
+
+@media only screen and (max-width:768px) {
+  .container-events-profile .index-card-category  {
+min-width: 70%;
+}
+}

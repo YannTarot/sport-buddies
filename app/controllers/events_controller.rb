@@ -7,7 +7,7 @@ class EventsController < ApplicationController
     # if params[:location].present?
     #   # raise
     #   # @events = @events.near(params[:city], 1, units: :km)
-    #   @events = Event.where(["location ILIKE ?", "Nantes"]) 
+    #   @events = Event.where(["location ILIKE ?", "Nantes"])
     # end
     if params[:location].present?
       @events = @events.where("location ILIKE ?", "%#{params[:location]}%")
