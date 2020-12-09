@@ -3,8 +3,9 @@
   margin: 0px;
   width: 100%;
   height: 400px;
-  background: url(https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-  background-position: top bottom;
+  background: url(https://source.unsplash.com/random);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .profile{
@@ -33,6 +34,40 @@
     font-size: 40px;
     font-weight: 600;
     margin-bottom: 20px;
+    color:$dark-blue;
+  }
+  h4 {
+    color:#51708E;
+  }
+  h4 i{
+    padding-right: 10px;
+    margin-bottom: 20px;
+  }
+  p{
+    width:50%;
+    margin:0 auto;
+    line-height: 2;
+  }
+  .profile-quote {
+    font-family: 'Georgia';
+    font-size: 250px;
+    opacity: .15;
+    top: 320px;
+    left: 46%;
+    position: absolute;
+    color:#51708E;
+  }
+  .info-sports {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color:#51708E;
+    font-weight: 600;
+    font-size:14px;
+  }
+  .info-desc {
+    color:#51708E;
+    font-weight: 600;
+    opacity: .7;
   }
 }
 
@@ -58,6 +93,13 @@
     padding: 10px 10px;
     position: relative;
     z-index: 0;
+    opacity:.4;
+}
+
+.nav-tabs .nav-link.active {
+  opacity:1;
+  padding:12px 16px;
+  color:$dark-blue;
 }
 
 
@@ -75,22 +117,7 @@
     list-style: none;
   }
 }
-.user-infos{
-  display: flex;
-  justify-content: center;
-  margin:  auto;
-  align-items: center;
-  height: 50px;
-  margin-bottom: 30px;
-  p{
-    margin-top: 20px;
-    background-color: $blue-sky;
-    padding: 15px;
-    border-radius: 10px;
-    color: #FFF;
-    font-weight: 600;
-  }
-}
+
 .profile-container {
   margin-bottom: 30px;
   padding-bottom: 50px;
@@ -123,20 +150,25 @@
   height: 100%;
   width: 120px;
   object-fit: cover;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .card-friend h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
+  font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 12px;
+    color: #51708E;
 }
 
 .card-friend p {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.4;
-
   margin-bottom: 0;
   margin-top: 8px;
+  font-weight: 600;
+  color: #51708E;
+  opacity: .6;
 
 }
 
@@ -172,4 +204,21 @@
   width: 100%;
   margin-bottom: 40px;
   background: transparent;
+}
+
+
+/*¨TABS */
+.container-events-profile {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  .index-card-category {
+    width:41%;
+  }
+}
+
+.profile-invitations .card-friend img {
+  width:auto;
 }
