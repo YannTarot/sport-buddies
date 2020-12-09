@@ -141,6 +141,9 @@
   text-align: left;
   flex: 1 auto;
   margin-bottom: 30px;
+  a {
+    text-decoration: none !important;
+  }
 }
 
 .owner-avatar img {
