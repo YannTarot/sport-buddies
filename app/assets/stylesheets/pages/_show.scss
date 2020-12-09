@@ -58,6 +58,7 @@
 .card-event-date {
   display: flex;
   color: #51708E;
+  height: 35px;
   h2 {
     font-size: 24px;
     margin-right: 16px;
@@ -89,17 +90,21 @@
 }
 
 .buddy-list{
-  h2:hover{
-    font-size: 2em;
-    color: #172574;
-  }
+
   h2:hover:after {
     content:"afficher la liste";
     margin-left: 10px;
-    font-size: 12px;
+    font-size: 18px;
   }
 }
+.card-event-location {
+  p {
+    font-size: 18px;
+    opacity: 0.7;
+    margin-bottom: 20px;
 
+  }
+}
 
 .cta-show {
   display: flex;
@@ -158,9 +163,10 @@
   text-align: left;
   flex: 1 auto;
   margin-bottom: 30px;
-  p {
-    opacity:.4;
+  a {
+    text-decoration: none !important;
   }
+
 }
 
 .owner-avatar img {

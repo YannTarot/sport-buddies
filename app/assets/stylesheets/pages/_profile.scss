@@ -172,6 +172,12 @@
 
 }
 
+.card_friend_name{
+  text-decoration: none;
+  color: $dark-blue;
+  text-align: center;
+}
+
 .card-friend .card-friend-infos {
   padding: 16px;
 }
@@ -223,10 +229,7 @@
 
 .card_friend_name{
   font-weight: bold;
-  font-size: 1.2em;
   text-decoration: none;
-  text-align: center;
-  color: $dark-blue;
 }
 
 
