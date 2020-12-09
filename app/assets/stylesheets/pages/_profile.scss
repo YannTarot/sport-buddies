@@ -128,9 +128,12 @@
 }
 
 .card-friend {
+  a{
+    text-decoration: none;
+  }
   width: 45%;
   overflow: hidden;
-  height: 120px;
+  height: auto;
   background: white;
   display: flex;
   align-items: center;
@@ -157,7 +160,6 @@
   font-size: 18px;
     font-weight: bold;
     margin: 0;
-    margin-top: 12px;
     color: #51708E;
 }
 
@@ -180,11 +182,20 @@
 
 .card-friend .card-friend-infos {
   padding: 16px;
+  align-items: center;
+
 }
 
 .friendlist{
   display: flex;
   justify-content: center;
+}
+
+.card-friend-h2{
+  display: flex;
+  h2{
+    padding-left: 4px;
+  }
 }
 
 
@@ -249,4 +260,15 @@
   width:auto;
 
 }
+}
+
+.sport_data{
+  display: flex;
+  align-items: center;
+  p{
+    padding: 3px 3px;
+  }
+  .sport_data_p{
+    font-size: 16px;
+  }
 }

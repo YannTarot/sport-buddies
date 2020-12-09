@@ -1,12 +1,20 @@
 <% friends.each do |friend|%>
+  <%= link_to user_path(friend) do %>
   <div class="card-friend">
     <%= cl_image_tag friend.avatar.key, height: 200, width: 200, crop: :fill %>
     <div class="card-friend-infos">
+      <div class="card-friend-h2">
+
       <h2><%= friend.first_name.capitalize %></h2>
+      <h2><%= friend.last_name.capitalize %></h2>
+      </div>
       <% friend.sports.first(2).each do |sport| %>
-      <p><%= "#{sport[0].capitalize} niveau #{sport[1]}" %></p>
+      <div class="sport_data">
+      <p class= "sport_data_p"><strong><%= "#{sport[0].capitalize}"%></strong></p>
+      <p><%= "#{sport[1]}" %></p>
+      </div>
       <% end %>
-      <%= link_to "Profile", user_path(friend), class: "btn btn-profile-link" %>
+    <% end %>
     </div>
   </div>
 <% end %>
