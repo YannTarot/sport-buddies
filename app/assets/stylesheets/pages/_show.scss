@@ -55,9 +55,14 @@
 
 .card-event-date {
   display: flex;
-  height: 40px;
   h2 {
     margin-right: 16px;
+  }
+  h3 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    margin-right: 16px;
+    opacity: 0.8;
   }
   i {
     opacity: 0.6;
@@ -75,12 +80,7 @@
   }
 }
 
-.card-event-location {
-  p {
-    font-size: 16px;
-    opacity: 0.7;
-  }
-}
+
 
 .cta-show {
   display: flex;
@@ -137,12 +137,6 @@
   text-align: left;
   flex: 1 auto;
   margin-bottom: 30px;
-  a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    opacity: 0.6;
-  }
 }
 
 .owner-avatar img {
