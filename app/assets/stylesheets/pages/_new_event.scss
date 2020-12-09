@@ -1,23 +1,29 @@
-.container-new-event {
-  background-color: white;
-  width: 600px;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 100px;
-  margin-bottom: 25px;
-  border-radius: 15px;
-  padding-bottom: -10px;
 
+.new-event-creation {
+  position:absolute;
+  width:100%;
+  height:auto;
+  background-repeat: no-repeat;
+  background-size:cover;
+
+  .form-event {
+    background-color:white;
+    border-radius:8px;
+    width:600px;
+    margin:150px auto 150px auto;
+    box-shadow:0px 0px 30px rgba(0,0,0,0.1);
+  }
 
   h1 {
     text-align: center;
     padding-top: 20px;
+    padding-top: 60px;
   }
 }
 
 .form-new-event {
-  padding: 50px;
+  padding: 30px 50px 50px 50px;
+  color:  #3f72af;
 }
 
 .category-wrapper {
@@ -40,17 +46,17 @@
   cursor: pointer;
   box-sizing: content-box;
   width: 50%;
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
-  padding: 60px 20px 10px 20px;
+  padding: 68px 20px 10px 20px;
   border: 1px solid white;
   border-radius: 4px;
   background-color: white;
 }
 
 .category-selector:checked + label {
-  color: #112d4e !important;
-  border-color: #112d4e;
+  color: #3f72af !important;
+  border-color: #3f72af;;
 }
 
 .tag-item {
@@ -73,6 +79,7 @@
   border: 1px solid #3f72af;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
+  padding: 12px 24px;
 }
 
 .tag-selector:checked + label {
@@ -84,13 +91,11 @@
   border-radius: 50px;
   background-color: #3f72af;
   color: white;
-  margin-right: 115px;
-  border: 1px;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 2px;
+  margin:0 auto;
+  border: 2px solid transparent;
+
   text-transform: uppercase;
-  padding: 20px 10px 20px 10px;
+
   margin-right: 20px;
   display: block;
   margin-left: auto;
@@ -111,7 +116,7 @@ label[for="event_sport_escalade"] {
   background-repeat: no-repeat;
   background-size: 50px, auto;
   background-position: center 10px;
-}
+  }
 
 label[for="event_sport_rugby"] {
 background-image:asset-url('rugby-icon.png');
@@ -205,6 +210,7 @@ label[for="event_sport_running"] {
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 0px;
+  justify-content: center;
   .toggle {
     position: absolute;
     transform: scale(0);
@@ -255,4 +261,18 @@ label[for="event_sport_running"] {
 
 .hidden {
   display: none;
+}
+
+.banner-new-event {
+  // background-size: cover;
+  // height:100vh;
+  // object-fit: cover;
+
+  // background: url(runners-banner.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  background: linear-gradient(#dbe2ef, #3f72af);
 }

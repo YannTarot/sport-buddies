@@ -4,9 +4,13 @@ class EventsController < ApplicationController
   def index
     @events = Event.geocoded
 
-    if params[:city].present?
-      # raise
-      @events = @events.near(params[:city])
+    # if params[:location].present?
+    #   # raise
+    #   # @events = @events.near(params[:city], 1, units: :km)
+    #   @events = Event.where(["location ILIKE ?", "Nantes"]) 
+    # end
+    if params[:location].present?
+      @events = @events.where("location ILIKE ?", "%#{params[:location]}%")
     end
     if params[:sport].present?
       # raise
@@ -31,7 +35,8 @@ class EventsController < ApplicationController
     @user  = current_user
     @message = Message.new
     @event = Event.geocoded.find(params[:id])
-    @messages = @event.messages.order(created_at: :desc)
+    @messages = @event.messages.order(created_at: :asc)
+    @event_date = @event.starts_at
 
     @already_suscribed = @event.participations.map { |participation| participation[:user_id] }
 
@@ -75,6 +80,12 @@ end
   private
 
   def event_params
+    new_params = event_params_raw
+    new_params[:expected_participants_count] = nil if new_params[:expected_participants_count].to_i == 0
+    new_params
+  end
+
+  def event_params_raw
     params.require(:event).permit(:name, :description, :location, :starts_at, :expected_participants_count, :sport, :expected_level)
   end
 end
