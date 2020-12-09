@@ -1,6 +1,6 @@
 <div class="container-events-profile">
 <% events.each do |event| %>
-<% card_function = image_path "card-#{event.sport}.jpg" %>
+<% card_function = image_path "card-#{event.sport.parameterize}.jpg" %>
   <div class="index-card-category m-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= card_function %>)">
     <div class="index-card-info">
       <div class="index-card-info-left">
@@ -13,6 +13,7 @@
               </div>
             <% else %>
               <div class="index-card-info-player">
+              <i class="fas fa-infinity"></i>
               </div>
             <% end %>
             </div>

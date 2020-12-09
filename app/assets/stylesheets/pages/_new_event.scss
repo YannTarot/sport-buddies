@@ -1,5 +1,5 @@
-.new-event-creation {
 
+.new-event-creation {
   position:absolute;
   width:100%;
   height:auto;
@@ -22,7 +22,8 @@
 }
 
 .form-new-event {
-  padding: 50px;
+  padding: 30px 50px 50px 50px;
+  color:  #3f72af;
 }
 
 .category-wrapper {
@@ -54,8 +55,8 @@
 }
 
 .category-selector:checked + label {
-  color: #112d4e !important;
-  border-color: #112d4e;
+  color: #3f72af !important;
+  border-color: #3f72af;;
 }
 
 .tag-item {
@@ -115,7 +116,7 @@ label[for="event_sport_escalade"] {
   background-repeat: no-repeat;
   background-size: 50px, auto;
   background-position: center 10px;
-}
+  }
 
 label[for="event_sport_rugby"] {
 background-image:asset-url('rugby-icon.png');
@@ -209,6 +210,7 @@ label[for="event_sport_running"] {
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 0px;
+  justify-content: center;
   .toggle {
     position: absolute;
     transform: scale(0);
@@ -259,4 +261,18 @@ label[for="event_sport_running"] {
 
 .hidden {
   display: none;
+}
+
+.banner-new-event {
+  // background-size: cover;
+  // height:100vh;
+  // object-fit: cover;
+
+  // background: url(runners-banner.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  background: linear-gradient(#dbe2ef, #3f72af);
 }

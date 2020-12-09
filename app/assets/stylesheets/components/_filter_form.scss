@@ -2,6 +2,13 @@
   padding-top: 80px;
 }
 
+.form-wrapper {
+  background-color: white;
+  border-radius: 50px 0 0 50px;
+  padding: 15px;
+  border-right: 1px solid #F0F0F0;
+}
+
 .search-container{
   margin-left: 55px;
   margin-bottom: 40px;
@@ -32,7 +39,7 @@
   font-weight: 400;
   border-radius: 50%;
   border: none;
-  background: #4194FE;
+  background: #3f72af;
   width: 36px;
   height: 36px;
   color: white;
@@ -185,7 +192,7 @@
   letter-spacing: 0.025rem;
   text-transform: uppercase;
   color: white;
-  background-color: #4194FE;
+  background-color: #3f72af;
   border: none;
   border-radius: 7px;
 }

@@ -27,13 +27,13 @@
               collection: Event::LEVELS %>
   <div class="form-check form-switch">
     <input class="form-check-input toggle boolean" type="checkbox" id="toggle-participants-count">
-    <label class="form-check-label boolean" for="toggle-participants-count">Selectionner des participants</label>
+    <label class="form-check-label boolean" for="toggle-participants-count"><strong>Sélectionner un nombre de participants</strong></label>
   </div>
   <div class="participants hidden">
     <label for="participant">Nombre de buddies attendu : <span id="participantSliderVal"></span></label>
     <%= f.input :expected_participants_count, :id => 'participant',
                 label: false,
-                as: :string, input_html: { data: {"slider-min" => 0, "slider-max" => 22, "slider-step" => '1'}} %>
+                as: :string, input_html: { data: {"slider-min" => 0, "slider-max" => 22, "slider-step" => '1', 'slider-value' => 0 }} %>
     <span id="participantSliderValLabel"></span>
   </div>
 
