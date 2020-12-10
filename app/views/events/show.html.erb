@@ -74,7 +74,7 @@
               <button type="button" class="btn-show-buddies" data-toggle="modal" data-target="#exampleModal">
                 J'invite mes buddies
               </button>
-            <% elsif @event.expected_participants_count <= @event.participations.count %>
+            <% elsif @event.expected_participants_count <= @confirmed_participation.count %>
               <%= link_to "évènement complet 💪", events_path, class: "btn-show-buddies" %>
             <% else %>
               <%= link_to "Je m'inscris", event_participations_path(@event), class: "btn-show-participate", method: :post %>
