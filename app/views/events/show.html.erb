@@ -17,90 +17,101 @@
           <% end %>
           </p>
         </div>
-      <div class="event-owner-level-expected" >
-        <% if  @event.expected_level == "débutant" %>
-          <p> <%= @event.expected_level.capitalize %></p>
-          <h3><i class="fas fa-medal gold-color"></i></h3>
-        <% elsif @event.expected_level == "intermédiaire" %>
-          <p> <%= @event.expected_level.capitalize %></p>
-          <h3><i class="fas fa-medal gold-color"></i></h3>
-          <h3><i class="fas fa-medal gold-color"></i></h3>
-        <% elsif @event.expected_level == "confirmé" %>
-          <p> <%= @event.expected_level.capitalize %></p>
-          <h3><i class="fas fa-medal gold-color"></i></h3>
-          <h3><i class="fas fa-medal gold-color"></i></h3>
-          <h3><i class="fas fa-medal gold-color"></i></h3>
+        <div class="event-owner-level-expected" >
+          <% if  @event.expected_level == "débutant" %>
+            <p> <%= @event.expected_level.capitalize %></p>
+            <h3><i class="fas fa-medal gold-color"></i></h3>
+          <% elsif @event.expected_level == "intermédiaire" %>
+            <p> <%= @event.expected_level.capitalize %></p>
+            <h3><i class="fas fa-medal gold-color"></i></h3>
+            <h3><i class="fas fa-medal gold-color"></i></h3>
+          <% elsif @event.expected_level == "confirmé" %>
+            <p> <%= @event.expected_level.capitalize %></p>
+            <h3><i class="fas fa-medal gold-color"></i></h3>
+            <h3><i class="fas fa-medal gold-color"></i></h3>
+            <h3><i class="fas fa-medal gold-color"></i></h3>
+          <% end %>
+        </div>
+      <!-- </div> -->
+      </div>
+      <div class="card-event-date">
+        <h2><i class="far fa-calendar-alt"></i> <strong> <%= @event.starts_at.strftime(" %d/%m") %> </strong></h2>
+        <h2 class="gray-separator">|</h2>
+        <h2><i class="fas fa-stopwatch"></i> <%= @event.starts_at.strftime("%HH") %> </h2>
+        <h2 class="gray-separator">|</h2>
+        <%# <div class="buddy-list"> %>
+        <% if @event.expected_participants_count.present? %>
+          <div type="" class="buddy-list" data-toggle="modal" data-target="#exampleModalCenter">
+            <h2><%= @event.participations.count %> / <%= @event.expected_participants_count %> <i class="fas fa-user-friends"></i></h2>
+          </div>
+        <% else %>
+          <div type="" class="" data-toggle="modal" data-target="#exampleModalCenter">
+            <h3> Aucune limite de buddies</h3>
+          </div>
+        <% end %>
+        <% if @event.owner[:id] == current_user.id %>
+          <h2 class="gray-separator">|</h2>
+          <h2><%= link_to edit_event_path(@event) do %>
+            <i class='far fa-edit'></i>
+            <% end %>
+          </h2>
+        <% end %>
+      </div>
+      <div class="card-event-location">
+        <p><i class="fas fa-map-marker-alt"></i>  <%= @event.location %> </p>
+      </div>
+      <p><%= @event.description %></p>
+      <div class="cta-show">
+        <% if @event_date > DateTime.now %>
+          <% if @already_suscribed.include?(current_user.id) %>
+            <%= link_to "Déjà inscrit 👍", events_path, class: "btn-show-buddies" %>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn-show-buddies" data-toggle="modal" data-target="#exampleModal">
+              J'invite mes buddies
+            </button>
+          <% elsif @event.expected_participants_count == nil %>
+            <%= link_to "Je m'inscris", event_participations_path(@event), class: "btn-show-participate", method: :post %>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn-show-buddies" data-toggle="modal" data-target="#exampleModal">
+              J'invite mes buddies
+            </button>
+          <% elsif @event.expected_participants_count <= @event.participations.count %>
+            <%= link_to "évènement complet 💪", events_path, class: "btn-show-buddies" %>
+          <% else %>
+            <%= link_to "Je m'inscris", event_participations_path(@event), class: "btn-show-participate", method: :post %>
+            <button type="button" class="btn-show-buddies" data-toggle="modal" data-target="#exampleModal">
+              J'invite mes buddies
+            </button>
+          <% end %>
+        <% else %>
+          <%= link_to "évènement terminé 🏁", events_path, class: "btn-show-buddies" %>
         <% end %>
       </div>
     </div>
-    <div class="card-event-date">
-      <h2><i class="far fa-calendar-alt"></i> <strong> <%= @event.starts_at.strftime(" %d/%m") %> </strong></h2>
-      <h2 class="gray-separator">|</h2>
-      <h2><i class="fas fa-stopwatch"></i> <%= @event.starts_at.strftime("%HH") %> </h2>
-      <h2 class="gray-separator">|</h2>
-      <%# <div class="buddy-list"> %>
-      <% if @event.expected_participants_count.present? %>
-        <div type="" class="buddy-list" data-toggle="modal" data-target="#exampleModalCenter">
-          <h2><%= @event.participations.count %> / <%= @event.expected_participants_count %> <i class="fas fa-user-friends"></i></h2>
-        </div>
-      <% else %>
-        <div type="" class="" data-toggle="modal" data-target="#exampleModalCenter">
-          <h3> Aucune limite de buddies</h3>
-        </div>
-      <% end %>
-      <% if @event.owner[:id] == current_user.id %>
-        <h2 class="gray-separator">|</h2>
-        <h2><%= link_to edit_event_path(@event) do %>
-          <i class='far fa-edit'></i>
-          <% end %>
-        </h2>
-      <% end %>
-      </div>
-        <div class="card-event-location">
-          <p><i class="fas fa-map-marker-alt"></i>  <%= @event.location %> </p>
-        </div>
-    <p><%= @event.description %></p>
-    <div class="cta-show">
-      <% if @event_date > DateTime.now %>
-            <% if @already_suscribed.include?(current_user.id) %>
-              <%= link_to "Déjà inscrit 👍", events_path, class: "btn-show-buddies" %>
-              <!-- Button trigger modal -->
-              <button type="button" class="btn-show-buddies" data-toggle="modal" data-target="#exampleModal">
-                J'invite mes buddies
-              </button>
-            <% elsif @event.expected_participants_count == nil %>
-              <%= link_to "Je m'inscris", event_participations_path(@event), class: "btn-show-participate", method: :post %>
-              <!-- Button trigger modal -->
-              <button type="button" class="btn-show-buddies" data-toggle="modal" data-target="#exampleModal">
-                J'invite mes buddies
-              </button>
-            <% elsif @event.expected_participants_count <= @event.participations.count %>
-              <%= link_to "évènement complet 💪", events_path, class: "btn-show-buddies" %>
-            <% else %>
-              <%= link_to "Je m'inscris", event_participations_path(@event), class: "btn-show-participate", method: :post %>
-              <button type="button" class="btn-show-buddies" data-toggle="modal" data-target="#exampleModal">
-                J'invite mes buddies
-              </button>
-            <% end %>
-          <% else %>
-            <%= link_to "évènement terminé 🏁", events_path, class: "btn-show-buddies" %>
-          <% end %>
-        </div>
-      </div>
     <div class="event-show-chat">
       <h3>Conversations</h3>
       <div class="message_to_send">
         <% if @already_suscribed.include?(current_user.id) %>
-          <div>
-          <%= simple_form_for [ @event, @message ], remote: true do |f| %>
-            <%= f.input_field :content, label: false, placeholder: "Tape ton message ici #{@user.first_name.capitalize}", class: "field-message-content" %>
+          <div class="messages-avatar">
+            <%= cl_image_tag @user.avatar.key, widht:  100, height: 100, crop: :fill %>
           </div>
-          <div>
-            <%= f.submit "Envoyer", class: "btn-show-participate" %>
+          <div class="suscribed-field-message-content">
+
+              <%= simple_form_for [ @event, @message ], remote: true do |f| %>
+                <%= f.input_field :content, label: false, placeholder: "Tape ton message ici #{@user.first_name.capitalize}", class: "field-message-content" %>
+                <%= f.submit "Envoyer", class: "btn-show-participate" %>
+
           </div>
+
         <% end %>
         <% else %>
-          <p class="unsuscribed-field-message-content"> Tu dois être inscrit pour participer à la conversation </p>
+        <div class="messages-avatar">
+          <%= cl_image_tag @user.avatar.key, widht:  100, height: 100, crop: :fill  %>
+        </div>
+        <div class="unsuscribed-field-message-content">
+          <p > Tu dois être inscrit pour participer à la conversation </p>
+          <a href="#" class="btn-show-participate">Envoyer</a>
+        </div>
         <% end %>
       </div>
         <% @messages.each do |message| %>
@@ -114,7 +125,7 @@
         </div>
       </div>
         <% end %>
-    </div>
+  </div>
   </div>
     <div class="map-show">
       <div id="map"
