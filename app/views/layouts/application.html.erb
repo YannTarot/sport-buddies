@@ -32,13 +32,8 @@
   </head>
 
   <body>
-    <% if controller_name = "events_controller" %>
-      <%= render 'shared/second-navbar' %>
-    <% else %>
-      <%= render 'shared/navbar' %>
-    <% end %>
-      <%= render 'shared/flashes' %>
-
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
     <%= yield %>
   </body>
 </html>

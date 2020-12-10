@@ -230,7 +230,7 @@
 
 .card_friend_name{
   text-decoration: none;
-  color: $dark-blue;
+  color: #167FFB;
   text-align: center;
 }
 
@@ -330,5 +330,15 @@
   .container-events-profile .index-card-category  {
 min-width: 70%;
 }
+.cards{
+  display: flex !important;
+  flex-wrap: wrap;
 
+}
+.btn-create{
+  margin-left: 60px;
+}
+.btn-join{
+  margin-left: 50px !important;
+}
 }
