@@ -315,7 +315,15 @@
 
 }
 }
-
+.notif-tab{
+  position: relative;
+}
+.fa-dot-circle{
+  position: absolute;
+    top: 0px;
+    right: -13px;
+    color: red;
+}
 .sport_data{
   display: flex;
   align-items: center;
