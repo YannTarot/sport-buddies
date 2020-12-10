@@ -48,8 +48,9 @@
           <p> afficher la liste</p>
         </div>
       <% else %>
-        <div type="" class="" data-toggle="modal" data-target="#exampleModalCenter">
-          <h3> Aucune limite de buddies</h3>
+        <div type="" class="buddy-list" data-toggle="modal" data-target="#exampleModalCenter">
+          <h3><i class="fas fa-infinity"></i> </h3>
+          <p> afficher la liste</p>
         </div>
       <% end %>
       <% if @event.owner[:id] == current_user.id %>

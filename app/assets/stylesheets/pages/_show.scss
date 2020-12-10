@@ -358,7 +358,7 @@ button:focus {
     margin-top: 13px;
     font-size: 22px !important ;
     font-style: bold;
-    color: #172574;
+    color: #167FFB;
   }
 
   .modal-avatar {
@@ -384,10 +384,10 @@ button:focus {
   .check-box:checked + label {
     .modal-avatar img {
       border-radius: 50%;
-      height: 100px;
-      width: 100px;
+      height: 150px;
+      width: 150px;
       object-fit: cover;
-      border: 6px solid #167FFB;
+      border: 4px solid #167FFB;
     }
   }
 }
@@ -403,4 +403,20 @@ button:focus {
   .card-event-description {
     width: 900px;
   }
+}
+
+.buddy-list2{
+  align-content: center;
+  i{
+    margin-top: 3px;
+  }
+  p{
+    font-size: 10px;
+    font-weight: lighter;
+    margin-top: 9px;
+  h2{
+    margin-right:5px ;
+  }
+  }
+
 }
