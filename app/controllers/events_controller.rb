@@ -37,6 +37,8 @@ class EventsController < ApplicationController
     @event = Event.geocoded.find(params[:id])
     @messages = @event.messages.order(created_at: :asc)
     @event_date = @event.starts_at
+    @confirmed_participation = @event.participations.where(status: "confirmed")
+    @user_confirmed_participation = User.where(id: @confirmed_participation.pluck(:user_id))
 
     @already_suscribed = @event.participations.map { |participation| participation[:user_id] }
 
