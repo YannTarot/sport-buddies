@@ -4,22 +4,33 @@
   <div class="index-card-category m-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= card_function %>)">
     <div class="index-card-info">
       <div class="index-card-info-left">
-        <h4> <strong> <%= event.sport.capitalize %> </strong>: <%= event.expected_level %></h4>
-          <p><%= event.starts_at.strftime("%d/%m à %HH") %></p>
-            </div>
-            <% if event.expected_participants_count.present? %>
-              <div class="index-card-info-player">
-                <p><%= event.participations.count %>/<%= event.expected_participants_count %></p>
-              </div>
-            <% else %>
-              <div class="index-card-info-player">
-              <i class="fas fa-infinity"></i>
-              </div>
-            <% end %>
-            </div>
-          <div class="index-card-btn">
-            <%= link_to "Voir l'évenement", event_path(event), class: "index-btn" %>
+        <p><%= event.starts_at.strftime("%d/%m à %HH") %></p>
+        <div class="event-owner-level-expected" >
+        <% if  event.expected_level == "débutant" %>
+          <h3><i class="fas fa-medal gold-color"></i></h3>
+        <% elsif event.expected_level == "intermédiaire" %>
+          <h3><i class="fas fa-medal gold-color"></i></h3>
+          <h3><i class="fas fa-medal gold-color"></i></h3>
+        <% elsif event.expected_level == "confirmé" %>
+          <h3><i class="fas fa-medal gold-color"></i></h3>
+          <h3><i class="fas fa-medal gold-color"></i></h3>
+          <h3><i class="fas fa-medal gold-color"></i></h3>
+        <% end %>
+      </div>
+      </div>
+        <% if event.expected_participants_count.present? %>
+          <div class="index-card-info-player">
+            <p><%= event.participations.count %>/<%= event.expected_participants_count %></p>
           </div>
+        <% else %>
+          <div class="index-card-info-player">
+          <i class="fas fa-infinity"></i>
+          </div>
+        <% end %>
         </div>
+      <div class="index-card-btn">
+        <%= link_to "Voir l'évenement", event_path(event), class: "index-btn" %>
+      </div>
+  </div>
 <% end %>
 </div>
