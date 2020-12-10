@@ -78,7 +78,7 @@
               <button type="button" class="btn-show-buddies" data-toggle="modal" data-target="#exampleModal">
                 J'invite mes buddies
               </button>
-            <% elsif @event.expected_participants_count <= @event.participations.count %>
+            <% elsif @event.expected_participants_count <= @confirmed_participation.count %>
               <%= link_to "évènement complet 💪", events_path, class: "btn-show-buddies" %>
             <% else %>
               <%= link_to "Je m'inscris", event_participations_path(@event), class: "btn-show-participate", method: :post %>
@@ -164,28 +164,28 @@
 
 
 <!-- Modal for listing participants -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Les buddies inscrits</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-          <div class="modal-body">
-            <% @event.participations.each do |participation|%>
-              <div class="card_container_friend">
-              <%= link_to  user_path(participation.user) do %>
-                <%= cl_image_tag participation.user.avatar.key,class:"card_friend", height: 150, width: 150, crop: :fill %>
-                  <p class= "card_friend_name"> <%= participation.user.first_name.capitalize  %> </p>
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Les buddies inscrits</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+            <div class="modal-body">
+              <% @user_confirmed_participation.each do |user|%>
+                <div class="card_container_friend">
+                <%= link_to  user_path(user) do %>
+                  <%= cl_image_tag user.avatar.key,class:"card_friend", height: 150, width: 150, crop: :fill %>
+                    <p class= "card_friend_name"> <%= user.first_name.capitalize  %> </p>
+                <% end %>
+                </div>
               <% end %>
-              </div>
-            <% end %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-        </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+          </div>
+      </div>
     </div>
   </div>
-</div>

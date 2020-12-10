@@ -1,7 +1,7 @@
 <% friends.each do |friend|%>
   <%= link_to user_path(friend) do %>
   <div class="card-friend">
-    <%= cl_image_tag friend.avatar.key, height: 200, width: 200, crop: :fill %>
+    <%= cl_image_tag friend.avatar.key, height: 210, width: 200, crop: :fill %>
     <div class="card-friend-infos">
       <div class="card-friend-h2">
 

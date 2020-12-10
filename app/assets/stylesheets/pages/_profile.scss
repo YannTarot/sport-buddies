@@ -139,17 +139,20 @@
   padding-left: 0px;
   margin: 10px;
   border-radius: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 0px 80px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   .btn-profile-link{
     margin-left: 220px;
     margin-top: -70px;
     color: white;
     background-color: $blue-sky;
   }
+  a {
+    text-decoration: none;
+  }
 }
 
 .card-friend img {
-  height: 100%;
+  height: auto;
   width: 120px;
   object-fit: cover;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -171,6 +174,58 @@
   color: #51708E;
   opacity: .6;
 
+}
+
+.card-friend-request {
+  width: 60%;
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  display: flex;
+  align-items: center;
+  padding-left: 0px;
+  margin-top: 25px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 0px 80px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  a {
+    text-decoration: none;
+  }
+  img {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 12px;
+    color: #51708E;
+  }
+  p {
+    font-size: 14px;
+    line-height: 1.4;
+    // margin-bottom: 0px;
+    margin-top: 8px;
+    font-weight: 600;
+    color: #51708E;
+    opacity: .6;
+  }
+}
+
+.card-friend-infos-request {
+  width: 65%;
+  padding-left: 25px;
+}
+
+.cta-friend-request {
+  text-align: center;
+  a {
+
+    text-align: center;
+  }
 }
 
 .card_friend_name{
