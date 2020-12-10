@@ -23,7 +23,7 @@
       </div>
         <% if event.expected_participants_count.present? %>
           <div class="index-card-info-player">
-            <p><%= event.participations.count %>/<%= event.expected_participants_count %></p>
+            <p><%= event.participations.where(status: "confirmed").count %>/<%= event.expected_participants_count %></p>
           </div>
         <% else %>
           <div class="index-card-info-player">

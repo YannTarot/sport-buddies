@@ -63,6 +63,9 @@
     <br>
     <br>
     <br>
+    <br>
+    <br>
+    <br>
     <% else %>
       <div class="index-cards">
         <% events_sorted = @events.sort_by &:starts_at %>
@@ -99,7 +102,7 @@
                 </div>
                 <% if event.expected_participants_count.present? %>
                   <div class="index-card-info-player">
-                    <p><%= event.participations.count %>/<%= event.expected_participants_count %></p>
+                    <p><%= event.participations.where(status: "confirmed").count %>/<%= event.expected_participants_count %></p>
                     <div class="icon">
                       <i class="far fa-user"></i>
                     </div>
