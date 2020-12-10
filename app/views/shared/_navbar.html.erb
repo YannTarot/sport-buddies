@@ -13,10 +13,10 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Crée une partie", new_event_path, class: "nav-link" %>
+          <%= link_to "Crée une partie", new_event_path, class: "nav-link-navbar" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Rejoins une partie", events_path, class: "nav-link" %>
+          <%= link_to "Rejoins une partie", events_path, class: "nav-link-navbar" %>
         </li>
         <li class="nav-item dropdown">
           <%= cl_image_tag current_user.avatar.key, width: 100, heigth: 100, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
