@@ -41,7 +41,7 @@
       <%# <div class="buddy-list"> %>
       <% if @event.expected_participants_count.present? %>
         <div class = "buddy-list" data-toggle="modal" data-target="#exampleModalCenter">
-          <h2><%= @event.participations.count %></h2>
+          <h2><%= @confirmed_participation.count %></h2>
           <h2>/</h2>
           <h2><%= @event.expected_participants_count %></h2>
           <i class="fas fa-user-friends"></i>
