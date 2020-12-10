@@ -242,3 +242,62 @@ margin-bottom: 120px;
     width: 100%;
   }
 }
+
+@media only screen and (max-width:768px) {
+
+.cards{
+  display: flex !important;
+  flex-wrap: wrap;
+
+}
+.btn-create{
+  margin-left: 60px;
+  margin-bottom: 30px !important;
+}
+.btn-join{
+  margin-left: 50px !important;
+
+}
+
+#jumbo-out{
+  height: 650px;
+}
+.first-container-title{
+  display: none !important;
+}
+
+.icons{
+  display: none !important;
+}
+.banner-sport{
+  padding: 0;
+}
+
+#seychelles {
+  border-radius: 10px;
+}
+.footer{
+  margin-top: -175px;
+  padding: 10px;
+  height: 175px;
+}
+#finland{
+  margin-top: -638px;
+  border-radius: 10px;
+}
+#container-title{
+  h1{
+    text-align: center;
+  }
+  p{
+    text-align: center;
+  }
+}
+
+#discover-activities{
+  display: none !important;
+}
+.social_footer_ul{
+  padding: 0;
+}
+}

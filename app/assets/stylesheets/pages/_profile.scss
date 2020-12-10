@@ -330,5 +330,15 @@
   .container-events-profile .index-card-category  {
 min-width: 70%;
 }
+.cards{
+  display: flex !important;
+  flex-wrap: wrap;
 
+}
+.btn-create{
+  margin-left: 60px;
+}
+.btn-join{
+  margin-left: 50px !important;
+}
 }
