@@ -43,7 +43,6 @@
 
 .card-event-description h2 {
   font-size: 30px;
-  margin-bottom: 30px;
 }
 
 .card-event-description p {
@@ -74,6 +73,8 @@
   i {
     opacity: 0.35;
     margin-right:10px;
+    font-size: 24px;
+    align-content: center;
   }
   .gray-separator {
     opacity: 0.2;
@@ -90,11 +91,18 @@
 }
 
 .buddy-list{
-
-  h2:hover:after {
-    content:"afficher la liste";
-    margin-left: 10px;
-    font-size: 18px;
+  display: flex;
+  align-content: center;
+  i{
+    margin-top: 3px;
+  }
+  p{
+    font-size: 10px;
+    font-weight: lighter;
+    margin-top: 9px;
+  h2{
+    margin-right:5px ;
+  }
   }
 }
 .card-event-location {
@@ -301,10 +309,14 @@ button:focus {
 
 .modal-title {
   font-size: 30px;
-  color: #172574;
+  color: #167FFB;
+  font-weight: 600;
   margin: 0px 0 0 100px;
 }
 
+.btn-secondary{
+  color: #167FFB;
+}
 
 .modal-body {
   display: flex;
@@ -329,8 +341,8 @@ button:focus {
   .modal-avatar {
     img {
     border-radius: 50%;
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     object-fit: cover;
     }
   }
