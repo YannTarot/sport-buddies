@@ -11,7 +11,9 @@
 .navbar-lewagon .navbar-brand img {
   width: 60px;
 }
-
+.navbar-nav{
+  align-items: center;
+}
 .nav-item{
   font-size: 20px;
   font-weight: 600;
@@ -21,8 +23,9 @@
   }
 }
 
-.nav-link{
+.nav-link-navbar{
   color: white !important;
+  padding-top: 50px !important;
 }
 
 .dropdown-menu{
@@ -30,6 +33,8 @@
   border-radius: 8px;
 }
 
-a.dropdown-itme{
+.nav-item{
+  padding-left: 10px !important;
+  padding-top: 10px;
 
 }
