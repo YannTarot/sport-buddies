@@ -1,14 +1,16 @@
 
   <% invitations.each do |invitation|%>
-    <div class="card-friend">
+     <div class="card-friend-request">
       <%= cl_image_tag invitation.user.avatar.key, height: 200, width: 200, crop: :fill %>
-      <div class="card-friend-infos">
-        <h2><%= invitation.user.first_name.capitalize %></h2>
-          <% invitation.user.sports.first(2).each do |sport| %>
-          <p><%= "#{sport[0].capitalize} niveau #{sport[1]}" %></p>
-          <% end %>
+      <div class="card-friend-infos-request">
+        <div>
+          <h2><%= invitation.user.first_name.capitalize %></h2>
+            <% invitation.user.sports.first(2).each do |sport| %>
+            <p class= "sport_data_p"><strong> <%= "#{sport[0].capitalize}" %></strong>  niveau <%= "#{sport[1]}" %></p>
+            <% end %>
+        </div>
       </div>
-      <div class="button-friendship-request">
+      <div class="cta-friend-request">
         <%= link_to "Accepter", accept_friendship_path(invitation), method: :patch, class: "btn btn-light-blue btn-md" %>
         <%= link_to "Refuser", deny_friendship_path(invitation), method: :patch, class: "btn btn-light-blue btn-md" %>
       </div>
