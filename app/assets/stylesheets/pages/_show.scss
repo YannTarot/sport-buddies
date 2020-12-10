@@ -227,15 +227,12 @@ button:focus {
 }
 
 .field-message-content {
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-  background-color: white;
+  background-color: #FFFFFF;
   border: none;
   border-radius: 6px;
   width: 300px;
   font-weight: 600;
-  // padding: 16px 20px;
-  // margin-left: 80px;
-  // margin-right: 40px;
+
 }
 .message-content {
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
@@ -256,6 +253,15 @@ button:focus {
   border-radius: 15px;
   padding: 10px 20px;
   width: 900px;
+
+  .new_message {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+  .btn-show-participate {
+    margin-right: 0px;
+  }
 }
 
 .unsuscribed-field-message-content {
